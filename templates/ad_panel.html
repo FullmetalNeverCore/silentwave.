@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="{{url_for('static', filename='js/admin_panel.js')}}"></script>
+</head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">{{ page_title }}</h1>
+      <form id="loginForm" action='#' method="post">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </body>
+<script>
+  $(document).ready(function(){
+  $('#loginForm').submit(function(e){
+    e.preventDefault();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    console.log('sending');
+    verifyAccount(username, password)
+            .then((promiseResult) => {
+            if (promiseResult.status) {
+                $('#usern').html(promiseResult.value['username']);
+                $('#id').html(promiseResult.value['id']);
+                var userData = {id:promiseResult.value['id'],username:promiseResult.value['username'],password:promiseResult.value['password']}
+                sessionStorage.setItem('ud',JSON.stringify(userData));
+                window.location.href = '/admin';
+            } else {
+                alert("Invalid username or password.");
+            }
+            });
+  });
+});
+</script>
+</html>

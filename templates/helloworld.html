@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{url_for('static', filename='js/radio.js')}}"></script>
+    </head>
+    <body>
+    <h1 class="h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;">SovietWave Radio</h1>
+    <div class="h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Устанавливаю связь...</div>
+    <div id="audio-stream">
+      <img class="img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
+      <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
+        <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()">
+      </div>
+      <audio controls hidden>
+        <source src="{{ stream_url }}" type="audio/mpeg">
+      Your browser does not support the audio element. 
+      </audio>
+    </div>
+    </body>
+    <footer>
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:0;right:0;height:100px">
+          Created by:
+          <a class="text-white" href="#">----</a>
+        </div>
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:200;right:0;height:100px">
+          Current Listeners:
+          <p class="text-white" id="listeners">0</p>
+        </di>
+    </footer>
+    <script>
+      console.log("Welcome on Sovietwave Radio!");
+      function updateTrackName() {
+        console.log('Updating track name...');
+        $.get('/track_name', function(data) {
+          $('#track-name').html(data.track_name);
+          $('#listeners').html(data.listeners);
+        });
+      }
+  
+      setInterval(updateTrackName, 5000);
+    </script>
+</html>

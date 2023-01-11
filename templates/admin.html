@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="{{url_for('static', filename='js/admin_panel.js')}}"></script>
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center" id="uppertext">That's gonna be admin panel!</h1>
+    </div>
+    <div class="container" id='imgchange' hidden>
+        <h1>Upload Image</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="image-file">Select Image:</label>
+            <input type="file" class="form-control" id="image-file" name="image-file">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+  </body>
+  <script>
+          var retData = sessionStorage.getItem("ud");
+          var parsData = JSON.parse(retData);
+          console.log(parsData);
+          if(parsData === null){
+            //window.location.href = '/'
+          }
+          try{
+            var username =  parsData['username'];
+            var password =  parsData['password'];
+          }
+          catch(e){
+            console.log(e);
+          }
+          console.log('sendin');
+          verifyAccount(username, password)
+            .then((promiseResult) => {
+            if (promiseResult.status) {
+                console.log(promiseResult.value);
+                document.getElementById('uppertext').innerHTML = `Admin Panel : ${promiseResult.value['username']}`;
+                document.getElementById('imgchange').removeAttribute('hidden');
+            } else {
+                console.log('e');
+                console.log(promiseResult.value);
+                window.location.href = '/';
+            }
+            });
+  </script>
+</html>
