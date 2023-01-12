@@ -11,6 +11,7 @@
       <h1 class="text-center" id="uppertext">That's gonna be admin panel!</h1>
     </div>
     <div class="container" id='imgchange' hidden>
+        <div class="row" id="def_prod"></div>
         <h1>Upload Image</h1>
         <form id="upload-form" enctype="multipart/form-data">
           <div class="form-group">
@@ -42,6 +43,13 @@
                 console.log(promiseResult.value);
                 document.getElementById('uppertext').innerHTML = `Admin Panel : ${promiseResult.value['username']}`;
                 document.getElementById('imgchange').removeAttribute('hidden');
+                getQueue(username, password)
+                .then((queueResult) => {
+                  if (queueResult.status) {
+                    console.log(queueResult.value);
+                    $('#def_prod').html(queueResult.value);
+                  }
+                });
             } else {
                 console.log('e');
                 console.log(promiseResult.value);

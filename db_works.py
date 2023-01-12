@@ -1,4 +1,9 @@
-import mariadb
+import subprocess
+import sys
+try:
+    import mariadb
+except Exception as e:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'mariadb'])
 import sys
 import hashlib
 
@@ -38,7 +43,7 @@ class DBWorks:
                 return False 
             else: 
                 return dataArray
-                
+
         except mariadb.Error as e: 
             print(f"MariaDB - Error : {e}")
             return False

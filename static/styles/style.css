@@ -1,8 +1,4 @@
 
-body {
-  background-image: url('https://newsovietwave.com/assets/images/bg2.jpg');
-}
-
 #volume-mixer input[type="range"] {
   color: red;
 }
