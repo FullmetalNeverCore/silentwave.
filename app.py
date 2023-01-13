@@ -9,7 +9,6 @@ class BGIMG:   #bg image
     link : str
 
 
-
 @app.route("/")
 def home():
         name = "test"
@@ -28,6 +27,29 @@ def track_name():
 def admin_panel():
         return render_template('ad_panel.html')
 
+@app.route('/img_update',methods=['POST'])
+def img_update():
+        uname = request.form['username']
+        passw = request.form['password']
+        link = request.form['link']
+        conn = db.login(uname,passw) #checking username and password
+        print('Attempt to change image')
+        if not conn == False:
+            print('successful login')
+            global bgi 
+            if type(link) is str:
+                print('link is str')
+                bgi = BGIMG(link)
+            else: 
+                print('link is not str')
+                pass 
+            #bgi = BGIMG(str(link)) if type(link) is str else bgi
+            return '.' #returning data from the database table
+        else: 
+            print('unlogin')
+            return 'Not'
+
+
 @app.route('/queue_return',methods=['POST'])
 def queue_return():
         uname = request.form['username']
@@ -40,7 +62,7 @@ def queue_return():
             print('unlogin')
             return 'Not'
 
-@app.route('/admin' )
+@app.route('/admin')
 def admin():
         return render_template('admin.html')
 

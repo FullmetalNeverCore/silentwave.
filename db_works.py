@@ -43,7 +43,6 @@ class DBWorks:
                 return False 
             else: 
                 return dataArray
-
         except mariadb.Error as e: 
             print(f"MariaDB - Error : {e}")
             return False

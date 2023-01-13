@@ -26,3 +26,21 @@ function getQueue(username, password){
     return {status: false, error: error.status + ": " + error.statusText};
   });
 }
+
+function updateIMG(username,password,link){
+  console.log('UPDATING IMG')
+  return $.ajax({
+    type: "POST",
+    url: '/img_update',
+    data: {username: username, password: password, link: link}
+  }).then(function(response){
+    if(response !== "Not"){
+      return {status: true, value: response};
+    }
+    else{
+      return {status: false, value: response};
+    }
+  }).catch(function(error) {
+    return {status: false, error: error.status + ": " + error.statusText};
+  }); 
+}

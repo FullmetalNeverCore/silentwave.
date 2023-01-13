@@ -9,17 +9,16 @@
   <body>
     <div class="container">
       <h1 class="text-center" id="uppertext">That's gonna be admin panel!</h1>
+      <h2 class="text-center" id="statustext" hidden>That's gonna be admin panel!</h2>
     </div>
     <div class="container" id='imgchange' hidden>
         <div class="row" id="def_prod"></div>
         <h1>Upload Image</h1>
-        <form id="upload-form" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="image-file">Select Image:</label>
-            <input type="file" class="form-control" id="image-file" name="image-file">
+            <label for="linkIMG">Image-Link</label>
+            <input type="input" class="form-control" id="linkIMG" aria-describedby="emailHelp" placeholder="Enter link">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+          <button class="btn btn-primary" id="img_link_btn">Submit</button>
       </div>
   </body>
   <script>
@@ -27,7 +26,7 @@
           var parsData = JSON.parse(retData);
           console.log(parsData);
           if(parsData === null){
-            //window.location.href = '/'
+            window.location.href = '/'
           }
           try{
             var username =  parsData['username'];
@@ -36,6 +35,22 @@
           catch(e){
             console.log(e);
           }
+          $(document).ready(function() {
+          $("#img_link_btn").click(function(e){
+                  console.log('send_link');
+                  e.preventDefault();
+                  var link = document.getElementById('linkIMG').value;
+                  console.log(link);
+                  updateIMG(username,password,link)
+                  .then((updateIMGresults) => {
+                    if(updateIMGresults.status){
+                      console.log('IMG updated');
+                      document.getElementById('statustext').removeAttribute('hidden');
+                      document.getElementById('statustext').innerHTML = `IMG updated!`;
+                    }
+                  })
+            });
+          });
           console.log('sendin');
           verifyAccount(username, password)
             .then((promiseResult) => {
