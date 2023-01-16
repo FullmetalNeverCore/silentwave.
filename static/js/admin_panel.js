@@ -15,6 +15,19 @@ function verifyAccount(username, password) {
     });
   }
 
+function MTMode(username,password){
+  return $.ajax({
+    type: "POST",
+    url: '/mt_mode',
+    data: {username: username, password: password}
+  }).then(function(response){
+    return {status: true, value: response};
+  }).catch(function(error) {
+    return {status: false, error: error.status + ": " + error.statusText};
+  });  
+}
+
+
 function getQueue(username, password){
   return $.ajax({
     type: "POST",

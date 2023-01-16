@@ -7,19 +7,12 @@
     <title>Admin Panel</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-center" id="uppertext">That's gonna be admin panel!</h1>
-      <h2 class="text-center" id="statustext" hidden>That's gonna be admin panel!</h2>
+    <div class="container" id="adminbody">
     </div>
-    <div class="container" id='imgchange' hidden>
-        <div class="row" id="def_prod"></div>
-        <h1>Upload Image</h1>
-          <div class="form-group">
-            <label for="linkIMG">Image-Link</label>
-            <input type="input" class="form-control" id="linkIMG" aria-describedby="emailHelp" placeholder="Enter link">
-          </div>
-          <button class="btn btn-primary" id="img_link_btn">Submit</button>
-      </div>
+    <div class="container" id="buttons">
+      <button class="btn btn-primary" id="img_link_btn">Submit</button>
+      <button class="btn btn-warning" id="mt">Maintance Mode</button>  
+    </div>
   </body>
   <script>
           var retData = sessionStorage.getItem("ud");
@@ -50,12 +43,24 @@
                     }
                   })
             });
+            $("#mt").click(function(e){
+              console.log('entering mt mode');
+              e.preventDefault();
+              MTMode(username,password)
+              .then((onenter) => {
+                if(onenter.status){
+                  console.log('maintance mode');
+                  document.getElementById('statustext').removeAttribute('hidden');
+                  document.getElementById('statustext').innerHTML = `Maintence status changed!`;
+                }
+              })
+            });
           });
           console.log('sendin');
           verifyAccount(username, password)
             .then((promiseResult) => {
             if (promiseResult.status) {
-                console.log(promiseResult.value);
+                $('#adminbody').html(promiseResult.value['code']);
                 document.getElementById('uppertext').innerHTML = `Admin Panel : ${promiseResult.value['username']}`;
                 document.getElementById('imgchange').removeAttribute('hidden');
                 getQueue(username, password)
@@ -67,7 +72,6 @@
                 });
             } else {
                 console.log('e');
-                console.log(promiseResult.value);
                 window.location.href = '/';
             }
             });
