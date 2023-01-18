@@ -40,12 +40,12 @@ function getQueue(username, password){
   });
 }
 
-function updateIMG(username,password,link){
+function updateIMG(username,password,link,time){
   console.log('UPDATING IMG')
   return $.ajax({
     type: "POST",
     url: '/img_update',
-    data: {username: username, password: password, link: link}
+    data: {username: username, password: password, link: link,time: time}
   }).then(function(response){
     if(response !== "Not"){
       return {status: true, value: response};

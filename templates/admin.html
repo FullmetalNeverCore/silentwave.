@@ -33,8 +33,9 @@
                   console.log('send_link');
                   e.preventDefault();
                   var link = document.getElementById('linkIMG').value;
+                  var time = document.getElementById('time_sel').value; 
                   console.log(link);
-                  updateIMG(username,password,link)
+                  updateIMG(username,password,link,time)
                   .then((updateIMGresults) => {
                     if(updateIMGresults.status){
                       console.log('IMG updated');
