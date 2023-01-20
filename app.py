@@ -24,6 +24,15 @@ class BGIMG:   #bg image
 
 
 
+@app.route('/get_songs_data',methods=['POST'])
+def track_data():
+    title = request.form['title']
+    conn = db_works.DBWorks().check_song(title)
+    print(conn)
+    if not conn == False: 
+        return jsonify({'love':conn[0]})
+    else:
+        return 'Not'
 @app.route("/")
 def home():
         name = "SovietWave Radio"

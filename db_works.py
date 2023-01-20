@@ -16,7 +16,7 @@ class DBWorks:
         try:
             conn = mariadb.connect(
                 user="root",
-                password="root",
+                password="",
                 host="127.0.0.1",
                 port=3306,
                 database="soviet"
@@ -46,3 +46,22 @@ class DBWorks:
         except mariadb.Error as e: 
             print(f"MariaDB - Error : {e}")
             return False
+    
+    def check_song(self,title):
+        try:
+                self.cur.execute(f"SELECT love FROM songs_table WHERE title='{title}'")
+                dataArray = []
+                for (love) in self.cur:
+                    for x in (love):
+                        dataArray.append(x)
+                #return dataArray if not len(dataArray) == 0 else False
+                if len(dataArray) == 0:
+                    self.cur.execute(f"INSERT INTO songs_table (title,love) VALUES ('{title}',0);")
+                    print('MariaDB - Insertion of data complete!')
+                    self.check_song(title)
+                else: 
+                    return dataArray
+        except mariadb.Error as e:
+            print(f"MariaDB - Error : {e}")
+            return False 
+            

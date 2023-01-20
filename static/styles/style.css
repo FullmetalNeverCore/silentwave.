@@ -10,3 +10,35 @@
 audio {
   filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
 }
+
+.heart-button {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  transition: rgb(255, 255, 255) 0.5s ease-in-out; 
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.heart-button-pressed{
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  background: red;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 3px 3px 3px #333;
+  transition: red 0.5s ease-in-out; 
+  box-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+.heart-button:hover {
+  background: red;
+  box-shadow: 0 0 10px rgb(255, 0, 0);
+}

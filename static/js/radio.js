@@ -23,3 +23,15 @@ function radio(){
     }); 
 }
 
+function getSongData(title){
+  return $.ajax({
+    type: "POST",
+    url: '/get_songs_data',
+    data: {title: title},
+  }).then(function(response){
+    return {status: true, value: response};
+  }).catch(function(error) {
+    return {status: false, error: error.status + ": " + error.statusText};
+  });
+}
+

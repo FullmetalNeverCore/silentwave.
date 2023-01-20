@@ -11,7 +11,8 @@
     </head>
     <body style="background-image: url('{{ bg_img }}');">
     <h1 class="h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;">SovietWave Radio</h1>
-    <div class="h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Устанавливаю связь...</div>
+    <div class="h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Connecting...</div>
+    </div>
     <div id="audio-stream">
       <img class="img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
       <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
@@ -24,6 +25,7 @@
     </div>
     </body>
     <footer>
+      </div>
         <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:0;right:0;height:100px">
           Created by:
           <a class="text-white" href="#">0xNC</a>
@@ -31,16 +33,42 @@
         <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:200;right:0;height:100px">
           Current Listeners:
           <p class="text-white" id="listeners">0</p>
-        </di>
+        </div>
+        <div class="container mx-auto" id="PositivesMeter" hidden>
+          <div class="text-center p-3 text-light" style="position:fixed;bottom:0;left:0;right:200;height:105px">
+          <div class="row">
+            <button class="heart-button my-3" id="lovebtn" hidden></button>
+            <button class="heart-button-pressed my-3" id="lovebtnprsd" hidden></button>
+            <p class="text-white">Positives: </p>
+            <p class="text-white" id="love" hidden>0</p>
+          </div>
+        </div>
     </footer>
     <script>
       console.log("Welcome on Sovietwave Radio!");
+      $(document).ready(function() {
+        $("#lovebtn").click(function(e){
+          document.getElementById('lovebtn').remove();
+          document.getElementById('lovebtnprsd').removeAttribute('hidden');
+          document.getElementById('lovebtnprsd').disabled = false;
+        });
+      });
       function updateTrackName() {
         console.log('Updating track name...');
         $.get('/track_name', function(data) {
           $('#track-name').html(data.track_name);
           $('#listeners').html(data.listeners);
         });
+        var title = document.getElementById('track-name').innerHTML 
+        getSongData(title)
+        .then((promisedResp) => {
+          if(promisedResp.status){
+            document.getElementById('PositivesMeter').removeAttribute('hidden');
+            document.getElementById('lovebtn').removeAttribute('hidden');
+            document.getElementById('love').removeAttribute('hidden');
+            document.getElementById('love').innerHTML = promisedResp.value['love']
+          }
+        })
       }
   
       setInterval(updateTrackName, 5000);
