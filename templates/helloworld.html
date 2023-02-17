@@ -9,10 +9,9 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{{url_for('static', filename='js/radio.js')}}"></script>
     </head>
-    <body style="background-image: url('{{ bg_img }}');">
+    <body style="background-image: url('{{ bg_img }}');background-size: cover;">
     <h1 class="h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;">SovietWave Radio</h1>
     <div class="h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Connecting...</div>
-    </div>
     <div id="audio-stream">
       <img class="img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
       <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">

@@ -25,7 +25,7 @@ class BGIMG:   #bg image
 
 
 @app.route('/get_songs_data',methods=['POST'])
-def track_data():
+def get_songs_data():
     title = request.form['title']
     conn = db_works.DBWorks().check_song(title)
     print(conn)
@@ -33,12 +33,25 @@ def track_data():
         return jsonify({'love':conn[0]})
     else:
         return 'Not'
+
+
+@app.route('/endp',methods=['GET'])
+def endp():
+    routes = {}
+    for r in app.url_map._rules:
+        routes[r.rule] = {}
+        routes[r.rule]["functionName"] = r.rule
+        routes[r.rule]["methods"] = list(r.methods)
+    routes.pop("/static/<path:filename>")
+    print(routes)
+    return jsonify(routes)
+
 @app.route("/")
 def home():
         name = "SovietWave Radio"
         if int(datetime.datetime.now().hour) >= 9 and int(datetime.datetime.now().hour) < 18: 
             background = bgi.morning_link 
-        elif int(datetime.datetime.now().hour) >= 18 and int(datetime.datetime.now()) < 23:
+        elif int(datetime.datetime.now().hour) >= 18 and int(datetime.datetime.now().hour) < 23:
             background = bgi.evening_link
         else:
             background = bgi.night_link
@@ -57,7 +70,7 @@ def track_name():
         return jsonify({'track_name': track_name,'listeners' : listeners})
 
 @app.route('/ad_panel')
-def admin_panel():
+def ad_panel():
         return render_template('ad_panel.html')
 
 def auth_check(u,p):
@@ -120,6 +133,7 @@ def img_update():
 
 @app.route('/queue_return',methods=['POST'])
 def queue_return():
+    try:
         uname = request.form['username']
         passw = request.form['password']
         conn = db.login(uname,passw) #checking username and password
@@ -129,6 +143,8 @@ def queue_return():
         else: 
             print('unlogin')
             return 'Not'
+    except Exception as e:
+        return 'Not'
 
 @app.route('/admin')
 def admin():

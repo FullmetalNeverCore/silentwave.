@@ -13,6 +13,9 @@
       <button class="btn btn-primary" id="img_link_btn">Submit</button>
       <button class="btn btn-warning" id="mt">Maintance Mode</button>  
     </div>
+    <div class="container" id="endp">
+      <h1>Endpoints : </h1>
+    </div>
   </body>
   <script>
           var retData = sessionStorage.getItem("ud");
@@ -71,6 +74,20 @@
                     $('#def_prod').html(queueResult.value);
                   }
                 });
+                getEndP(username, password)
+                .then((epResult) => {
+                  if (epResult.status) {
+                    //console.log(epResult.value['/']['functionName'])
+                    dict = Object.keys(epResult.value);
+                    for (let i = 0;i <  Object.keys(epResult.value).length;i++){
+                      //console.log(epResult.value[dict[i]]['functionName']));
+                      const heading = document.createElement('h2');
+                      heading.textContent = epResult.value[dict[i]]['functionName'] + " :: " + epResult.value[dict[i]]['methods'];
+                      heading.style.color = 'green';
+                      document.querySelector('#endp').appendChild(heading);
+                    }
+                  }
+                });    
             } else {
                 console.log('e');
                 window.location.href = '/';

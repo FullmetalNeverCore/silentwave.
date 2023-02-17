@@ -28,6 +28,17 @@ function MTMode(username,password){
 }
 
 
+function getEndP(username, password){
+  return $.ajax({
+    type: "GET",
+    url: '/endp',
+  }).then(function(response){
+    return {status: true, value: response};
+  }).catch(function(error) {
+    return {status: false, error: error.status + ": " + error.statusText};
+  });
+}
+
 function getQueue(username, password){
   return $.ajax({
     type: "POST",
