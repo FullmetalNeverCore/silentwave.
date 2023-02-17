@@ -1,4 +1,7 @@
 install:
 		pip install -r requirements.txt
 
-all: install
+test: 
+	python -m pytest tests/
+
+all: install test
