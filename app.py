@@ -6,6 +6,7 @@ import datetime
 from dataclasses import dataclass,replace
 app = Flask(__name__)
 
+#Dataclasses - enums
 
 @dataclass 
 class MTMode:
@@ -23,7 +24,7 @@ class BGIMG:   #bg image
 
 
 
-
+#endpoint for getting song like points from database
 @app.route('/get_songs_data',methods=['POST'])
 def get_songs_data():
     title = request.form['title']
@@ -34,7 +35,7 @@ def get_songs_data():
     else:
         return 'Not'
 
-
+#Mainly used in admin panel,endpoint return every endpoint in flask backend
 @app.route('/endp',methods=['GET'])
 def endp():
     routes = {}
@@ -46,6 +47,7 @@ def endp():
     print(routes)
     return jsonify(routes)
 
+#index page
 @app.route("/")
 def home():
         name = "SovietWave Radio"
@@ -60,6 +62,8 @@ def home():
             return render_template('helloworld.html', title='SovietWave Radio', username=name,stream_url=f'http://{ip.ip}:8000/stream',bg_img=background)
         else: 
             return render_template('maintance.html')
+        
+#Get current song data
 @app.route('/track_name')
 def track_name():
         status_url = 'http://localhost:8000/status.xsl'
@@ -69,10 +73,12 @@ def track_name():
         listeners = html.split('<td class="streamstats">')[3].split('</td>')[0]
         return jsonify({'track_name': track_name,'listeners' : listeners})
 
+#Admin panel
 @app.route('/ad_panel')
 def ad_panel():
         return render_template('ad_panel.html')
 
+#Admin authentication
 def auth_check(u,p):
     conn = db.login(u,p) 
     #return True if conn else False
@@ -81,13 +87,13 @@ def auth_check(u,p):
     else: 
         return False 
 
-
+#Maintenance 
 @app.route('/mt_mode',methods=['POST'])
 def mt_mode():
         uname = request.form['username']
         passw = request.form['password']
         conn = auth_check(uname,passw) #checking username and password
-        print('Attempt to enter maintance mode')
+        print('Attempt to enter maintenance mode')
         if not conn == False:
             print('successful login')
             global mt
@@ -102,7 +108,7 @@ def mt_mode():
             return 'Not'
 
 
-
+#Update site's background image
 @app.route('/img_update',methods=['POST'])
 def img_update():
         print(request.form)
@@ -131,6 +137,7 @@ def img_update():
             return 'Not'
 
 
+
 @app.route('/queue_return',methods=['POST'])
 def queue_return():
     try:
@@ -146,10 +153,12 @@ def queue_return():
     except Exception as e:
         return 'Not'
 
+#Admin panel
 @app.route('/admin')
 def admin():
         return render_template('admin.html')
 
+#Verifying credentials to return admin page functionality
 @app.route('/verify_credentials',methods=['POST'])
 def verf_cred():
         uname = request.form['username']
