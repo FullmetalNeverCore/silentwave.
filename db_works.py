@@ -8,9 +8,11 @@ import sys
 import hashlib
 
 
+#The Database
 
 class DBWorks:
 
+    #Class constructor that creating mariadb cursor
     def __init__(self):
         # Connect to MariaDB Platform
         try:
@@ -28,7 +30,7 @@ class DBWorks:
         except mariadb.Error as e:
             print(f"MariaDB -Error connecting to MariaDB Platform: {e}")
 
-    
+    #login into db
     def login(self,l,p): #params - login, password 
         try: 
             print(l,p)
@@ -46,7 +48,7 @@ class DBWorks:
         except mariadb.Error as e: 
             print(f"MariaDB - Error : {e}")
             return False
-    
+    #Get the song title and like number,or write new song title into db
     def check_song(self,title):
         print(title)
         try:
