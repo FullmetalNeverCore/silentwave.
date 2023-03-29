@@ -23,6 +23,19 @@ function radio(){
     }); 
 }
 
+function addLove(title,love){
+  return $.ajax({
+    type: "POST",
+    url: '/add_song_love',
+    data: {title: title},
+  }).then(function(response){
+    return {status: true, value: response};
+  }).catch(function(error) {
+    return {status: false, error: error.status + ": " + error.statusText};
+  });
+}
+
+
 function getSongData(title){
   return $.ajax({
     type: "POST",

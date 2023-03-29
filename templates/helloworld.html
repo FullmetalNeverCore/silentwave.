@@ -37,7 +37,6 @@
           <div class="text-center p-3 text-light" style="position:fixed;bottom:0;left:0;right:200;height:105px">
           <div class="row">
             <button class="heart-button my-3" id="lovebtn" hidden></button>
-            <button class="heart-button-pressed my-3" id="lovebtnprsd" hidden></button>
             <p class="text-white">Positives: </p>
             <p class="text-white" id="love" hidden>0</p>
           </div>
@@ -45,12 +44,16 @@
     </footer>
     <script>
       console.log("Welcome on Sovietwave Radio!");
-      $(document).ready(function() {
-        $("#lovebtn").click(function(e){
-          document.getElementById('lovebtn').remove();
-          document.getElementById('lovebtnprsd').removeAttribute('hidden');
-          document.getElementById('lovebtnprsd').disabled = false;
-        });
+
+      document.getElementById('lovebtn').addEventListener('click', function() {
+        console.log('heart clicked!')
+        document.getElementById('lovebtn').classList.add('heart-button-liked')
+        addLove(document.getElementById('track-name').innerHTML)
+        .then((pResp) => {
+          if(pResp){
+            console.log('Liked!')
+          }
+        })
       });
       function updateTrackName() {
         console.log('Updating track name...');
