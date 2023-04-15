@@ -59,8 +59,8 @@ class SiteItSelf(Data):
         self.bgi = super().BGIMG('https://cdna.artstation.com/p/assets/images/images/004/720/972/large/randall-mackey-mural2.jpg?1485790389',
                                  'https://livewire.thewire.in/wp-content/uploads/2022/02/DanyloHrechyshkinSovietwave-1024x650.jpeg',
                                  'https://wallpapercave.com/wp/wp9186396.jpg')
-        #self.db = db_works.DBWorks() #Connecting to db
-        #self.db.create_tables_if_not_exist() #initialisation        
+        self.db = db_works.DBWorks() #Connecting to db
+        self.db.create_tables_if_not_exist() #initialisation        
 
         #endpoint for getting song like points from database
         @self.app.route('/get_songs_data',methods=['POST',
