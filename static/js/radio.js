@@ -23,7 +23,7 @@ function radio(){
     }); 
 }
 
-function addLove(title,love){
+function addLove(title){
   return $.ajax({
     type: "POST",
     url: '/add_song_love',
@@ -38,7 +38,7 @@ function addLove(title,love){
 
 function getSongData(title){
   return $.ajax({
-    type: "POST",
+    type: "GET",
     url: '/get_songs_data',
     data: {title: title},
   }).then(function(response){
