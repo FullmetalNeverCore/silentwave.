@@ -59,21 +59,22 @@ class SiteItSelf(Data):
         self.bgi = super().BGIMG('https://cdna.artstation.com/p/assets/images/images/004/720/972/large/randall-mackey-mural2.jpg?1485790389',
                                  'https://livewire.thewire.in/wp-content/uploads/2022/02/DanyloHrechyshkinSovietwave-1024x650.jpeg',
                                  'https://wallpapercave.com/wp/wp9186396.jpg')
-        self.db = db_works.DBWorks() #Connecting to db
-        self.db.create_tables_if_not_exist() #initialisation        
+        #self.db = db_works.DBWorks() #Connecting to db
+        #self.db.create_tables_if_not_exist() #initialisation        
 
         #endpoint for getting song like points from database
         @self.app.route('/get_songs_data',methods=['POST',
                                             'GET'])
         def get_songs_data():
+                print(request.json )
                 match(request.method):
                     case 'GET':
                         logger.warning('%s accessing /get_songs_data',request.remote_addr)
-                        title = request.form['title']
+                        title = request.json['title']
                         return self.db_query('get_love_data',title)
                     case 'POST':
                         logger.warning('%s accessing /get_songs_data add mark',request.remote_addr)
-                        title = request.form['title']
+                        title = request.json['title']
                         return  self.db_query('love',title)
                     
 
@@ -137,8 +138,8 @@ class SiteItSelf(Data):
         #Maintenance 
         @self.app.route('/mt_mode',methods=['POST'])
         def mt_mode():
-                uname = request.form['username']
-                passw = request.form['password']
+                uname = request.json['username']
+                passw = request.json['password']
                 conn = self.auth_check(uname,passw) #checking username and password
                 logger.warning('Attempting to change maintenance mode from - %s',request.remote_addr)
                 #print('Attempt to enter maintenance mode')
@@ -162,11 +163,11 @@ class SiteItSelf(Data):
         @self.app.route('/img_update',methods=['POST'])
         def img_update():
                 logger.warning('Updating img from - %s',request.remote_addr)
-                #print(request.form)
-                uname = request.form['username']
-                passw = request.form['password']
-                link = request.form['link']
-                time = request.form['time']
+                #print(request.json)
+                uname = request.json['username']
+                passw = request.json['password']
+                link = request.json['link']
+                time = request.json['time']
                 conn = self.db.login(uname,passw) #checking username and password
                 global bgi
                 swap = {'1':replace(self.bgi,morning_link=link),'2':replace(self.bgi,evening_link=link),'3':replace(self.bgi,morning_link=link)}
@@ -193,8 +194,8 @@ class SiteItSelf(Data):
         @self.app.route('/queue_return',methods=['POST'])
         def queue_return():
             try:
-                uname = request.form['username']
-                passw = request.form['password']
+                uname = request.json['username']
+                passw = request.json['password']
                 conn = self.db.login(uname,passw) #checking username and password
                 if not conn == False:
                     print('successful login')
@@ -215,14 +216,14 @@ class SiteItSelf(Data):
         @self.app.route('/verify_credentials',methods=['POST'])
         def verf_cred():
                 logger.warning('Second layer of ad_panel verification,from - %s',request.remote_addr)
-                uname = request.form['username']
-                passw = request.form['password']
+                uname = request.json['username']
+                passw = request.json['password']
                 conn = self.db.login(uname,passw) #checking username and password
                 #print(conn)
                 if not conn == False:
                     logger.info("Successful login!")
                     #print('successful login')
-                    return jsonify({'username': request.form['username'],'id':conn[1],'password':request.form['password'],'code':'''
+                    return jsonify({'username': request.json['username'],'id':conn[1],'password':request.json['password'],'code':'''
             <h1 class="text-center" id="uppertext">Thats gonna be admin panel!</h1>
             <h2 class="text-center" id="statustext" hidden>Thats gonna be admin panel!</h2>
             </div>
