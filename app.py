@@ -54,9 +54,9 @@ class SiteItSelf(Data):
         ipadd = socket.gethostbyname(hostname)#ip adress of localnet for testing
         logger.info('Current ip - %s',ipadd)
         self.app = Flask(__name__)
-        self.mt = super().MTMode(False)
-        self.ip = super().IPClass(str(ipadd))
-        self.bgi = super().BGIMG('https://cdna.artstation.com/p/assets/images/images/004/720/972/large/randall-mackey-mural2.jpg?1485790389',
+        self.mt = Data.MTMode(False)
+        self.ip = Data.IPClass(str(ipadd))
+        self.bgi = Data.BGIMG('https://cdna.artstation.com/p/assets/images/images/004/720/972/large/randall-mackey-mural2.jpg?1485790389',
                                  'https://livewire.thewire.in/wp-content/uploads/2022/02/DanyloHrechyshkinSovietwave-1024x650.jpeg',
                                  'https://wallpapercave.com/wp/wp9186396.jpg')
         self.db = db_works.DBWorks() #Connecting to db
