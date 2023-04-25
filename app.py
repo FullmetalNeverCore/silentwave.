@@ -1,4 +1,4 @@
-from flask import Flask,render_template,jsonify,request
+from flask import Flask,render_template,jsonify,request,abort
 import requests
 import db_works
 import socket 
@@ -43,30 +43,59 @@ class Data:
     class BGIMG:   #bg image 
         morning_link : str
         evening_link : str 
-        night_link : str 
+        night_link : str
+
+    @dataclass 
+    class ip_whitelist:
+         ipw : list 
 
 
 
-class SiteItSelf(Data):
+class SiteItSelf():
 
     def __init__(self):
-        hostname = socket.gethostname()
-        ipadd = socket.gethostbyname(hostname)#ip adress of localnet for testing
-        logger.info('Current ip - %s',ipadd)
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        default_allowed_ips = ['127.0.0.1']
+        try:
+                # Try to connect to a router
+                s.connect(('10.255.255.255', 1))
+                ip = s.getsockname()[0]
+                default_allowed_ips.append(ip)
+        except:
+                # If the connection fails, just pass
+                pass
+        finally:
+                s.close()
+        logger.info('Current ip - %s',ip)
         self.app = Flask(__name__)
         self.mt = Data.MTMode(False)
-        self.ip = Data.IPClass(str(ipadd))
+        self.ip = Data.IPClass(default_allowed_ips[0])
+        self.whitelist = Data.ip_whitelist(default_allowed_ips)
         self.bgi = Data.BGIMG('https://cdna.artstation.com/p/assets/images/images/004/720/972/large/randall-mackey-mural2.jpg?1485790389',
                                  'https://livewire.thewire.in/wp-content/uploads/2022/02/DanyloHrechyshkinSovietwave-1024x650.jpeg',
                                  'https://wallpapercave.com/wp/wp9186396.jpg')
         self.db = db_works.DBWorks() #Connecting to db
-        self.db.create_tables_if_not_exist() #initialisation        
+        self.db.create_tables_if_not_exist() #initialisation   
+
+
+
+        def whitelist_req(view_func):
+            def wrapper(*args, **kwargs):
+                    if request.remote_addr not in self.whitelist.ipw:
+                        abort(403)  # Return a "Forbidden" HTTP status code if the user's IP is not in the whitelist
+                    return view_func(*args, **kwargs)
+            wrapper.__name__ = view_func.__name__
+            return wrapper
+
+        @self.app.route('/ipw',methods=['GET'])
+        def ipw():
+                return jsonify(self.whitelist.ipw)
 
         #endpoint for getting song like points from database
         @self.app.route('/get_songs_data',methods=['POST',
                                             'GET'])
         def get_songs_data():
-                print(request.json )
+                print(request.json)
                 match(request.method):
                     case 'GET':
                         logger.warning('%s accessing /get_songs_data',request.remote_addr)
@@ -130,6 +159,7 @@ class SiteItSelf(Data):
 
         #Admin panel
         @self.app.route('/ad_panel')
+        @whitelist_req
         def ad_panel():
                 logger.warning('Accessing ad_panel from - %s',request.remote_addr)
                 return render_template('ad_panel.html')
@@ -208,6 +238,7 @@ class SiteItSelf(Data):
 
         #Admin panel
         @self.app.route('/admin')
+        @whitelist_req
         def admin():
                 logger.warning('Accessing /admin from - %s',request.remote_addr)
                 return render_template('admin.html')
