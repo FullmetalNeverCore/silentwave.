@@ -1,10 +1,12 @@
-from flask import Flask,render_template,jsonify,request,abort
+from flask import Flask,render_template,jsonify,request,abort,Response
 import requests
 import db_works
 import socket 
 import datetime
 from dataclasses import dataclass,replace
 import logging
+import pyaudio
+
 
 
 
@@ -74,8 +76,8 @@ class SiteItSelf():
         self.bgi = Data.BGIMG('https://cdna.artstation.com/p/assets/images/images/004/720/972/large/randall-mackey-mural2.jpg?1485790389',
                                  'https://livewire.thewire.in/wp-content/uploads/2022/02/DanyloHrechyshkinSovietwave-1024x650.jpeg',
                                  'https://wallpapercave.com/wp/wp9186396.jpg')
-        self.db = db_works.DBWorks() #Connecting to db
-        self.db.create_tables_if_not_exist() #initialisation   
+        #self.db = db_works.DBWorks() #Connecting to db
+        #self.db.create_tables_if_not_exist() #initialisation   
 
 
 
@@ -242,6 +244,7 @@ class SiteItSelf():
         def admin():
                 logger.warning('Accessing /admin from - %s',request.remote_addr)
                 return render_template('admin.html')
+        
 
         #Verifying credentials to return admin page functionality
         @self.app.route('/verify_credentials',methods=['POST'])
@@ -301,7 +304,11 @@ class SiteItSelf():
         if conn:
             return True 
         else: 
-            return False 
+            return False
+
+
+
+
         
 
 
