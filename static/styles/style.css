@@ -24,12 +24,21 @@ audio {
   box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
-.heart-button:hover {
+.heart-button-pressed{
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
   background: red;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 3px 3px 3px #333;
+  transition: red 0.5s ease-in-out; 
   box-shadow: 0 0 10px rgb(255, 0, 0);
 }
-.heart-button-liked{
+
+.heart-button:hover {
   background: red;
-  transition: red 0.5s ease-in-out; 
   box-shadow: 0 0 10px rgb(255, 0, 0);
 }

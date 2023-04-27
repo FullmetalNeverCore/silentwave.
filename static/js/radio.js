@@ -23,11 +23,12 @@ function radio(){
     }); 
 }
 
-function addLove(title){
+function addLove(type,title){
   return $.ajax({
     type: "POST",
-    url: '/add_song_love',
-    data: {title: title},
+    contentType: 'application/json',
+    url: '/get_songs_data',
+    data: JSON.stringify({"type":type,"title": title})
   }).then(function(response){
     return {status: true, value: response};
   }).catch(function(error) {
@@ -36,11 +37,12 @@ function addLove(title){
 }
 
 
-function getSongData(title){
+function getSongData(type,title){
   return $.ajax({
-    type: "GET",
+    type: "POST",
     url: '/get_songs_data',
-    data: {title: title},
+    contentType: 'application/json',
+    data: JSON.stringify({"type":type,"title": title}),
   }).then(function(response){
     return {status: true, value: response};
   }).catch(function(error) {

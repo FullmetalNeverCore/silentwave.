@@ -27,7 +27,7 @@
       </div>
         <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:0;right:0;height:100px">
           Created by:
-          <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
+          <a class="text-white" href="#">0xNC</a>
         </div>
         <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:200;right:0;height:100px">
           Current Listeners:
@@ -37,6 +37,7 @@
           <div class="text-center p-3 text-light" style="position:fixed;bottom:0;left:0;right:200;height:105px">
           <div class="row">
             <button class="heart-button my-3" id="lovebtn" hidden></button>
+            <button class="heart-button-pressed my-3" id="lovebtnprsd" hidden></button>
             <p class="text-white">Positives: </p>
             <p class="text-white" id="love" hidden>0</p>
           </div>
@@ -44,11 +45,10 @@
     </footer>
     <script>
       console.log("Welcome on Sovietwave Radio!");
-
       document.getElementById('lovebtn').addEventListener('click', function() {
         console.log('heart clicked!')
         document.getElementById('lovebtn').classList.add('heart-button-liked')
-        addLove(document.getElementById('track-name').innerHTML)
+        addLove('POST',document.getElementById('track-name').innerHTML)
         .then((pResp) => {
           if(pResp){
             console.log('Liked!')
@@ -62,7 +62,7 @@
           $('#listeners').html(data.listeners);
         });
         var title = document.getElementById('track-name').innerHTML 
-        getSongData(title)
+        getSongData('GET',title)
         .then((promisedResp) => {
           if(promisedResp.status){
             document.getElementById('PositivesMeter').removeAttribute('hidden');

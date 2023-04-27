@@ -1,8 +1,9 @@
 function verifyAccount(username, password) {
     return $.ajax({
       type: "POST",
+      contentType: 'application/json',
       url: '/verify_credentials',
-      data: {username: username, password: password}
+      data: JSON.stringify({username: username, password: password})
     }).then(function(response) {
       if(response !== "Not"){
         return {status: true, value: response};
@@ -19,7 +20,8 @@ function MTMode(username,password){
   return $.ajax({
     type: "POST",
     url: '/mt_mode',
-    data: {username: username, password: password}
+    contentType: 'application/json',
+    data: JSON.stringify({username: username, password: password})
   }).then(function(response){
     return {status: true, value: response};
   }).catch(function(error) {
@@ -42,8 +44,9 @@ function getEndP(username, password){
 function getQueue(username, password){
   return $.ajax({
     type: "POST",
+    contentType: 'application/json',
     url: '/queue_return',
-    data: {username: username, password: password}
+    data: JSON.stringify({username: username, password: password})
   }).then(function(response){
     return {status: true, value: response};
   }).catch(function(error) {
@@ -55,8 +58,9 @@ function updateIMG(username,password,link,time){
   console.log('UPDATING IMG')
   return $.ajax({
     type: "POST",
+    contentType: 'application/json',
     url: '/img_update',
-    data: {username: username, password: password, link: link,time: time}
+    data: JSON.stringify({username: username, password: password, link: link,time: time})
   }).then(function(response){
     if(response !== "Not"){
       return {status: true, value: response};
