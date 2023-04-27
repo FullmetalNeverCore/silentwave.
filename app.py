@@ -5,7 +5,6 @@ import socket
 import datetime
 from dataclasses import dataclass,replace
 import logging
-import pyaudio
 
 
 
