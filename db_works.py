@@ -36,15 +36,10 @@ logger.addHandler(ch)
 class DatabaseFactory(ABC):
     @abstractmethod
     def made_instance(self):
-        pass
+        raise NotImplementedError
 
 
 class DBinterface(ABC):
-
-    #Class constructor that creating mariadb cursor
-    def __init__(self):
-        # Connect to MariaDB Platform
-        self.conn = DBFactory().made_instantce()
     
     @abstractmethod
     def create_tables_if_not_exist(self):
@@ -63,10 +58,10 @@ class DBinterface(ABC):
         raise NotImplementedError
 
 class DBFactory(DatabaseFactory):
-    def made_instantce(self):
+    def made_instantce():
         db_logger.warning('Connecting to MariaDB Platform')
         try:
-            self.conn = mariadb.connect(
+            conn = mariadb.connect(
                 user="root",
                 password="root",
                 host="127.0.0.1",
@@ -75,15 +70,19 @@ class DBFactory(DatabaseFactory):
 
             )
             db_logger.info('MariaDB - Success')
-            # Get Cursor
-            self.cur = self.conn.cursor()
-            return self.conn
+            return conn
         except mariadb.Error as e:
             db_logger.error(f"MariaDB -Error connecting to MariaDB Platform: {e}")  
             return None
 
 class DBWorks(DBinterface):
-
+    #Class constructor that creating mariadb cursor
+    def __init__(self):
+        # Connect to MariaDB Platform
+        self.conn = DBFactory.made_instantce()
+        # Get Cursor
+        self.cur = self.conn.cursor()
+        
     def create_tables_if_not_exist(self):
         # Connect to MariaDB Platform
         db_logger.info('Checking if tables exist inside the db')
