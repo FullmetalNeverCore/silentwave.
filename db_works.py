@@ -7,6 +7,7 @@ except Exception as e:
 import sys
 import hashlib
 import logging 
+from abc import ABC, abstractmethod
 
 logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
@@ -32,11 +33,37 @@ logger.addHandler(ch)
 
 #The Database
 
-class DBWorks:
+class DatabaseFactory(ABC):
+    @abstractmethod
+    def made_instance(self):
+        pass
+
+
+class DBinterface(ABC):
 
     #Class constructor that creating mariadb cursor
     def __init__(self):
         # Connect to MariaDB Platform
+        self.conn = DBFactory().made_instantce()
+    
+    @abstractmethod
+    def create_tables_if_not_exist(self):
+        raise NotImplementedError
+
+    @abstractmethod
+    def login(self):
+        raise NotImplementedError
+
+    @abstractmethod
+    def check_song(self):
+        raise NotImplementedError
+    
+    @abstractmethod
+    def add_love(self):
+        raise NotImplementedError
+
+class DBFactory(DatabaseFactory):
+    def made_instantce(self):
         db_logger.warning('Connecting to MariaDB Platform')
         try:
             self.conn = mariadb.connect(
@@ -50,8 +77,12 @@ class DBWorks:
             db_logger.info('MariaDB - Success')
             # Get Cursor
             self.cur = self.conn.cursor()
+            return self.conn
         except mariadb.Error as e:
-            db_logger.error(f"MariaDB -Error connecting to MariaDB Platform: {e}")
+            db_logger.error(f"MariaDB -Error connecting to MariaDB Platform: {e}")  
+            return None
+
+class DBWorks(DBinterface):
 
     def create_tables_if_not_exist(self):
         # Connect to MariaDB Platform
