@@ -77,7 +77,7 @@ class DBFactory(DatabaseFactory):
 
 class DBWorks(DBinterface):
     #Class constructor that creating mariadb cursor
-    def __init__(self):
+    def __init__(self) -> None:
         # Connect to MariaDB Platform
         self.conn = DBFactory.made_instantce()
         # Get Cursor
@@ -105,7 +105,7 @@ class DBWorks(DBinterface):
             db_logger.error(f"MariaDB -Error connecting to MariaDB Platform: {e}")
 
     #login into db
-    def login(self,l,p): #params - login, password 
+    def login(self,l,p) -> list: #params - login, password 
         db_logger.info('Logging in into db')
         try: 
             #print(l,p)
@@ -125,7 +125,7 @@ class DBWorks(DBinterface):
             return False
 
     #Get the song title and like number,or write new song title into db
-    def check_song(self,title):
+    def check_song(self,title) -> list:
         db_logger.info('Check data for song %s',title)
         db_logger.info(f'check song - {title}')
         try:
@@ -148,7 +148,7 @@ class DBWorks(DBinterface):
             return False 
     
     #add love to chosen song 
-    def add_love(self,title):
+    def add_love(self,title) -> bool:
         db_logger.info('Adding love to song %s',title)
         try:
             db_logger.info('Adding love')
