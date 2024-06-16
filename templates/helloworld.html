@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>{{ title }}</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,6 +11,8 @@
         <script src="{{url_for('static', filename='js/radio.js')}}"></script>
     </head>
     <body style="background-image: url('{{ bg_img }}'); background-size: cover; background-repeat: no-repeat; background-position: center center; background-attachment: fixed;">
+      <div class="vignette"></div>
+    </body>
     <h1 class="h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;">silentwave.</h1>
     <div class="h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Connecting...</div>
     <div id="audio-stream">
@@ -26,7 +29,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-section-left">
-          <a class="text-white" href="https://github.com/FullmetalNeverCore">Created by: 0xNC</a>
+          <a class="text-white" href="https://github.com/FullmetalNeverCore">Created by:0xNC</a>
         </div>
         <div class="text-white footer-section-right">
           Current Listeners:
@@ -47,5 +50,30 @@
       }
   
       setInterval(updateTrackName, 5000);
+      document.addEventListener('DOMContentLoaded', () => {
+    const bodyElement = document.body;
+
+    function createNoise() {
+        const noise = document.createElement('div');
+        noise.className = 'vhs-noise';
+        noise.style.position = 'absolute';
+        noise.style.top = `${Math.random() * 100}%`;
+        noise.style.left = `${Math.random() * 100}%`;
+        noise.style.width = `${Math.random() * 20 + 10}px`;
+        noise.style.height = `${Math.random() * 2 + 1}px`;
+        noise.style.backgroundColor = '#fff';
+        noise.style.opacity = Math.random() * 0.5;
+        noise.style.zIndex = 3;
+        noise.style.pointerEvents = 'none';
+        bodyElement.appendChild(noise);
+
+        setTimeout(() => {
+            bodyElement.removeChild(noise);
+        }, Math.random() * 1000);
+    }
+
+    setInterval(createNoise, 50);
+});
+
     </script>
 </html>
