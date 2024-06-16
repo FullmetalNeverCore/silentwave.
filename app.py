@@ -54,7 +54,7 @@ class SiteItSelf():
 
     def __init__(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.host = "cast.az-streamingserver.com:8755"
+        self.host = "http://cast.az-streamingserver.com:8755"
         default_allowed_ips = ['127.0.0.1']
         try:
                 # Try to connect to a router
