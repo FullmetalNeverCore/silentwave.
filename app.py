@@ -54,6 +54,7 @@ class SiteItSelf():
 
     def __init__(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.music_host = "https://cast.az-streamingserver.com/proxy/nncdcccp/stream" #cors fix
         self.host = "http://cast.az-streamingserver.com:8755"
         default_allowed_ips = ['127.0.0.1']
         try:
@@ -123,7 +124,7 @@ class SiteItSelf():
                     background = self.bgi.morning_link 
                 logger.info('Welcome to %s currently its in %s mode',name,time)
                 if not self.mt.maintance:
-                    return render_template('helloworld.html', title='silentwave.', username=name,stream_url=f'{self.host}/live',bg_img=background)
+                    return render_template('helloworld.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
                 else: 
                     return render_template('maintance.html')
             
