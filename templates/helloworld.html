@@ -13,8 +13,8 @@
 </head>
 <body>
     <div id="screen"></div>
-    <h1 class="vhs h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px; font-family: 'SilentWitness';"data-text="silentwave.">silentwave.</h1>
-    <div class="vhs h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Connecting...</div>
+    <img src="{{ url_for('static', filename='silentwave.png') }}" class="vhs h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;"></img>
+    <div class="vhs h-100 d-flex align-items-center justify-content-center text-light font-family: 'SilentWave';" id="track-name">Connecting...</div>
     <div id="audio-stream">
         <img class="img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
         <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
@@ -40,6 +40,7 @@
     
     <script>
        console.log("Welcome to silentwave.");
+
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
