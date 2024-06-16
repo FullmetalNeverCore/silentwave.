@@ -9,7 +9,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{{url_for('static', filename='js/radio.js')}}"></script>
     </head>
-    <body style="background-image: url('{{ bg_img }}');background-size: cover;">
+    <body style="background-image: url('{{ bg_img }}'); background-size: cover; background-repeat: no-repeat; background-position: center center; background-attachment: fixed;">
     <h1 class="h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;">silentwave.</h1>
     <div class="h-100 d-flex align-items-center justify-content-center text-light" id="track-name">Connecting...</div>
     <div id="audio-stream">
@@ -24,16 +24,17 @@
     </div>
     </body>
     <footer>
-      </div>
-        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:0;right:0;height:100px">
-          Created by:
-          <a class="text-white" href="#">0xNC</a>
+      <div class="footer-content">
+        <div class="footer-section-left">
+          <a class="text-white" href="https://github.com/FullmetalNeverCore">Created by: 0xNC</a>
         </div>
-        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2); position:fixed;bottom:0;left:200;right:0;height:100px">
+        <div class="text-white footer-section-right">
           Current Listeners:
           <p class="text-white" id="listeners">0</p>
         </div>
+      </div>
     </footer>
+    
     <script>
       console.log("Welcome to silentwave.");
       function updateTrackName() {

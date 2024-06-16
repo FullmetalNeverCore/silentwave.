@@ -11,6 +11,60 @@ audio {
   filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
 }
 
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-section-left,
+.footer-section-right {
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-section-left {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-section-right {
+  flex: 1;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  footer {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section-left,
+  .footer-section-right {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
 .heart-button {
   text-align: center;
   width: 50px;

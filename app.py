@@ -177,7 +177,7 @@ class SiteItSelf():
 
     def run(self):
         self.app.debug = True 
-        self.app.run(host = '0.0.0.0',port=5000)
+        self.app.run(host = '0.0.0.0',port=5002)
 
 
 
