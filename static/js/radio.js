@@ -12,6 +12,10 @@ function radio(){
     var audio = document.querySelector('audio'); 
     var button = document.getElementById('audio-button'); 
     var soundEffect = new Audio('static/audio/interaction.mp3');
+    //vhs noise effect
+    var soundEffect = new Audio('static/audio/vhs.mp3');
+    soundEffect.loop = true;
+    soundEffect.volume = 0.7;
     button.addEventListener('click', function(){ 
       soundEffect.play();
       if (audio.paused) { 
