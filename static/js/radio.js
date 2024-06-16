@@ -11,8 +11,9 @@ function vol(){
 function radio(){
     var audio = document.querySelector('audio'); 
     var button = document.getElementById('audio-button'); 
-
+    var soundEffect = new Audio('static/audio/interaction.mp3');
     button.addEventListener('click', function(){ 
+      soundEffect.play();
       if (audio.paused) { 
         audio.play(); 
         button.src = "static/pause.png"; 
@@ -21,6 +22,7 @@ function radio(){
         button.src = "static/play.png";          
       }
     }); 
+
 }
 
 function addLove(type,title){

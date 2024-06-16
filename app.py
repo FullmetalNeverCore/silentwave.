@@ -1,3 +1,4 @@
+import random
 from flask import Flask,render_template,jsonify,request,abort,Response
 import requests
 import socket 
@@ -39,9 +40,6 @@ class Data:
     class IPClass:
         ip : str 
 
-    @dataclass
-    class BGIMG:   #bg image 
-        morning_link : str
 
 
     @dataclass 
@@ -74,22 +72,7 @@ class SiteItSelf():
         self.app = Flask(__name__)
         self.mt = Data.MTMode(False)
         self.whitelist = Data.ip_whitelist(default_allowed_ips)
-        self.bgi = Data.BGIMG('https://i.imgur.com/N0eAUAq.jpeg')
-
-
-
-        def whitelist_req(view_func):
-            def wrapper(*args, **kwargs):
-                    if request.remote_addr not in self.whitelist.ipw:
-                        abort(403)  # Return a "Forbidden" HTTP status code if the user's IP is not in the whitelist
-                    return view_func(*args, **kwargs)
-            wrapper.__name__ = view_func.__name__
-            return wrapper
-
-        @self.app.route('/ipw',methods=['GET'])
-        def ipw():
-                return jsonify(self.whitelist.ipw)
-
+        self.bgi = ['https://i.imgur.com/N0eAUAq.jpeg','https://i.imgur.com/p1n1prS.jpeg','https://i.imgur.com/09DrPYL.jpeg']
 
                     
 
@@ -106,23 +89,27 @@ class SiteItSelf():
             #print(routes)
             logger.info('Endpoints returned')
             return jsonify(routes)
-
+        
+        @self.app.route("/test")
+        def testhome():
+                logger.warn(self.ip.ip)
+                name = "silentwave."
+                background = random.choice(self.bgi)
+                logger.info('Welcome to %s',name)
+                if not self.mt.maintance:
+                    return render_template('styletest.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
+                else: 
+                    return render_template('maintance.html')
+                
+            
+                
         #index page
         @self.app.route("/")
         def home():
                 logger.warn(self.ip.ip)
                 name = "silentwave."
-                time = None
-                if int(datetime.datetime.now().hour) >= 9 and int(datetime.datetime.now().hour) < 18: 
-                    time = 'day'
-                    background = self.bgi.morning_link 
-                elif int(datetime.datetime.now().hour) >= 18 and int(datetime.datetime.now().hour) < 23:
-                    time = 'evening'
-                    background = self.bgi.morning_link 
-                else:
-                    time = 'night'
-                    background = self.bgi.morning_link 
-                logger.info('Welcome to %s currently its in %s mode',name,time)
+                background = random.choice(self.bgi)
+                logger.info('Welcome to %s',name)
                 if not self.mt.maintance:
                     return render_template('helloworld.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
                 else: 
@@ -144,12 +131,6 @@ class SiteItSelf():
                     logger.error(f'{e} - Is RadioDJ working fine?')
                     return jsonify({'track_name':'null','listeners':0})
 
-        #Admin panel
-        @self.app.route('/ad_panel')
-        @whitelist_req
-        def ad_panel():
-                logger.warning('Accessing ad_panel from - %s',request.remote_addr)
-                return render_template('ad_panel.html')
 
 
 
@@ -157,21 +138,7 @@ class SiteItSelf():
 
 
 
-        @self.app.route('/queue_return',methods=['POST'])
-        def queue_return():
-            try:
-                data = request.get_json()
-                uname = data.get('username')
-                passw = data.get('password')
-                conn = self.db.login(uname,passw) #checking username and password
-                if not conn == False:
-                    print('successful login')
-                    return '<h1>test</h1>' #returning data from the database table
-                else: 
-                    print('unlogin')
-                    return 'Not'
-            except Exception as e:
-                return 'Not'
+
 
 
 
