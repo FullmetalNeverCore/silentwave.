@@ -495,8 +495,8 @@ canvas.snow {
 }
 
 .glow-image {
-  width: 300px;
-  height: auto;
+  width: 200px;
+  height: 300px;
   transition: filter 0.3s ease;
 }
 
