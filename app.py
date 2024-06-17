@@ -74,8 +74,7 @@ class SiteItSelf():
         self.whitelist = Data.ip_whitelist(default_allowed_ips)
         self.bgi = ['https://i.imgur.com/N0eAUAq.jpeg',
                     'https://i.imgur.com/p1n1prS.jpeg',
-                    'https://i.imgur.com/09DrPYL.jpeg',
-                    'https://i.imgur.com/C0a56hi.png']
+                    'https://i.imgur.com/09DrPYL.jpeg']
 
                     
 

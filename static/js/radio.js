@@ -11,17 +11,17 @@ function vol(){
 function radio(){
     var audio = document.querySelector('audio'); 
     var button = document.getElementById('audio-button'); 
-    var pressEffect = new Audio('static/audio/interaction.mp3');
+    // var pressEffect = new Audio('static/audio/interaction.mp3');
     //vhs noise effect
-    var soundEffect = new Audio('static/audio/vhs.mp3');
-    soundEffect.loop = true;
-    soundEffect.volume = 0.7;
+    // var soundEffect = new Audio('static/audio/vhs.mp3');
+    // soundEffect.loop = true;
+    // soundEffect.volume = 0.7;
     button.addEventListener('click', function(){ 
-      pressEffect.play(); 
+      // pressEffect.play(); 
       //silent hill's press effect
       if (audio.paused) { 
         audio.play(); 
-        soundEffect.play();
+        // soundEffect.play();
         button.src = "static/pause.png"; 
       } else {   
         audio.pause();  
