@@ -436,7 +436,6 @@
 
 
         function updateTrackName() {
-          console.log('Updating track name...');
           $.get('/track_name', function(data) {
             $('#track-name').html(data.track_name);
             $('#listeners').html(data.listeners);
