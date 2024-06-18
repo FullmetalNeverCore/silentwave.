@@ -11,12 +11,12 @@ function vol(){
 function radio(){
     var audio = document.querySelector('audio'); 
     var button = document.getElementById('audio-button'); 
-    var pressEffect = new Audio('static/audio/interaction.mp3');
-    //vhs noise effect
-    var soundEffect = new Audio('static/audio/vhs.mp3');
-    soundEffect.loop = true;
-    soundEffect.volume = 0.7;
-    button.addEventListener('click', function(){ 
+      //press effect
+      var pressEffect = new Audio('static/audio/interaction.mp3');
+      //vhs noise effect
+      var soundEffect = new Audio('static/audio/vhs.mp3');
+      soundEffect.loop = true;
+      soundEffect.volume = 0.7;
       pressEffect.play(); 
       //silent hill's press effect
       if (audio.paused) { 
@@ -27,8 +27,6 @@ function radio(){
         audio.pause();  
         button.src = "static/play.png";          
       }
-    }); 
-
 }
 
 function addLove(type,title){
