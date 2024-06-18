@@ -5,6 +5,7 @@ import socket
 import datetime
 from dataclasses import dataclass,replace
 import logging
+import bg_list
 
 
 
@@ -72,9 +73,7 @@ class SiteItSelf():
         self.app = Flask(__name__)
         self.mt = Data.MTMode(False)
         self.whitelist = Data.ip_whitelist(default_allowed_ips)
-        self.bgi = ['https://i.imgur.com/N0eAUAq.jpeg',
-                    'https://i.imgur.com/p1n1prS.jpeg',
-                    'https://i.imgur.com/09DrPYL.jpeg']
+        self.bgi = bg_list.bglist
 
                     
 
