@@ -16,7 +16,7 @@ function radio(){
       //vhs noise effect
       var soundEffect = new Audio('static/audio/vhs.mp3');
       soundEffect.loop = true;
-      soundEffect.volume = 0.7;
+      soundEffect.volume = 0.45;
       pressEffect.play(); 
       //silent hill's press effect
       if (audio.paused) { 
