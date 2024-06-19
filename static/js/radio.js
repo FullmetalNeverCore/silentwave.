@@ -10,8 +10,14 @@ function radio()
       var soundEffect = new Audio('static/audio/vhs.mp3');
       soundEffect.loop = true;
       soundEffect.volume = 0.45;
-      pressEffect.play(); 
       //silent hill's press effect
+      pressEffect.play(); 
+      //check if vhs static sound is already playing,to prevent stacking
+      if (soundEffect.paused) {
+        soundEffect.play();
+      } else {
+          soundEffect.pause();
+      }
       if (audio.paused) { 
         audio.play(); 
         soundEffect.play();
