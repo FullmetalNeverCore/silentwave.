@@ -1,14 +1,14 @@
-function vol(){
+function vol()
+{
   var audio = document.querySelector('audio'); 
   var volumeControl = document.querySelector('#volume-control');
+  audio.volume = this.value;
 
-  volumeControl.addEventListener('input', function() {
-    audio.volume = this.value;
-  });
 }
 
 
-function radio(){
+function radio()
+{
     var audio = document.querySelector('audio'); 
     audio.volume = 0.6; //initial loudness
     var button = document.getElementById('audio-button'); 
@@ -30,7 +30,8 @@ function radio(){
       }
 }
 
-function addLove(type,title){
+function addLove(type,title)
+{
   return $.ajax({
     type: "POST",
     contentType: 'application/json',
@@ -44,7 +45,8 @@ function addLove(type,title){
 }
 
 
-function getSongData(type,title){
+function getSongData(type,title)
+{
   return $.ajax({
     type: "POST",
     url: '/get_songs_data',
