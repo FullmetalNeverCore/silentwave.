@@ -10,6 +10,7 @@ function vol(){
 
 function radio(){
     var audio = document.querySelector('audio'); 
+    audio.volume = 0.6; //initial loudness
     var button = document.getElementById('audio-button'); 
       //press effect
       var pressEffect = new Audio('static/audio/interaction.mp3');
