@@ -2,15 +2,17 @@ function vol()
 {
   var audio = document.querySelector('audio'); 
   var volumeControl = document.querySelector('#volume-control');
-  audio.volume = this.value;
 
+  volumeControl.addEventListener('input', function() {
+    audio.volume = this.value;
+  });
 }
 
 
 function radio()
 {
     var audio = document.querySelector('audio'); 
-    audio.volume = 0.35; //initial loudness
+    audio.volume = 0.6; //initial loudness
     var button = document.getElementById('audio-button'); 
       //press effect
       var pressEffect = new Audio('static/audio/interaction.mp3');
