@@ -18,7 +18,7 @@
     <div id="audio-stream">
         <img class="vhs glow-image img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
         <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
-            <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()">
+            <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control">
         </div>
         <audio controls hidden>
             <source src="{{ stream_url }}" type="audio/mpeg">
@@ -42,7 +42,12 @@
     
     <script>
        console.log("Welcome to silentwave.");
+        var audio = document.querySelector('audio'); 
+        var volumeControl = document.querySelector('#volume-control');
 
+        volumeControl.addEventListener('input', function() {
+          audio.volume = this.value;
+        });
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);

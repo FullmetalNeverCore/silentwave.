@@ -41,7 +41,12 @@
     
     <script>
       console.log("Welcome to silentwave.");
+      var audio = document.querySelector('audio'); 
+      var volumeControl = document.querySelector('#volume-control');
 
+      volumeControl.addEventListener('input', function() {
+        audio.volume = this.value;
+      });
       function getRandomInt(min, max) {
           min = Math.ceil(min);
           max = Math.floor(max);
