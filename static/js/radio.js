@@ -1,13 +1,3 @@
-function vol()
-{
-  var audio = document.querySelector('audio'); 
-  var volumeControl = document.querySelector('#volume-control');
-
-  volumeControl.addEventListener('input', function() {
-    audio.volume = this.value;
-  });
-}
-
 
 function radio()
 {
