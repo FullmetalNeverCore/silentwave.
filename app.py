@@ -95,15 +95,19 @@ class SiteItSelf():
         def testhome():
                 logger.warn(self.ip.ip)
                 name = "silentwave."
-                background = random.choice(self.bgi)
-                logger.info('Welcome to %s',name)
+                if datetime.now().month >= 12 and datetime.now().month <= 2:
+                    season = 'winter'
+                else:
+                     season = 'summer'
+                background = season_getter(season)
+                logger.info('Welcome to %s,currently its %s season.',name,season)
                 if not self.mt.maintance:
                     return render_template('styletest.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
                 else: 
                     return render_template('maintance.html')
                 
         def season_getter(season):
-                    if int(datetime.datetime.now().hour) >= 9 and int(datetime.datetime.now().hour) < 21:
+                    if int(datetime.now().hour) >= 9 and int(datetime.now().hour) < 21:
                         time = 'day'
                         background = random.choice(self.bgi[season][time])
                     else:
