@@ -2,7 +2,7 @@ import random
 from flask import Flask,render_template,jsonify,request,abort,Response
 import requests
 import socket 
-import datetime
+from datetime import datetime
 from dataclasses import dataclass,replace
 import logging
 import bg_list
