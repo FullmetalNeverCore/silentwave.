@@ -503,3 +503,38 @@ canvas.snow {
 .glow-image:hover {
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
 }
+
+.container {
+  margin-top: 20px;
+}
+#slideout {
+  font-family: 'SilentWave';
+  background: rgba(0, 0, 0, 0.8);
+  color: #f2f2f2;
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 500px;
+  height: 100%;
+  overflow-y: auto; /* Add overflow-y: auto to enable vertical scrollbar */
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+#slideout form {
+  display: block;
+  padding: 20px;
+}
+
+#slideout textarea {
+  display: block;
+  height: 100px;
+  margin-bottom: 6px;
+  width: 250px;
+}
+
+#slideout.on {
+  right: 0;
+}

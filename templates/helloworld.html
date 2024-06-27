@@ -25,6 +25,12 @@
             Your browser does not support the audio element. 
         </audio>
     </div>
+    
+    <!--Lastest played tracks-->
+    <div id="slideout">
+      <ul class="list">
+      </ul>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -44,7 +50,12 @@
        console.log("Welcome to silentwave.");
         var audio = document.querySelector('audio'); 
         var volumeControl = document.querySelector('#volume-control');
+        var showWindowBtn = document.getElementById('showWindowBtn');
 
+        showWindowBtn.addEventListener('click', function() {
+          $('#slideout').toggleClass('on');
+        });
+        
         volumeControl.addEventListener('input', function() {
           audio.volume = this.value;
         });
@@ -445,7 +456,6 @@
             $('#track-name').html(data.track_name);
             $('#listeners').html(data.listeners);
           });
-          var title = document.getElementById('track-name').innerHTML 
         }
   
       setInterval(updateTrackName, 5000);

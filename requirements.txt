@@ -2,3 +2,4 @@ flask
 pytest==7.2.1
 requests
 datetime
+flask_apscheduler

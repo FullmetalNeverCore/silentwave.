@@ -25,13 +25,21 @@
         </audio>
     </div>
 
+    <!--Lastest played tracks-->
+    <div id="slideout">
+      <ul class="list">
+      </ul>
+    </div>
+
     <footer>
         <div class="footer-content">
-            <div class="text-white footer-section-left">
-                Created by:
-                <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
-                <a class="text-white">, EternalXero</a>
-            </div>
+          <div class="text-white footer-section-left">
+            Created by:
+            <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
+            <a class="text-white">, EternalXero</a>
+            <br>
+            <a id="showWindowBtn" class="text-white">Previously on silentwave."click me"</a>
+          </div>
             <div class="text-white footer-section-right">
                 Current Listeners:
                 <p class="text-white" id="listeners">0</p>
@@ -43,6 +51,14 @@
       console.log("Welcome to silentwave.");
       var audio = document.querySelector('audio'); 
       var volumeControl = document.querySelector('#volume-control');
+      
+      var showWindowBtn = document.getElementById('showWindowBtn');
+
+      showWindowBtn.addEventListener('click', function() {
+        $('#slideout').toggleClass('on');
+      });
+
+      
 
       volumeControl.addEventListener('input', function() {
         audio.volume = this.value;
@@ -437,5 +453,25 @@
             }
           }
         }, 1000);
+
+
+      function updateLatestTracks() {
+          $.get('/previous', function(data) {
+            var list = $('.list'); 
+            list.empty();
+            // $('#track-name').html(data.track_name);
+            // $('#listeners').html(data.listeners);
+            for(var time in data.tracks) 
+            {
+              if(data.tracks.hasOwnProperty(time)) {
+                var track_name = data.tracks[time];
+                var li = $('<li></li>').html(time + ": " + track_name);
+                list.append(li);
+              }
+            }
+          });
+        }
+  
+      setInterval(updateLatestTracks,10000);
     </script>
 </html>

@@ -6015,3 +6015,1177 @@
 2024-06-18 21:56:15,920 - __main__ - INFO - 192.168.8.176
 2024-06-18 21:57:07,948 - __main__ - INFO - Current ip - 192.168.8.176
 2024-06-18 21:57:07,948 - __main__ - INFO - 192.168.8.176
+2024-06-25 00:05:49,558 - __main__ - INFO - Current ip - 192.168.8.176
+2024-06-25 00:05:49,560 - __main__ - INFO - 192.168.8.176
+2024-06-25 00:05:50,341 - __main__ - INFO - Current ip - 192.168.8.176
+2024-06-25 00:05:50,342 - __main__ - INFO - 192.168.8.176
+2024-06-25 00:06:02,238 - __main__ - WARNING - 192.168.8.176
+2024-06-25 00:06:04,067 - __main__ - WARNING - 192.168.8.176
+2024-06-25 00:06:43,635 - __main__ - INFO - Current ip - 192.168.8.176
+2024-06-25 00:06:43,643 - __main__ - INFO - 192.168.8.176
+2024-06-25 00:07:06,142 - __main__ - WARNING - 192.168.8.176
+2024-06-25 00:07:06,142 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 22:41:57,818 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:41:58,050 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:41:58,050 - __main__ - ERROR - 'builtin_function_or_method' object has no attribute 'strftime' - Is RadioDJ working fine?
+2024-06-27 22:41:58,628 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:41:58,790 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:41:58,791 - __main__ - ERROR - 'builtin_function_or_method' object has no attribute 'strftime' - Is RadioDJ working fine?
+2024-06-27 22:42:07,818 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:42:08,050 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:42:08,050 - __main__ - ERROR - 'builtin_function_or_method' object has no attribute 'strftime' - Is RadioDJ working fine?
+2024-06-27 22:42:08,624 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:42:08,780 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:42:08,780 - __main__ - ERROR - 'builtin_function_or_method' object has no attribute 'strftime' - Is RadioDJ working fine?
+2024-06-27 22:45:52,736 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:45:52,908 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:45:52,908 - previous.routes - INFO - [listPrev]Added track 残された魂 - サイレントヒルに影響を受けたメランコリックな音楽 to list.
+2024-06-27 22:45:53,289 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:45:53,478 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:45:53,478 - previous.routes - INFO - [listPrev]Added track 残された魂 - サイレントヒルに影響を受けたメランコリックな音楽 to list.
+2024-06-27 22:46:02,794 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:03,111 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:03,111 - previous.routes - INFO - [listPrev]Added track 残された魂 - サイレントヒルに影響を受けたメランコリックな音楽 to list.
+2024-06-27 22:46:03,373 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:03,528 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:03,530 - previous.routes - INFO - [listPrev]Added track 残された魂 - サイレントヒルに影響を受けたメランコリックな音楽 to list.
+2024-06-27 22:46:12,737 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:12,907 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:12,908 - previous.routes - INFO - [listPrev]Added track 残された魂 - サイレントヒルに影響を受けたメランコリックな音楽 to list.
+2024-06-27 22:46:13,286 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:13,448 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:13,448 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:46:22,737 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:22,898 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:22,898 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:46:23,287 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:23,458 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:23,458 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:46:32,732 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:32,888 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:32,888 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:46:33,290 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:33,428 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:33,429 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:46:42,732 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:42,908 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:42,909 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:46:43,345 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:46:43,510 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:46:43,510 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:47:58,464 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:47:58,636 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:47:58,637 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:47:58,977 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:47:59,157 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:47:59,158 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - I ve Been Losing You to list.
+2024-06-27 22:48:08,467 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:08,617 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:08,976 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:09,147 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:18,467 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:18,627 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:18,971 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:19,107 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:28,465 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:28,704 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:28,973 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:29,129 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:38,468 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:38,689 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:38,971 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:39,126 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:48,463 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:48,607 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:48,976 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:49,206 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:58,464 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:58,696 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:48:58,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:48:59,136 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:08,495 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:08,688 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:08,974 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:09,328 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:18,466 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:18,626 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:18,974 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:19,126 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:28,463 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:28,606 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:28,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:29,106 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:38,467 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:38,626 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:38,974 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:39,126 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:48,466 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:48,972 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:49,311 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:49,605 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:58,467 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:58,606 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:49:58,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:49:59,136 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:08,462 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:08,625 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:08,626 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Combing Town West to list.
+2024-06-27 22:50:08,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:09,125 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:09,126 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Combing Town West to list.
+2024-06-27 22:50:18,463 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:18,615 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:18,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:19,151 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:28,464 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:28,625 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:28,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:29,115 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:38,463 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:38,644 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:38,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:39,135 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:48,468 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:48,738 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:48,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:49,139 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:58,464 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:58,615 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:50:58,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:50:59,215 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:51:08,605 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:51:08,947 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:51:08,975 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:51:09,342 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:54:59,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:54:59,342 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:54:59,343 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Tender Sugar to list.
+2024-06-27 22:54:59,926 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:00,104 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:00,106 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Tender Sugar to list.
+2024-06-27 22:55:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:09,183 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:09,927 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:10,112 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:19,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:19,191 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:19,926 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:20,063 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:29,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:29,171 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:29,932 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:30,071 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:39,083 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:39,293 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:40,791 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 22:55:49,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:49,401 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:50,579 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:50,772 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:55:50,773 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Tender Sugar to list.
+2024-06-27 22:55:59,056 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:55:59,241 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:09,099 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:09,271 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:10,623 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 22:56:19,048 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:19,231 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:20,562 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:21,013 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:21,014 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Tender Sugar to list.
+2024-06-27 22:56:29,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:29,252 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:30,504 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:30,691 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:39,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:39,203 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:40,551 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:40,855 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:49,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:49,215 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:50,507 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:50,720 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:56:59,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:56:59,341 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:00,572 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:00,816 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:09,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:09,200 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:10,501 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:10,672 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:19,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:19,247 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:20,503 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:20,663 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:29,069 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:29,360 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:30,502 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:30,802 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:39,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:39,758 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:39,759 - previous.routes - INFO - [listPrev]Added track SIGNALIS - 3000 Cycles I Missed you to list.
+2024-06-27 22:57:40,505 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:40,890 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:40,891 - previous.routes - INFO - [listPrev]Added track SIGNALIS - 3000 Cycles I Missed you to list.
+2024-06-27 22:57:49,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:49,341 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:50,505 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:50,779 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:57:59,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:57:59,259 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:00,502 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:00,657 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:09,176 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:10,506 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:10,660 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:19,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:19,240 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:20,506 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:20,649 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:29,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:29,218 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:30,503 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:30,649 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:39,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:39,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:40,505 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:40,766 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:49,095 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:50,339 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:50,743 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:50,919 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:59,100 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:58:59,390 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:58:59,391 - previous.routes - INFO - [listPrev]Added track Y24U - 00018 to list.
+2024-06-27 22:59:00,509 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:00,712 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:00,713 - previous.routes - INFO - [listPrev]Added track Y24U - 00018 to list.
+2024-06-27 22:59:09,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:09,214 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:10,560 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:10,832 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:19,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:19,239 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:20,505 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:20,742 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:29,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:29,193 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:39,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:39,188 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:42,269 - previous.routes - INFO - [listPrev]Added track Y24U - 00018 to list.
+2024-06-27 22:59:49,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:49,299 - __main__ - INFO - Return of track name is successful.
+2024-06-27 22:59:59,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 22:59:59,217 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:00:09,052 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:00:09,309 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:00:19,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:00:19,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:00:29,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:00:29,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:00:39,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:00:39,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:00:49,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:00:49,188 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:00:59,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:00:59,199 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:01:09,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:01:09,187 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:01:19,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:01:19,258 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:01:29,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:01:29,298 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:01:39,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:01:39,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:01:49,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:01:49,217 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:01:59,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:01:59,188 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:02:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:02:09,177 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:02:19,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:02:19,257 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:02:29,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:02:29,210 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:02:39,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:02:39,196 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:02:49,049 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:02:49,446 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:02:59,185 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:02:59,366 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:03:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:03:09,186 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:03:19,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:03:19,206 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:03:29,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:03:29,216 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:03:39,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:03:39,215 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:03:49,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:03:49,281 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:03:59,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:03:59,315 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:04:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:04:09,195 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:04:19,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:04:19,215 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:04:29,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:04:29,205 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:04:29,205 - previous.routes - INFO - [listPrev]Added track Nikita Kryukov - Mirror to list.
+2024-06-27 23:04:32,025 - previous.routes - INFO - [listPrev]Added track Nikita Kryukov - Mirror to list.
+2024-06-27 23:04:39,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:04:39,205 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:04:49,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:04:49,194 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:04:59,102 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:04:59,255 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:05:09,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:05:09,219 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:05:19,169 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:05:19,390 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:05:29,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:05:29,239 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:05:39,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:05:39,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:05:49,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:05:49,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:05:59,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:05:59,239 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:06:09,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:06:09,180 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:06:19,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:06:19,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:06:29,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:06:29,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:06:39,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:06:39,222 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:06:49,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:06:49,199 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:06:59,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:06:59,413 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:07:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:07:09,200 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:07:19,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:07:19,179 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:07:29,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:07:29,372 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:07:39,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:07:39,199 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:07:49,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:07:49,221 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:07:59,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:07:59,299 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:09,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:08:09,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:10,812 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:08:19,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:08:19,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:20,982 - __main__ - WARNING - Trying to get /track_name
+2024-06-27 23:08:21,149 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:29,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:08:29,202 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:29,203 - previous.routes - INFO - [listPrev]Added track Unknown - Win95desktop to list.
+2024-06-27 23:08:29,811 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:08:32,192 - previous.routes - INFO - [listPrev]Added track Unknown - Win95desktop to list.
+2024-06-27 23:08:39,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:08:39,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:49,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:08:49,289 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:08:59,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:08:59,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:09:09,106 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:09:09,411 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:09:19,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:09:19,192 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:09:29,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:09:29,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:09:39,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:09:39,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:09:49,169 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:09:49,368 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:09:59,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:09:59,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:10:09,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:10:09,314 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:10:19,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:10:19,249 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:10:29,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:10:29,196 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:10:39,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:10:39,218 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:10:49,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:10:49,188 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:10:59,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:10:59,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:11:09,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:11:09,189 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:11:19,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:11:19,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:11:29,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:11:29,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:11:39,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:11:39,349 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:11:49,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:11:49,298 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:11:59,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:11:59,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:09,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:12:09,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:19,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:12:19,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:29,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:12:29,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:39,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:12:39,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:49,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:12:49,375 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:59,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:12:59,220 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:12:59,220 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Mirrored Guilt to list.
+2024-06-27 23:13:02,018 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Mirrored Guilt to list.
+2024-06-27 23:13:09,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:13:09,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:13:19,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:13:19,298 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:13:26,876 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:13:29,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:13:29,229 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:13:39,050 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:13:39,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:13:49,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:13:49,219 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:13:59,072 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:13:59,240 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:14:09,048 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:14:09,239 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:14:19,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:14:19,209 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:14:29,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:14:29,229 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:14:39,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:14:39,210 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:14:49,049 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:14:49,319 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:14:59,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:14:59,208 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:15:09,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:15:09,387 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:15:19,055 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:15:19,237 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:15:29,130 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:15:29,519 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:15:29,521 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Maternal Heart to list.
+2024-06-27 23:15:31,395 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:15:32,018 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Maternal Heart to list.
+2024-06-27 23:15:39,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:15:39,239 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:15:49,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:15:50,306 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:15:59,058 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:15:59,326 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:16:09,054 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:16:09,279 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:16:19,067 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:16:19,518 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:16:29,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:16:29,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:16:39,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:16:39,188 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:16:49,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:16:49,222 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:16:59,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:16:59,222 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:17:07,231 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:17:09,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:17:09,275 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:17:19,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:17:19,227 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:17:29,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:17:29,254 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:17:39,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:17:39,278 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:17:49,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:17:49,230 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:17:59,052 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:17:59,362 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:18:09,048 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:18:09,207 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:18:19,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:18:19,236 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:18:22,008 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Peace &amp; Serenity to list.
+2024-06-27 23:18:29,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:18:29,207 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:18:29,208 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Peace &amp; Serenity to list.
+2024-06-27 23:18:39,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:18:40,119 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:18:49,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:18:49,247 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:18:59,047 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:18:59,197 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:19:09,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:19:09,197 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:19:19,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:19:19,207 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:19:29,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:19:29,207 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:19:39,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:19:39,286 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:19:49,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:19:49,216 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:19:59,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:19:59,198 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:06,046 - __main__ - ERROR - module 'previous.routes' has no attribute 'add_tracks' - Is RadioDJ working fine?
+2024-06-27 23:20:09,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:20:09,224 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:16,050 - __main__ - ERROR - module 'previous.routes' has no attribute 'add_tracks' - Is RadioDJ working fine?
+2024-06-27 23:20:19,089 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:20:19,237 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:26,231 - __main__ - ERROR - module 'previous.routes' has no attribute 'add_tracks' - Is RadioDJ working fine?
+2024-06-27 23:20:29,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:20:29,186 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:36,051 - __main__ - ERROR - module 'previous.routes' has no attribute 'add_tracks' - Is RadioDJ working fine?
+2024-06-27 23:20:39,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:20:39,255 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:49,048 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:20:49,372 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:49,681 - __main__ - ERROR - Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information. - Is RadioDJ working fine?
+2024-06-27 23:20:59,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:20:59,206 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:20:59,477 - __main__ - ERROR - Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information. - Is RadioDJ working fine?
+2024-06-27 23:21:09,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:21:09,182 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:21:09,456 - __main__ - ERROR - Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information. - Is RadioDJ working fine?
+2024-06-27 23:21:19,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:21:19,196 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:21:19,457 - __main__ - ERROR - Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information. - Is RadioDJ working fine?
+2024-06-27 23:21:29,179 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:21:29,403 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:21:33,257 - __main__ - ERROR - Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information. - Is RadioDJ working fine?
+2024-06-27 23:21:39,091 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:21:39,341 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:21:39,342 - previous.routes - INFO - [listPrev]Added track Akira Yamaoka - Angela's Hell to list.
+2024-06-27 23:21:49,045 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:21:49,187 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:21:59,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:21:59,196 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:22:09,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:22:09,206 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:22:19,042 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:22:19,186 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:22:29,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:22:29,176 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:22:39,044 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:22:39,177 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:22:49,046 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:22:49,216 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:22:59,043 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:22:59,206 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:23:09,129 - __main__ - INFO - [listPrev]Checking music track...
+2024-06-27 23:23:09,300 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:30:16,515 - __main__ - WARNING - Trying to get /track_name
+2024-06-27 23:30:16,673 - __main__ - INFO - Return of track name is successful.
+2024-06-27 23:31:01,559 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:31:02,060 - previous.routes - INFO - Track list was empty...
+2024-06-27 23:31:47,078 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:32:01,554 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:32:06,964 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:32:29,596 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:33:01,580 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:33:06,993 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:34:01,575 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:34:06,964 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:35:01,631 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:35:14,439 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:35:28,206 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:35:43,072 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:36:01,713 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:36:03,066 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:36:19,955 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:37:01,571 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:37:15,697 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:37:59,919 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:38:01,596 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:38:05,637 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:39:01,582 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:39:08,447 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:39:17,540 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:39:18,511 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:40:08,428 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:40:10,958 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:41:00,942 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:41:08,392 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:41:28,941 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:41:28,943 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:41:30,863 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:41:30,867 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:41:30,995 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:41:38,899 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:41:40,801 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:41:48,850 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:41:50,818 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:41:58,858 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:00,823 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:42:00,824 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:08,913 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:42:08,968 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:10,823 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:18,936 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:20,776 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:28,930 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:30,805 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:38,879 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:40,806 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:48,873 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:42:58,855 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:02,922 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:43:02,922 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:08,868 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:43:08,869 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:12,882 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:18,859 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:22,871 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:28,831 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:32,869 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:38,946 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:48,889 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:43:57,370 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:43:58,849 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:08,839 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:44:08,842 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:11,848 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:44:18,900 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:21,481 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:28,865 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:38,835 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:48,849 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:44:58,884 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:01,763 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:45:08,861 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:45:08,862 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:11,555 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:18,849 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:29,041 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:38,928 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:48,860 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:50,578 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:45:51,633 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:45:58,848 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:46:05,514 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:46:09,076 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:46:09,077 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:46:11,229 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:46:18,970 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:46:26,124 - previous.routes - INFO - [prevTrack]Track list was empty...
+2024-06-27 23:46:28,846 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:46:38,855 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:46:48,836 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:47:43,561 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:47:56,907 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:48:02,126 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:48:11,133 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:48:12,029 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:48:13,530 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:48:22,472 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:48:32,476 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:48:42,487 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:48:52,505 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:49:02,698 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:49:11,099 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:49:12,549 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:49:13,636 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:49:22,506 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:49:32,522 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:49:35,021 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:49:42,542 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:50:06,479 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:50:13,532 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:50:24,327 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:50:39,378 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:50:44,533 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:51:13,625 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:51:38,624 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:51:45,176 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:52:08,578 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:52:13,518 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:53:08,714 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:53:12,542 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:53:13,683 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:53:49,726 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:54:03,795 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:54:08,559 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:54:13,560 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:55:08,588 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:55:13,546 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:55:14,298 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:55:57,283 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-27 23:56:08,693 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:56:13,580 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:57:08,596 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:57:13,622 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:57:17,628 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:58:08,605 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:58:13,541 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:58:41,145 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:58:48,080 - previous.routes - INFO - [prevTrack]Updated the previous track list.
+2024-06-27 23:59:10,989 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:59:13,527 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-27 23:59:45,025 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:00:13,572 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:00:22,113 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:00:37,032 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:01:08,724 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:01:13,646 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:01:23,656 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:01:38,663 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:01:53,662 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:02:11,646 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:02:17,461 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:02:17,971 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:02:32,371 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:02:33,044 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:02:47,507 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:02:47,947 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:02,367 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:02,967 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:17,367 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:18,004 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:30,709 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:03:32,357 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:32,959 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:47,363 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:03:47,934 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:02,372 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:02,932 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:17,736 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:17,971 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:21,830 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:04:32,451 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:32,930 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:47,392 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:04:47,939 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:02,407 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:02,927 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:17,437 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:18,022 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:32,375 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:32,958 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:47,405 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:05:48,016 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:06:02,451 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:06:02,967 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:06:12,392 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:06:17,471 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:06:22,527 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:06:23,842 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:06:32,371 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:06:32,406 - previous.routes - DEBUG - {'tracks': {'00:06': '壊れやすい - パラサイト - イヴをイメージした心落ち着く音楽'}}
+2024-06-28 00:06:42,427 - previous.routes - DEBUG - {'tracks': {'00:06': '壊れやすい - パラサイト - イヴをイメージした心落ち着く音楽'}}
+2024-06-28 00:06:47,399 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:00,587 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:07:02,368 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:02,622 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:07:12,642 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:07:14,200 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:17,379 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:25,010 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:07:32,378 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:32,652 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:07:39,150 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:42,828 - previous.routes - DEBUG - {'tracks': {'00:07': 'Akira Yamaoka - Fear Of Dark'}}
+2024-06-28 00:07:47,469 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:07:52,668 - previous.routes - DEBUG - {'tracks': {'00:07': 'Akira Yamaoka - Fear Of Dark'}}
+2024-06-28 00:08:02,364 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:08:02,910 - previous.routes - DEBUG - {'tracks': {'00:07': 'Akira Yamaoka - Fear Of Dark'}}
+2024-06-28 00:08:09,145 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:08:17,917 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:08:24,554 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:08:40,695 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:08:51,034 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:08:51,322 - previous.routes - DEBUG - {'tracks': {None: None}}
+2024-06-28 00:08:51,922 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:09:01,585 - previous.routes - DEBUG - {'tracks': {None: None, '00:08': 'Unknown - Dream Room'}}
+2024-06-28 00:09:05,972 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:09:06,841 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:09:11,519 - previous.routes - DEBUG - {'tracks': {None: None, '00:08': 'Unknown - Dream Room', '00:09': 'Unknown - Dream Room'}}
+2024-06-28 00:09:21,981 - previous.routes - DEBUG - {'tracks': {None: None, '00:08': 'Unknown - Dream Room', '00:09': 'Unknown - Dream Room'}}
+2024-06-28 00:09:32,136 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:09:42,646 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:09:47,051 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:09:52,532 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room'}}
+2024-06-28 00:10:02,142 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:10:02,530 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room'}}
+2024-06-28 00:10:05,935 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:10:12,703 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room'}}
+2024-06-28 00:10:22,518 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room'}}
+2024-06-28 00:10:32,527 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room'}}
+2024-06-28 00:10:42,528 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room'}}
+2024-06-28 00:10:52,680 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room'}}
+2024-06-28 00:11:02,060 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:11:02,603 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room'}}
+2024-06-28 00:11:05,928 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:11:12,745 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room'}}
+2024-06-28 00:11:22,687 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room'}}
+2024-06-28 00:11:32,673 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room'}}
+2024-06-28 00:11:42,691 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room'}}
+2024-06-28 00:11:52,671 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room'}}
+2024-06-28 00:12:02,006 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:12:02,656 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room', '00:12': 'Akira Yamaoka - 4.08 - Failing Maria'}}
+2024-06-28 00:12:05,965 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:12:12,732 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room', '00:12': 'Akira Yamaoka - 4.08 - Failing Maria'}}
+2024-06-28 00:12:22,729 - previous.routes - DEBUG - {'tracks': {'00:09': 'Unknown - Dream Room', '00:10': 'Unknown - Dream Room', '00:11': 'Unknown - Dream Room', '00:12': 'Akira Yamaoka - 4.08 - Failing Maria'}}
+2024-06-28 00:12:39,752 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:12:42,720 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:12:52,759 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:12:54,022 - __main__ - ERROR - -1 - Is RadioDJ working fine?
+2024-06-28 00:13:05,921 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:13:05,968 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:13:12,884 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:13:22,808 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:13:32,857 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:13:35,929 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:13:42,922 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:13:50,832 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:13:52,996 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:14:03,030 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:14:05,834 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:14:05,918 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:14:13,019 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:14:20,845 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:14:23,081 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:14:33,059 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:14:35,845 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:14:43,049 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:14:51,004 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:14:53,250 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:15:04,234 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:15:05,843 - __main__ - ERROR - 'int' object is not iterable - Is RadioDJ working fine?
+2024-06-28 00:15:05,909 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:15:15,236 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:15:26,236 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:15:37,443 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:15:48,230 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:15:51,896 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:15:52,458 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:15:52,547 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:16:03,123 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:16:06,845 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:07,491 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:12,965 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:16:21,843 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:22,474 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:22,972 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:16:32,959 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:16:36,843 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:37,485 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:42,964 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:16:51,874 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:52,497 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:16:53,002 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:17:03,063 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:17:07,012 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:17:07,542 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:17:13,071 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:17:22,111 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:17:22,564 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:17:23,425 - previous.routes - DEBUG - {'tracks': {'00:15': 'Akira Yamaoka - Pianissimo Epilogue'}}
+2024-06-28 00:17:28,488 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:17:36,899 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:17:38,955 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:17:43,355 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:17:48,933 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:17:51,928 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:17:58,975 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:18:06,856 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:18:09,043 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:18:18,994 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:18:21,869 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:18:29,062 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:18:36,868 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:18:39,119 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:18:49,133 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:18:51,843 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:18:59,187 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:19:06,831 - __main__ - ERROR - 'dict_keys' object is not subscriptable - Is RadioDJ working fine?
+2024-06-28 00:19:09,312 - previous.routes - DEBUG - {'tracks': {'00:17': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:19:19,275 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:19:29,268 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:19:30,336 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:19:32,446 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:19:39,267 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:19:49,284 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:19:59,269 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking'}}
+2024-06-28 00:20:00,281 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:20:02,387 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:20:09,280 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:20:19,270 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:20:29,268 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:20:39,278 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:20:49,277 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:20:59,281 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:21:09,299 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:21:19,296 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:21:29,293 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:21:39,294 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:21:49,288 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:21:59,275 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night'}}
+2024-06-28 00:22:00,259 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:22:02,390 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:22:09,298 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:22:19,275 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:22:29,293 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:22:39,292 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:22:49,275 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:22:59,286 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:23:09,290 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:23:19,306 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:23:29,289 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:23:39,289 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:23:49,289 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:23:59,303 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:24:09,304 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:24:19,305 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:24:29,304 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:24:39,315 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:24:49,306 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:24:59,334 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:25:09,301 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:25:19,303 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:25:29,318 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:25:39,313 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:25:49,316 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:25:59,310 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:26:09,299 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:26:19,316 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:26:29,673 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:26:39,391 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:26:49,363 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:26:59,379 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:09,377 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:12,494 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:27:19,378 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:23,101 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:29,417 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:33,424 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:39,747 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:43,345 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:49,514 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:53,281 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:27:59,435 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:03,678 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:09,426 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:14,351 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:19,427 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:23,738 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:28,537 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:28:33,925 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:38,915 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:43,894 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:48,911 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:53,973 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:28:59,007 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:04,135 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:09,092 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:14,163 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:18,974 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:23,232 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:29:24,242 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:33,680 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:34,323 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:43,719 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:44,402 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:53,788 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:29:54,488 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:03,783 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:04,656 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:13,826 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:14,578 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:23,816 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:24,942 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:33,862 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:34,937 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:43,877 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:45,359 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:53,908 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:30:55,443 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:03,901 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:05,517 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:13,922 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:15,522 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:23,994 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:25,521 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:33,966 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:35,544 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:44,007 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:45,322 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:31:45,600 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽'}}
+2024-06-28 00:31:47,392 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:31:49,773 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:31:54,072 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:31:55,556 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:00,484 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:04,034 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:05,571 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:10,468 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:14,058 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:15,612 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:20,487 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:24,054 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:25,581 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:30,486 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:34,046 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:35,578 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:40,491 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:44,095 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:45,578 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:50,476 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:54,119 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:32:55,584 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:00,497 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:04,118 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:06,403 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:10,475 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:14,115 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:16,645 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:20,594 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:24,130 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:26,914 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:30,284 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:33:31,521 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence'}}
+2024-06-28 00:33:32,453 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:33:34,127 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:33:37,031 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:33:44,180 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:33:47,081 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:33:54,191 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:33:57,190 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:04,190 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:07,249 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:14,269 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:17,341 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:24,271 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:27,409 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:34,258 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:37,489 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:44,297 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:47,592 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:54,397 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:34:57,668 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:04,395 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:07,749 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:14,464 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:17,817 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:24,475 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:27,915 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:34,489 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:38,236 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:44,593 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:48,322 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:54,610 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:35:58,725 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:36:04,652 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:36:08,711 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:36:14,688 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal'}}
+2024-06-28 00:36:15,291 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:36:17,397 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:36:18,710 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:24,826 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:28,958 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:34,750 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:38,957 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:44,733 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:48,979 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:54,765 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:36:59,254 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:04,775 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:09,373 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:14,800 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:19,410 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:24,834 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:29,459 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:34,828 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:39,547 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:44,871 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters'}}
+2024-06-28 00:37:45,291 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:37:47,475 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:37:49,642 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:37:54,928 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:37:59,652 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:04,879 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:09,850 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:14,993 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:19,879 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:24,984 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:30,213 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:34,972 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:40,327 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:45,003 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:50,372 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:38:55,220 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:00,460 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:04,997 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:10,674 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:14,995 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:20,614 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:24,998 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:30,697 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:35,016 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:40,816 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:45,050 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:39:50,894 - previous.routes - DEBUG - {'tracks': {'00:19': 'Nikita Kryukov - Thinking', '00:20': 'Akira Yamaoka - Heaven s Night', '00:22': '残された魂 - サイレントヒルに影響を受けたメランコリックな音楽', '00:31': 'Akira Yamaoka - Lost Innocence', '00:33': '|| nobody here || - Betrayal', '00:36': 'Akira Yamaoka - Letters', '00:37': 'Akira Yamaoka - The Reverse Will'}}
+2024-06-28 00:49:06,027 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:50:25,886 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:50:35,935 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:50:38,205 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:50:38,735 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:50:45,965 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:50:55,985 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:51:06,145 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:51:16,055 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:51:26,104 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:51:36,144 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:51:46,174 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:51:56,114 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:52:06,154 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:52:16,184 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:52:26,214 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:52:36,124 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You'}}
+2024-06-28 00:52:38,114 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:52:38,684 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:52:46,184 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You', '00:52': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:52:56,224 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You', '00:52': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:53:06,254 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You', '00:52': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:53:10,379 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:53:11,318 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-28 00:53:16,984 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You', '00:52': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:53:26,991 - previous.routes - DEBUG - {'tracks': {'00:50': 'Akira Yamaoka - I ve Been Losing You', '00:52': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:53:37,284 - previous.routes - DEBUG - {'tracks': {}}
+2024-06-28 00:53:40,919 - track_name.routes - WARNING - Trying to get /track_name
+2024-06-28 00:53:41,095 - track_name.routes - INFO - Return of track name is successful.
+2024-06-28 00:53:44,504 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:53:45,316 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-28 00:53:45,670 - track_name.routes - WARNING - Trying to get /track_name
+2024-06-28 00:53:45,825 - track_name.routes - INFO - Return of track name is successful.
+2024-06-28 00:53:47,723 - previous.routes - DEBUG - {'tracks': {'00:53': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:53:57,814 - previous.routes - DEBUG - {'tracks': {'00:53': 'Akira Yamaoka - Claw Finger'}}
+2024-06-28 00:54:00,325 - previous.routes - INFO - [prevTrack]Added a new track to the list.

@@ -24,6 +24,7 @@ function radio()
         button.src = "static/pause.png"; 
       } else {   
         audio.pause();  
+        soundEffect.pause();
         button.src = "static/play.png";          
       }
 }

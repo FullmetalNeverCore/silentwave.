@@ -6,7 +6,8 @@ from datetime import datetime
 from dataclasses import dataclass,replace
 import logging
 import bg_list
-
+from flask_apscheduler import APScheduler
+import conf 
 
 
 
@@ -30,22 +31,9 @@ logger.addHandler(fh)
 logger.addHandler(ch)
 
 
-
-class Data:
-
-    @dataclass 
-    class MTMode:
-        maintance : bool 
-
-    @dataclass
-    class IPClass:
-        ip : str 
-
-
-
-    @dataclass 
-    class ip_whitelist:
-         ipw : list 
+import previous.routes
+from previous.routes import prev_bp
+from track_name.routes import tn_bp
 
 
 
@@ -53,26 +41,19 @@ class SiteItSelf():
 
     def __init__(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.music_host = "https://cast.az-streamingserver.com/proxy/nncdcccp/stream" #cors fix
-        self.host = "http://cast.az-streamingserver.com:8755"
-        default_allowed_ips = ['127.0.0.1']
-        try:
-                # Try to connect to a router
-                s.connect(('10.255.255.255', 1))
-                ip = s.getsockname()[0]
-                default_allowed_ips.append(ip)
-        except Exception as e:
-                # If the connection fails, just pass
+        self.music_host = conf.music_host
+        self.host = conf.host
 
-                pass
-        finally:
-                s.close()
-        logger.info('Current ip - %s',ip)
-        self.ip = Data.IPClass(ip)
-        logger.info(self.ip.ip)
         self.app = Flask(__name__)
-        self.mt = Data.MTMode(False)
-        self.whitelist = Data.ip_whitelist(default_allowed_ips)
+        #endpoints
+        self.app.register_blueprint(prev_bp,url_prefix='/previous')
+        self.app.register_blueprint(tn_bp,url_prefix='/track_name')
+
+        _scheduler = APScheduler()
+        _scheduler.init_app(self.app)
+
+        _scheduler.start() #starting scheduler
+        
         self.bgi = bg_list.bglist
 
                     
@@ -93,7 +74,6 @@ class SiteItSelf():
         
         @self.app.route("/test")
         def testhome():
-                logger.warn(self.ip.ip)
                 name = "silentwave."
                 if datetime.now().month >= 12 and datetime.now().month <= 2:
                     season = 'winter'
@@ -101,10 +81,8 @@ class SiteItSelf():
                      season = 'summer'
                 background = season_getter(season)
                 logger.info('Welcome to %s,currently its %s season.',name,season)
-                if not self.mt.maintance:
-                    return render_template('styletest.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
-                else: 
-                    return render_template('maintance.html')
+                return render_template('styletest.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
+
                 
         def season_getter(season):
                     if int(datetime.now().hour) >= 9 and int(datetime.now().hour) < 21:
@@ -119,7 +97,6 @@ class SiteItSelf():
         #index page
         @self.app.route("/")
         def home():
-                logger.warn(self.ip.ip)
                 name = "silentwave."
                 if datetime.now().month >= 12 and datetime.now().month <= 2:
                     season = 'winter'
@@ -127,27 +104,22 @@ class SiteItSelf():
                      season = 'summer'
                 background = season_getter(season)
                 logger.info('Welcome to %s,currently its %s season.',name,season)
-                if not self.mt.maintance:
-                    return render_template('helloworld.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
-                else: 
-                    return render_template('maintance.html')
-            
-        #Get current song data
-        @self.app.route('/track_name')
-        def track_name():
-                logger.warning('Trying to get /track_name')
-                status_url = f'{self.host}/status.xsl'
-                response = requests.get(status_url) 
-                html = response.text
-                try:
-                    track_name = html.split('<td class="streamstats">')[7].split('</td>')[0]
-                    listeners = html.split('<td class="streamstats">')[3].split('</td>')[0]
-                    logger.info('Return of track name is successful.')
-                    return jsonify({'track_name': track_name,'listeners' : listeners})
-                except Exception as e:
-                    logger.error(f'{e} - Is RadioDJ working fine?')
-                    return jsonify({'track_name':'null','listeners':0})
+                return render_template('helloworld.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
 
+            
+
+                
+        @_scheduler.task('interval', id='check_tracks', seconds=15, misfire_grace_time=900)
+        def check_tracks():
+            status_url = f'{conf.host}/status.xsl'
+            response = requests.get(status_url) 
+            html = response.text
+            try:
+                            track_name = html.split('<td class="streamstats">')[7].split('</td>')[0]
+                            current_time = datetime.now().strftime("%H:%M")
+                            previous.routes.add_tracks(time=current_time,track=track_name)
+            except Exception as e:
+                            logger.error(f'{e} - Is RadioDJ working fine?')
 
 
 
