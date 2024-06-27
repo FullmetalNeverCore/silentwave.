@@ -33,17 +33,19 @@
     </div>
 
     <footer>
-        <div class="footer-content">
-          <div class="text-white footer-section-left">
-            Created by:
-            <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
-            <a class="text-white">, EternalXero</a>
+      <div class="footer-content">
+        <div class="text-white footer-section-left">
+          Created by:
+          <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
+          <a class="text-white">, EternalXero</a>
+          <br>
+          <a id="showWindowBtn" class="text-white">Previously on silentwave."click me"</a>
         </div>
-            <div class="text-white footer-section-right">
-                Current Listeners:
-                <p class="text-white" id="listeners">0</p>
-            </div>
-        </div>
+          <div class="text-white footer-section-right">
+              Current Listeners:
+              <p class="text-white" id="listeners">0</p>
+          </div>
+      </div>
     </footer>
     
     <script>
@@ -55,7 +57,7 @@
         showWindowBtn.addEventListener('click', function() {
           $('#slideout').toggleClass('on');
         });
-        
+
         volumeControl.addEventListener('input', function() {
           audio.volume = this.value;
         });
@@ -459,5 +461,22 @@
         }
   
       setInterval(updateTrackName, 5000);
+
+      function updateLatestTracks() {
+          $.get('/previous', function(data) {
+            var list = $('.list'); 
+            list.empty();
+            for(var time in data.tracks) 
+            {
+              if(data.tracks.hasOwnProperty(time)) {
+                var track_name = data.tracks[time];
+                var li = $('<li></li>').html(time + ": " + track_name);
+                list.append(li);
+              }
+            }
+          });
+        }
+  
+      setInterval(updateLatestTracks,10000);
     </script>
 </html>
