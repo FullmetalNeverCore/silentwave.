@@ -113,7 +113,7 @@ class SiteItSelf():
             gmt = utc.astimezone(tm)
             return gmt.strftime("%H:%M")
                 
-        @_scheduler.task('interval', id='check_tracks', seconds=15, misfire_grace_time=900)
+        @_scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
         def check_tracks():
             status_url = f'{conf.host}/status.xsl'
             response = requests.get(status_url) 

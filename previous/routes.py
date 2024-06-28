@@ -33,20 +33,40 @@ ch.setFormatter(formatter)
 logger.addHandler(fh)
 logger.addHandler(ch)
 
+# def reverse_elements(d):
+#      keys = list(d.keys())[::-1]
+#      values = list(d.values())[::-1]
+
+#      tempDict = {}
+#      if len(keys) == 0:
+#          return tempDict
+#      for x,y in zip(keys,values):
+#         tempDict[x] = y
+#      return tempDict
 
 @prev_bp.route("/",methods=['GET'])
 def returnList():
-    logger.debug(prevTracks)
+    #reversing
+    # print(prevTracks)
+    # copyPT = {'tracks': reverse_elements(prevTracks['tracks'])}
+    # print(prevTracks)
     return jsonify(prevTracks)
 
 
 def add_tracks(time,track):
     kys = list(prevTracks['tracks'].keys())
     vls = list(prevTracks['tracks'].values())
+
     #check if previous track if not the same as present
-    if len(prevTracks['tracks']) >= 50:
-         prevTracks['tracks'].pop(0) # removing there are more then 50 entries in list 
-    if time not in kys and (len(kys) == 0 or prevTracks['tracks'][kys[len(kys)-1]] != track):
-            prevTracks['tracks'][time] = track 
+    if len(prevTracks['tracks']) >= 25:
+        oldest_time = kys[0]
+        del prevTracks['tracks'][oldest_time] # removing there are more then 50 entries in list 
+
+    if kys:
+        if time not in kys and str(vls[-1]) != str(track):
+                prevTracks['tracks'][time] = track 
+                logger.info('[prevTrack]Added a new track to the list.')
+    else:
+            prevTracks['tracks'][time] = track
             logger.info('[prevTrack]Added a new track to the list.')
 

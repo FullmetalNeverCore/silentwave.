@@ -31,16 +31,17 @@ audio {
 }
 
 footer {
+  height: 50px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px; /* Adjust padding as needed */
+  padding: 0 20px;/* Adjust padding as needed */
   z-index: 1;
   width: 100%;
   font-family: 'SilentWave';
@@ -67,22 +68,6 @@ footer {
   text-align: right;
 }
 
-@media (max-width: 767px) {
-  footer {
-      flex-direction: column;
-  }
-
-  .footer-content {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .footer-section-left,
-  .footer-section-right {
-      text-align: center;
-      width: 100%;
-  }
-}
 
 .heart-button {
   text-align: center;
@@ -507,21 +492,23 @@ canvas.snow {
 .container {
   margin-top: 20px;
 }
+
 #slideout {
   font-family: 'SilentWave';
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   color: #f2f2f2;
   position: fixed;
   top: 0;
   font-size: 15px;
   right: -520px;
-  width: 500px;
-  height: 100%;
-  overflow-y: auto; /* Add overflow-y: auto to enable vertical scrollbar */
+  width: 420px;
+  height: calc(100vh - 60px); /* Adjust height to account for the footer */
+  overflow-y: auto; /* Enable vertical scrollbar */
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  padding-bottom:50px; /* Add padding to ensure content is not hidden */
 }
 
 #slideout form {
@@ -529,7 +516,16 @@ canvas.snow {
   padding: 20px;
 }
 
-
 #slideout.on {
   right: 0;
 }
+
+footer {
+  height: 60px; /* Define the footer height */
+}
+
+
+.text-white {
+  color: #f2f2f2;
+}
+
