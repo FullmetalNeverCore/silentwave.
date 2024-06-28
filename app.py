@@ -8,6 +8,7 @@ import logging
 import bg_list
 from flask_apscheduler import APScheduler
 import conf 
+import pytz
 
 
 
@@ -106,8 +107,11 @@ class SiteItSelf():
                 logger.info('Welcome to %s,currently its %s season.',name,season)
                 return render_template('helloworld.html', title='silentwave.', username=name,stream_url=f'{self.music_host}',bg_img=background)
 
-            
-
+        def gettingTimeZone():
+            utc = datetime.now(pytz.utc)  
+            tm = pytz.timezone("Etc/GMT-3")
+            gmt = utc.astimezone(tm)
+            return gmt.strftime("%H:%M")
                 
         @_scheduler.task('interval', id='check_tracks', seconds=15, misfire_grace_time=900)
         def check_tracks():
@@ -116,7 +120,7 @@ class SiteItSelf():
             html = response.text
             try:
                             track_name = html.split('<td class="streamstats">')[7].split('</td>')[0]
-                            current_time = datetime.now().strftime("%H:%M")
+                            current_time = gettingTimeZone() #getting time in correct time zone
                             previous.routes.add_tracks(time=current_time,track=track_name)
             except Exception as e:
                             logger.error(f'{e} - Is RadioDJ working fine?')
