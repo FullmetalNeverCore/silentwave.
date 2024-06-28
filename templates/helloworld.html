@@ -28,6 +28,7 @@
     
     <!--Lastest played tracks-->
     <div id="slideout">
+      <a class="vhs text-white d-flex justify-content-center">Previously on silentwave.</a>
       <ul class="list">
       </ul>
     </div>
@@ -466,14 +467,13 @@
           $.get('/previous', function(data) {
             var list = $('.list'); 
             list.empty();
-            for(var time in data.tracks) 
-            {
-              if(data.tracks.hasOwnProperty(time)) {
-                var track_name = data.tracks[time];
-                var li = $('<li></li>').html(time + ": " + track_name);
-                list.append(li);
-              }
-            }
+            var reversedTracks = Object.entries(data.tracks).reverse();
+            // $('#track-name').html(data.track_name);
+            // $('#listeners').html(data.listeners);
+            reversedTracks.forEach(function([time, track_name]) {
+              var li = $('<li style="margin:5px;margin-left:30px;text-size:5px;"></li>').html(time + ": " + track_name);
+              list.append(li);
+            });
           });
         }
   
