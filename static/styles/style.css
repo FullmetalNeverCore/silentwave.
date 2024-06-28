@@ -37,7 +37,7 @@ footer {
   left: 0;
   right: 0;
   padding: 0 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -495,14 +495,14 @@ canvas.snow {
 
 #slideout {
   font-family: 'SilentWave';
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   color: #f2f2f2;
   position: fixed;
   top: 0;
   font-size: 15px;
   right: -520px;
   width: 420px;
-  height: calc(100vh - 60px); /* Adjust height to account for the footer */
+  height: calc(100vh - 70px); /* Adjust height to account for the footer */
   overflow-y: auto; /* Enable vertical scrollbar */
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
@@ -521,7 +521,7 @@ canvas.snow {
 }
 
 footer {
-  height: 60px; /* Define the footer height */
+  height: 70px; /* Define the footer height */
 }
 
 
