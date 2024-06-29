@@ -59,7 +59,7 @@ def add_tracks(time,track):
 
     #check if previous track if not the same as present
     if len(prevTracks['tracks']) >= 30:
-        oldest_time = kys[0]
+        oldest_time = kys[-1]
         del prevTracks['tracks'][oldest_time] # removing there are more then 50 entries in list 
 
     if kys:
