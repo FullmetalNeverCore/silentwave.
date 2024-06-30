@@ -57,6 +57,9 @@ def add_tracks(time,track):
     kys = list(prevTracks['tracks'].keys())
     vls = list(prevTracks['tracks'].values())
 
+    #removing array at 00:00
+    if int(datetime.now().strftime("%H")) > 0:
+         prevTracks = {'tracks':{}}
     #check if previous track if not the same as present
     if len(prevTracks['tracks']) >= 30:
         oldest_time = kys[-1]

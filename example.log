@@ -8622,3 +8622,15 @@ with app.app_context(). See the documentation for more information. - Is RadioDJ
 2024-06-28 20:54:04,636 - previous.routes - INFO - [prevTrack]Added a new track to the list.
 2024-06-28 20:56:26,783 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
 2024-06-28 20:56:28,798 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-29 03:06:21,769 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-29 03:06:22,342 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-29 03:07:01,793 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-29 03:08:06,881 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-29 03:08:37,273 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-29 03:08:41,694 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-29 03:08:42,875 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-29 03:10:01,172 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-29 03:10:36,675 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-29 03:10:37,435 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-06-29 03:10:56,467 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-06-29 03:11:20,610 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
