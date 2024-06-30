@@ -124,6 +124,12 @@ class SiteItSelf():
                             previous.routes.add_tracks(time=current_time,track=track_name)
             except Exception as e:
                             logger.error(f'{e} - Is RadioDJ working fine?')
+        
+
+        @_scheduler.task('interval', id='check_tracks', minutes=60, misfire_grace_time=900)
+        def nullifyTrackHistory():
+            if datetime.now().strftime("%H") == "00":
+                previous.routes.nullify_tracks()
 
 
 
