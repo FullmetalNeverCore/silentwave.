@@ -128,7 +128,7 @@ class SiteItSelf():
 
         @_scheduler.task('interval', id='check_tracks', minutes=60, misfire_grace_time=900)
         def nullifyTrackHistory():
-            if datetime.now().strftime("%H") == "00":
+            if datetime.now().hour == 0:
                 previous.routes.nullify_tracks()
 
 
