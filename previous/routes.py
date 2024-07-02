@@ -54,6 +54,11 @@ def returnList():
 
 
 def add_tracks(time,track):
+    
+    def track_to_array(time,track):
+        prevTracks['tracks'][time] = track 
+        logger.info('[prevTrack]Added a new track to the list.')
+
     kys = list(prevTracks['tracks'].keys())
     vls = list(prevTracks['tracks'].values())
 
@@ -65,15 +70,18 @@ def add_tracks(time,track):
 
     if kys:
         if time not in kys and str(vls[-1]) != str(track):
-                prevTracks['tracks'][time] = track 
-                logger.info('[prevTrack]Added a new track to the list.')
+            track_to_array(time,track)
     else:
-            prevTracks['tracks'][time] = track
-            logger.info('[prevTrack]Added a new track to the list.')
+            track_to_array(time,track)
 
+
+def empty_tracks():
+    prevTracks['tracks'] = {}
+    logger.info('[prevTrack]Tracks list has been cleared.')
 
 def nullify_tracks():
-    if len(prevTracks['tracks']) >= 10:
-        prevTracks['tracks'] = {}
-        logger.info('[prevTrack]Tracks list has been cleared.')
+    if len([x for x in list(prevTracks) if x < 10]) > 0 and datetime.now().hour > 10:
+        empty_tracks()
+    elif len([x for x in list(prevTracks) if x > 10]) > 0 and datetime.now().hour < 10:
+        empty_tracks()
 
