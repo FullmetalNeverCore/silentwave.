@@ -66,9 +66,9 @@ def add_tracks(time,track):
     #check if previous track if not the same as present
     if len(prevTracks['tracks']) >= 30:
         for _ in range(10):
-            oldest_time = kys[0]  # Get the first key
+            oldest_time = kys[-1]  # Get the first key
             del prevTracks['tracks'][oldest_time]  # Remove the entry
-            kys.pop(0)  # Remove the key from kys list
+
 
     if kys:
         if time not in kys and str(vls[-1]) != str(track):
