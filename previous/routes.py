@@ -64,7 +64,7 @@ def add_tracks(time,track):
 
 
     #check if previous track if not the same as present
-    if len(prevTracks['tracks']) >= 100:
+    if len(prevTracks['tracks']) >= 30 and datetime.now().hour == 0:
         empty_tracks()
 
 
