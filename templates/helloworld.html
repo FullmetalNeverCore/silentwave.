@@ -462,18 +462,21 @@
         }
   
       setInterval(updateTrackName, 5000);
+      
+      let prevTracks;
 
       function updateLatestTracks() {
           $.get('/previous', function(data) {
             var list = $('.list'); 
             list.empty();
-            var reversedTracks = Object.entries(data.tracks).reverse();
-            // $('#track-name').html(data.track_name);
-            // $('#listeners').html(data.listeners);
-            reversedTracks.forEach(function([time, track_name]) {
+            if(Object.entries(data.tracks).reverse() != prevTracks)
+            {
+              prevTracks = Object.entries(data.tracks).reverse();
+              prevTracks.forEach(function([time, track_name]) {
               var li = $('<li style="margin:5px;margin-left:30px;text-size:5px;"></li>').html(time + ": " + track_name);
               list.append(li);
             });
+            };
           });
         }
   

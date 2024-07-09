@@ -8639,3 +8639,18 @@ with app.app_context(). See the documentation for more information. - Is RadioDJ
 2024-07-01 10:35:17,429 - previous.routes - INFO - [prevTrack]Added a new track to the list.
 2024-07-01 10:35:24,352 - previous.routes - INFO - [prevTrack]Added a new track to the list.
 2024-07-01 10:35:24,770 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-07-09 21:35:03,651 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:35:24,721 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:45:12,596 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:45:56,305 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:46:02,915 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:47:18,030 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:51:13,640 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:51:43,200 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:54:09,222 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:54:09,592 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-07-09 21:54:11,274 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-07-09 21:54:24,950 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:54:41,420 - __main__ - INFO - Welcome to silentwave.,currently its summer season.
+2024-07-09 21:57:09,367 - previous.routes - INFO - [prevTrack]Added a new track to the list.
+2024-07-09 21:57:11,230 - previous.routes - INFO - [prevTrack]Added a new track to the list.

@@ -79,9 +79,4 @@ def empty_tracks():
     prevTracks['tracks'] = {}
     logger.info('[prevTrack]Tracks list has been cleared.')
 
-def nullify_tracks():
-    if len([x for x in list(prevTracks) if int(x) < 10]) > 0 and datetime.now().hour > 10:
-        empty_tracks()
-    elif len([x for x in list(prevTracks) if int(x) > 10]) > 0 and datetime.now().hour < 10:
-        empty_tracks()
 

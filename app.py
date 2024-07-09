@@ -126,10 +126,6 @@ class SiteItSelf():
                             logger.error(f'{e} - Is RadioDJ working fine?')
         
 
-        @_scheduler.task('interval', id='nullifyJob', minutes=10, misfire_grace_time=900)
-        def nullifyTrackHistory():
-                previous.routes.nullify_tracks()
-
 
 
 

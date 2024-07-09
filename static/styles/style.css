@@ -70,26 +70,7 @@ footer {
 }
 
 
-.heart-button {
-  text-align: center;
-  width: auto; /* Allow width to flex */
-  height: auto; /* Allow height to flex */
-  background: white;
-  border-radius: 50%;
-  border: none;
-  transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-  box-shadow: 0 0 5px rgb(255, 255, 255); /* Adjust shadow as needed */
-}
 
-.heart-button-pressed {
-  background: red;
-  box-shadow: 0 0 5px rgb(255, 0, 0); /* Adjust shadow as needed */
-}
-
-.heart-button:hover {
-  background: red;
-  box-shadow: 0 0 5px rgb(255, 0, 0); /* Adjust shadow as needed */
-}
 
 
 body {
@@ -147,8 +128,6 @@ canvas.snow {
   height: 100%;
 }
 
-.screen-wrapper:first-child {
-}
 
 .vcr {
   opacity: 0.6;
