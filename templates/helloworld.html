@@ -471,6 +471,7 @@
             list.empty();
             if(Object.entries(data.tracks).reverse() != prevTracks)
             {
+              console.log("New entry.")
               prevTracks = Object.entries(data.tracks).reverse();
               prevTracks.forEach(function([time, track_name]) {
               var li = $('<li style="margin:5px;margin-left:30px;text-size:5px;"></li>').html(time + ": " + track_name);
