@@ -59,14 +59,14 @@ def add_tracks(time,track):
         prevTracks['tracks'][time] = track 
         logger.info('[prevTrack]Added a new track to the list.')
 
-    kys = list(prevTracks['tracks'].keys())
-    vls = list(prevTracks['tracks'].values())
 
 
     #check if previous track if not the same as present
     if len(prevTracks['tracks']) >= 30 and datetime.now().hour == 0:
-        empty_tracks()
-
+        prevTracks = {'tracks':{}}
+    
+    kys = list(prevTracks['tracks'].keys())
+    vls = list(prevTracks['tracks'].values())
 
     if kys:
         if time not in kys and str(vls[-1]) != str(track):
@@ -75,8 +75,5 @@ def add_tracks(time,track):
             track_to_array(time,track)
 
 
-def empty_tracks():
-    prevTracks['tracks'] = {}
-    logger.info('[prevTrack]Tracks list has been cleared.')
 
 
