@@ -9,6 +9,7 @@ Repository with source code for the [SilentWave](https://silentwave.cc) website.
 
 ## Hosted By
 
-- [Render] (https://render.com/)
+- [Render] (https://render.com/) 
+- [AZ-StreamingServer] (https://az-streamingserver.com/) 
 
 Coded by 0xNC@2024
