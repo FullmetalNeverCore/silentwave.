@@ -1,6 +1,6 @@
 ![silentwave.](https://i.imgur.com/JAC7aWI.png)
 
-Repository with source code for the [SilentWave](https://silentwave.com) website.
+Repository with source code for the [SilentWave](https://silentwave.cc) website.
 
 ## Built With
 
