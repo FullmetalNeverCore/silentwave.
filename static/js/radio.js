@@ -19,9 +19,8 @@ function radio()
           soundEffect.pause();
       }
       if (audio.paused) { 
-        var currentSrc = audio.src;
         audio.src = '';
-        audio.src = currentSrc;
+        audio.src = 'https://cast.az-streamingserver.com/proxy/nncdcccp/stream';
         
         audio.play().then(() => {
             soundEffect.play();
