@@ -19,6 +19,7 @@ function radio()
           soundEffect.pause();
       }
       if (audio.paused) { 
+        audio.currentTime = audio.duration;
         audio.play(); 
         soundEffect.play();
         button.src = "static/pause.png"; 
