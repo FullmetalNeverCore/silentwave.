@@ -19,10 +19,16 @@ function radio()
           soundEffect.pause();
       }
       if (audio.paused) { 
-        audio.currentTime = audio.duration;
-        audio.play(); 
-        soundEffect.play();
-        button.src = "static/pause.png"; 
+        var currentSrc = audio.src;
+        audio.src = '';
+        audio.src = currentSrc;
+        
+        audio.play().then(() => {
+            soundEffect.play();
+            button.src = "static/pause.png";
+        }).catch(error => {
+            console.error("Error playing audio:", error);
+        });
       } else {   
         audio.pause();  
         soundEffect.pause();
