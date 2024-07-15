@@ -33,46 +33,31 @@ ch.setFormatter(formatter)
 logger.addHandler(fh)
 logger.addHandler(ch)
 
-# def reverse_elements(d):
-#      keys = list(d.keys())[::-1]
-#      values = list(d.values())[::-1]
-
-#      tempDict = {}
-#      if len(keys) == 0:
-#          return tempDict
-#      for x,y in zip(keys,values):
-#         tempDict[x] = y
-#      return tempDict
 
 @prev_bp.route("/",methods=['GET'])
 def returnList():
-    #reversing
-    # print(prevTracks)
-    # copyPT = {'tracks': reverse_elements(prevTracks['tracks'])}
-    # print(prevTracks)
     return jsonify(prevTracks)
 
 
-def add_tracks(time,track):
+def add_tracks(time, track):
     
-    def track_to_array(time,track):
-        prevTracks['tracks'][time] = track 
-        logger.info('[prevTrack]Added a new track to the list.')
+    def track_to_array(time, track):
+        prevTracks['tracks'][time] = track
+        logger.info('[prevTrack] Added a new track to the list.')
 
-
-    #check if previous track if not the same as present
+    # Check if the previous track is not the same as the present
     if len(prevTracks['tracks']) >= 30 and datetime.now().hour == 0:
         empty_tracks()
-        print("Remvoing tracks.")
+        logger.info('[prevTrack] Removing tracks as the list exceeded 30 entries and it is midnight.')
 
-    kys = list(prevTracks['tracks'].keys())
-    vls = list(prevTracks['tracks'].values())
+    keys = list(prevTracks['tracks'].keys())
+    values = list(prevTracks['tracks'].values())
 
-    if kys:
-        if time not in kys and str(vls[-1]) != str(track):
-            track_to_array(time,track)
+    if keys:
+        if time not in keys and str(values[-1]) != str(track):
+            track_to_array(time, track)
     else:
-            track_to_array(time,track)
+        track_to_array(time, track)
 
 
 def empty_tracks():
