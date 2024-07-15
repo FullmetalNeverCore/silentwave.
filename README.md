@@ -1,15 +1,22 @@
-![silentwave.](https://i.imgur.com/JAC7aWI.png)
+<p align="center">
+  <img src="https://i.imgur.com/JAC7aWI.png" alt="silentwave."> 
+</p>
 
-Repository with source code for the [SilentWave](https://silentwave.cc) website.
+<h1 align="center">SilentWave</h1>
+<p align="center">
+  Repository with source code for the website <a href="https://silentwave.cc">SilentWave</a>.
+</p>
 
-## Built With
+## 🛠️ Built with
 
-- [Flask] (https://flask.palletsprojects.com/en/2.0.x/) - The Python web framework.
-- [Bootstrap] (https://getbootstrap.com/) - The most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/) - Web framework for Python.
+- [Bootstrap](https://getbootstrap.com/) - The most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.
 
-## Hosted By
+## 🌐 Hosting provided by
 
-- [Render] (https://render.com/) 
-- [AZ-StreamingServer] (https://az-streamingserver.com/) 
+- [Render](https://render.com/)
+- [AZ-StreamingServer](https://az-streamingserver.com/)
 
-Coded by 0xNC@2024
+<p align="center">
+  <b>Code written by 0xNC@2024</b>
+</p>
