@@ -24,9 +24,9 @@ function radio()
         audio.play(); 
       
       } else {   
+        button.src = "static/play.png";
         audio.pause();  
-        soundEffect.pause();
-        button.src = "static/play.png";          
+        soundEffect.pause();       
       }
 }
 
