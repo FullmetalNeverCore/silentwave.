@@ -19,15 +19,10 @@ function radio()
           soundEffect.pause();
       }
       if (audio.paused) { 
-        audio.src = '';
-        audio.src = 'https://cast.az-streamingserver.com/proxy/nncdcccp/stream';
-        
-        audio.play().then(() => {
-            soundEffect.play();
-            button.src = "static/pause.png";
-        }).catch(error => {
-            console.error("Error playing audio:", error);
-        });
+        button.src = "static/pause.png"; 
+        soundEffect.play();
+        audio.play(); 
+      
       } else {   
         audio.pause();  
         soundEffect.pause();
