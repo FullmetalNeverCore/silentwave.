@@ -4,7 +4,7 @@
 
 <h1 align="center">SilentWave</h1>
 <p align="center">
-  Repository with source code for the website <a href="https://silentwave.cc">SilentWave</a>.
+  Repository with source code for the website <a href="https://silentwave.cc">SilentWave.</a>.
 </p>
 
 ## 🛠️ Built with
