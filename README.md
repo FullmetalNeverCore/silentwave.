@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Repository with source code for the website <a href="https://silentwave.cc">silentwave.</a>.
+  Repository with source code for the website <a href="https://silentwave.cc">silentwave.</a>
 </p>
 
 ## 🛠️ Built with
