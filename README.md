@@ -2,9 +2,6 @@
   <img src="https://i.imgur.com/JAC7aWI.png" alt="silentwave."> 
 </p>
 
-<p align="center">
-  Repository with source code for the website <a href="https://silentwave.cc">silentwave.</a>
-</p>
 
 ## 🛠️ Built with
 
