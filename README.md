@@ -7,12 +7,12 @@
   Repository with source code for the website <a href="https://silentwave.cc">SilentWave.</a>.
 </p>
 
-## 🛠️ Built with
+## 🛠️ Built with:
 
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/) - Web framework for Python.
 - [Bootstrap](https://getbootstrap.com/) - The most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.
 
-## 🌐 Hosting provided by
+## 🌐 Hosting provided by:
 
 - [Render](https://render.com/)
 - [AZ-StreamingServer](https://az-streamingserver.com/)

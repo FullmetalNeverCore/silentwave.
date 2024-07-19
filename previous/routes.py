@@ -1,4 +1,5 @@
 from flask import jsonify
+import pytz
 import requests
 from flask_apscheduler import APScheduler
 import logging 
@@ -46,7 +47,7 @@ def add_tracks(time, track):
         logger.info('[prevTrack] Added a new track to the list.')
 
     # Check if the previous track is not the same as the present
-    if len(prevTracks['tracks']) >= 30 and datetime.now().hour == 0:
+    if len(prevTracks['tracks']) >= 30 and int(datetime.now(pytz.utc).astimezone(pytz.timezone("Etc/GMT-3")).strftime("%H")) == 0:
         empty_tracks()
         logger.info('[prevTrack] Removing tracks as the list exceeded 30 entries and it is midnight.')
 
