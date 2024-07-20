@@ -57,4 +57,4 @@ function updateLatestTracks() {
   });
 }
 
-setInterval(updateLatestTracks,10000);
+setInterval(updateLatestTracks,6000);
