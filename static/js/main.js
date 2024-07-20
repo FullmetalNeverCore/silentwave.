@@ -2,10 +2,20 @@ console.log("Welcome to silentwave.");
 var audio = document.querySelector('audio'); 
 var volumeControl = document.querySelector('#volume-control');
 var showWindowBtn = document.getElementById('showWindowBtn');
+var slideout = document.getElementById('slideout');
 
-showWindowBtn.addEventListener('click', function() {
-  $('#slideout').toggleClass('on');
-});
+
+showWindowBtn.addEventListener('click', function(event) {
+    slideout.classList.toggle('on');
+    event.stopPropagation(); // Prevent the click event from bubbling up to the document
+  });
+
+document.addEventListener('click', function(event) {
+    if (!slideout.contains(event.target) && !showWindowBtn.contains(event.target)) {
+      slideout.classList.remove('on');
+    }
+  });
+
 document.addEventListener('mousemove', function(event) {
     const screenHeight = window.innerHeight;
     const mouseY = event.clientY;
