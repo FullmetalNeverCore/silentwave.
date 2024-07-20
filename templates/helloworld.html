@@ -58,7 +58,17 @@
         showWindowBtn.addEventListener('click', function() {
           $('#slideout').toggleClass('on');
         });
+        $(document).ready(function() {
+          var footer = $('.footer-content');
 
+          $(document).mousemove(function(event) {
+            if ($(window).height() - event.clientY < 50) { 
+              footer.addClass('show');
+            } else {
+              footer.removeClass('show');
+            }
+          });
+        });
         volumeControl.addEventListener('input', function() {
           audio.volume = this.value;
         });
