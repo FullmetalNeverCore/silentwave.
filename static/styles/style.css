@@ -482,7 +482,7 @@ canvas.snow {
   font-size: 15px;
   right: -520px;
   width: 420px;
-  height: calc(100vh - 70px); /* Adjust height to account for the footer */
+  height: 100vh; /* Adjust height to account for the footer */
   overflow-y: auto; /* Enable vertical scrollbar */
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
@@ -502,8 +502,12 @@ canvas.snow {
 
 footer {
   height: 70px; /* Define the footer height */
+  bottom: -100px; /* Hide the footer initially */
 }
 
+body.footer-visible #footer {
+  bottom: 0;
+}
 
 .text-white {
   color: #f2f2f2;

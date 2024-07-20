@@ -32,7 +32,7 @@
       </ul>
     </div>
 
-    <footer>
+    <footer id="footer">
         <div class="footer-content">
           <div class="text-white footer-section-left">
             Created by:
@@ -455,7 +455,16 @@
           }
         }, 1000);
 
+      document.addEventListener('mousemove', function(event) {
+          const screenHeight = window.innerHeight;
+          const mouseY = event.clientY;
 
+          if (mouseY >= screenHeight - 100) { 
+              document.body.classList.add('footer-visible');
+          } else {
+              document.body.classList.remove('footer-visible');
+          }
+      });
       function updateLatestTracks() {
           $.get('/previous', function(data) {
               const list = $('.list');
@@ -466,7 +475,7 @@
                       css: {
                           margin: '5px',
                           marginLeft: '30px',
-                          fontSize: '5px'
+                          fontSize: '15px'
                       },
                       text: `${time}: ${track_name}`
                   });
@@ -477,6 +486,5 @@
           });
       }
   
-      setInterval(updateLatestTracks,10000);
     </script>
 </html>
