@@ -1,14 +1,14 @@
 function radio() {
     const audio = document.querySelector('audio');
     const button = document.getElementById('audio-button');
-    const pressEffect = new Audio('static/audio/interaction.mp3');
+    // const pressEffect = new Audio('static/audio/interaction.mp3');
     const soundEffect = new Audio('static/audio/vhs.mp3');
 
     audio.volume = 0.6; // initial loudness
     soundEffect.loop = true;
-    soundEffect.volume = 0.45;
+    soundEffect.volume = 0.25;
 
-    pressEffect.play(); // silent hill's press effect
+    // pressEffect.play(); // silent hill's press effect
 
     // Check if vhs static sound is already playing, to prevent stacking
     if (soundEffect.paused) {

@@ -9028,3 +9028,21 @@ with app.app_context(). See the documentation for more information. - Is RadioDJ
 2024-07-20 19:55:29,700 - previous.routes - INFO - [prevTrack] Added a new track to the list.
 2024-07-20 19:55:31,850 - previous.routes - INFO - [prevTrack] Added a new track to the list.
 2024-07-20 19:56:07,914 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:03:35,946 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:03:36,025 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:04:13,201 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:04:36,016 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:04:40,867 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:07:50,868 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:07:51,018 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:07:51,344 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:08:14,017 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:09:07,890 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:09:35,176 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:09:35,859 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:09:36,029 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:10:25,868 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:10:26,019 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:10:38,311 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-26 12:11:55,887 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-26 12:11:56,011 - previous.routes - INFO - [prevTrack] Added a new track to the list.
