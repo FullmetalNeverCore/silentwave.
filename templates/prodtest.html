@@ -18,11 +18,10 @@
     <div class="lines"></div>
     <div class="main">
         <div class="noise"></div>
-        <div class="vhs" data-splitting>VHS</div>
+        <div class="vhs" id="vhs" data-splitting>VHS</div>
         <div class="time"><span id="time"></span></div>
         <div class="counter">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
     </div>
-    
     <div id="screen"></div>
     <img src="{{ url_for('static', filename='silentwave.png') }}" class="vhs h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;"></img>
     <div class="vhs h-100 d-flex align-items-center justify-content-center text-light font-family: 'SilentWave';" id="track-name">Connecting...</div>

@@ -27,29 +27,39 @@ function setTime() {
   document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60));
 }
 
-/* TIME IN FORMAT HH:MM:SS */
+    /* TIME IN FORMAT HH:MM:SS */
 function checkTime(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
-}
-
+      if (i < 10) {
+          i = "0" + i;
+      }
+      return i;
+      }
+  
 setInterval(getTime, 1000);
+setInterval(getCurrentFormattedDate, 1000);
+
+function getCurrentFormattedDate() {
+          const options = { year: 'numeric', month: 'short', day: 'numeric' };
+          const date = new Date(); 
+          const year = 1995; 
+          const formattedDate = date.toLocaleDateString('en-US', options);
+          var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. ${year}`).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
+          document.getElementById('vhs').innerHTML = formattedDateOrigin;
+      }
 
 function getTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  // add a zero in front of numbers < 10
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-  t = setTimeout(function() {
-    getTime()
-  }, 500);
-}
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          // add a zero in front of numbers < 10
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+          t = setTimeout(function() {
+              getTime()
+          }, 500);
+      }
 
 showWindowBtn.addEventListener('click', function(event) {
     slideout.classList.toggle('on');

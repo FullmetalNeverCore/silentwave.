@@ -15,9 +15,10 @@
     <div class="lines"></div>
     <div class="main">
         <div class="noise"></div>
-        <div class="vhs" data-splitting>VHS</div>
-        <div class="time"><span id="time"></span></div>
         <div class="counter">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
+        <div class="time"><span id="time"></span></div>
+        <div class="vhs" id="vhs" data-splitting> </div>
+        
     </div>
 
     <div id="screen" style="background-size: cover;background-repeat: no-repeat; background-position: center center; background-attachment: fixed;"></div>
@@ -103,19 +104,29 @@
     }
 
     setInterval(getTime, 1000);
+    setInterval(getCurrentFormattedDate, 1000);
+
+    function getCurrentFormattedDate() {
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        const date = new Date(); 
+        const year = 1995; 
+        const formattedDate = date.toLocaleDateString('en-US', options);
+        var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. ${year}`).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
+        document.getElementById('vhs').innerHTML = formattedDateOrigin;
+    }
 
     function getTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    // add a zero in front of numbers < 10
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-    t = setTimeout(function() {
-        getTime()
-    }, 500);
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers < 10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function() {
+            getTime()
+        }, 500);
     }
         showWindowBtn.addEventListener('click', function(event) {
             slideout.classList.toggle('on');
