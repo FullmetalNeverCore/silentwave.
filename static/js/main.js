@@ -5,8 +5,6 @@ var showWindowBtn = document.getElementById('showWindowBtn');
 var slideout = document.getElementById('slideout');
 
 
-Splitting();
-
 /* COUNTER */
 function pad(val) {
   var valString = val + "";
