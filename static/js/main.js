@@ -53,7 +53,11 @@ function getTime() {
           // add a zero in front of numbers < 10
           m = checkTime(m);
           s = checkTime(s);
-          document.getElementById('time').innerHTML = "PM " +h + ":" + m;
+          if (h > 12) {
+            document.getElementById('time').innerHTML = "PM " + h + ":" + m;
+          } else {
+            document.getElementById('time').innerHTML = "AM " + h + ":" + m;
+          }
           t = setTimeout(function() {
               getTime()
           }, 500);
