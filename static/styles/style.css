@@ -693,25 +693,25 @@ body.footer-visible #footer {
 
 @keyframes rgbText {
 	0% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(200, 200, 200, 0.35), 0px 0 1px rgba(220, 220, 220, 0.4), 0 0px 3px rgba(180, 180, 180, 0.4), 0px 0 3px rgba(240, 240, 240, 0.4), 0 0px 3px rgba(200, 200, 200, 0.4), 0px 0 3px rgba(160, 160, 160, 0.4);
 	}
 	25% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 1px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(220, 220, 220, 0.35), 0px 0 1px rgba(240, 240, 240, 0.4), 0 0px 3px rgba(200, 200, 200, 0.4), 0px 0 3px rgba(180, 180, 180, 0.4), 0 0px 3px rgba(160, 160, 160, 0.4), 0px 0 3px rgba(140, 140, 140, 0.4);
 	}
 	45% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 5px 0 1px rgba(251, 0, 231, 0.8), 0 5px 1px rgba(0, 233, 235, 0.8), -5px 0 1px rgba(0, 242, 14, 0.8), 0 -5px 1px rgba(244, 45, 0, 0.8), 5px 0 1px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(240, 240, 240, 0.35), 5px 0 1px rgba(220, 220, 220, 0.4), 0 5px 1px rgba(200, 200, 200, 0.4), -5px 0 1px rgba(180, 180, 180, 0.4), 0 -5px 1px rgba(160, 160, 160, 0.4), 5px 0 1px rgba(140, 140, 140, 0.4);
 	}
 	50% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), -5px 0 1px rgba(251, 0, 231, 0.8), 0 -5px 1px rgba(0, 233, 235, 0.8), 5px 0 1px rgba(0, 242, 14, 0.8), 0 5px 1px rgba(244, 45, 0, 0.8), -5px 0 1px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(220, 220, 220, 0.35), -5px 0 1px rgba(240, 240, 240, 0.4), 0 -5px 1px rgba(200, 200, 200, 0.4), 5px 0 1px rgba(180, 180, 180, 0.4), 0 5px 1px rgba(160, 160, 160, 0.4), -5px 0 1px rgba(140, 140, 140, 0.4);
 	}
 	55% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 0px 0 3px rgba(251, 0, 231, 0.8), 0 0px 3px rgba(0, 233, 235, 0.8), 0px 0 3px rgba(0, 242, 14, 0.8), 0 0px 3px rgba(244, 45, 0, 0.8), 0px 0 3px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(240, 240, 240, 0.35), 0px 0 3px rgba(220, 220, 220, 0.4), 0 0px 3px rgba(200, 200, 200, 0.4), 0px 0 3px rgba(180, 180, 180, 0.4), 0 0px 3px rgba(160, 160, 160, 0.4), 0px 0 3px rgba(140, 140, 140, 0.4);
 	}
 	90% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), -5px 0 1px rgba(251, 0, 231, 0.8), 0 5px 1px rgba(0, 233, 235, 0.8), 5px 0 1px rgba(0, 242, 14, 0.8), 0 -5px 1px rgba(244, 45, 0, 0.8), 5px 0 1px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(220, 220, 220, 0.35), -5px 0 1px rgba(240, 240, 240, 0.4), 0 5px 1px rgba(200, 200, 200, 0.4), 5px 0 1px rgba(180, 180, 180, 0.4), 0 -5px 1px rgba(160, 160, 160, 0.4), 5px 0 1px rgba(140, 140, 140, 0.4);
 	}
 	100% {
-		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.6), 1px -1px 8px rgba(255, 255, 235, 0.7), 5px 0 1px rgba(251, 0, 231, 0.8), 0 -5px 1px rgba(0, 233, 235, 0.8), -5px 0 1px rgba(0, 242, 14, 0.8), 0 5px 1px rgba(244, 45, 0, 0.8), -5px 0 1px rgba(59, 0, 226, 0.8);
+		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(240, 240, 240, 0.35), 5px 0 1px rgba(220, 220, 220, 0.4), 0 -5px 1px rgba(200, 200, 200, 0.4), -5px 0 1px rgba(180, 180, 180, 0.4), 0 5px 1px rgba(160, 160, 160, 0.4), -5px 0 1px rgba(140, 140, 140, 0.4);
 	}
 }
 
