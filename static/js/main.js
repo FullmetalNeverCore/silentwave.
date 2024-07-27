@@ -53,7 +53,7 @@ function getTime() {
           // add a zero in front of numbers < 10
           m = checkTime(m);
           s = checkTime(s);
-          document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+          document.getElementById('time').innerHTML = "PM " +h + ":" + m;
           t = setTimeout(function() {
               getTime()
           }, 500);
