@@ -68,6 +68,17 @@ def test_home():
     logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
+@app.route("/prodtest")
+def test_prod():
+    name = "silentwave."
+    if datetime.now().month >= 12 and datetime.now().month <= 2:
+        season = 'winter'
+    else:
+        season = 'summer'
+    background = get_season_background(season)
+    logger.info('Welcome to %s, currently its %s season.', name, season)
+    return render_template('prodtest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+
 def get_season_background(season):
     if 9 <= datetime.now().hour < 21:
         time = 'day'
