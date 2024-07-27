@@ -28,9 +28,9 @@
     <div class="vhs h-100 d-flex align-items-center justify-content-center text-light font-family: 'SilentWave';" id="track-name">Connecting...</div>
     <div id="audio-stream">
         <img class="vhs glow-image img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
-        <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
-            <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control">
-        </div>
+        <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px; position: relative; z-index: 1;">
+          <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()" style="position: relative; z-index: 2;">
+      </div>
         <audio controls hidden>
             <source src="{{ stream_url }}" type="audio/mpeg">
             Your browser does not support the audio element. 
