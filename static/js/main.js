@@ -39,7 +39,7 @@ setInterval(getCurrentFormattedDate, 1000);
 function getCurrentFormattedDate() {
           const options = { year: 'numeric', month: 'short', day: 'numeric' };
           const date = new Date(); 
-          const year = 1995; 
+          const year = 2001; 
           const formattedDate = date.toLocaleDateString('en-US', options);
           var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. ${year}`).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
           document.getElementById('vhs').innerHTML = formattedDateOrigin;
