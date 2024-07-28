@@ -72,6 +72,7 @@ def test_home():
 @app.route("/hw")
 def hw():
     name = "silentwave."
+    season = 'halloween'
     background = bgi['hw']
     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
     return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
@@ -80,7 +81,8 @@ def hw():
 @app.route("/hwtest")
 def hw_home():
     name = "silentwave."
-    background = get_season_background(season)
+    season = 'halloween'
+    background = bgi['hw']
     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
     return render_template('halloweentest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
