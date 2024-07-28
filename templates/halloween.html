@@ -18,10 +18,11 @@
     <div class="lines"></div>
       <div class="main">
           <div class="noise"></div>
-          <div class="vhs" id="vhs" data-splitting style="font-size: 0.8em;">NO_DATA</div>
-          <div class="time" style="font-size: 0.8em;"><span id="time"></span></div>
-          <div class="counter" style="font-size: 0.8em;">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
+          <div class="time" style="font-size: 0.8em;color: red;"><span id="time"></span></div>
+          <div class="vhs" id="vhs" data-splitting style="font-size: 0.8em;color:red;">NO_DATA</div>
+          <div class="counter" style="font-size: 0.8em;color:red;">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
     </div>
+
 
     <div id="screen"></div>
     <img src="{{ url_for('static', filename='silentwave.png') }}" class="vhs h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;"></img>
