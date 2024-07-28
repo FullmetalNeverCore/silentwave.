@@ -69,22 +69,22 @@ def test_home():
     return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 
-@app.route("/hw")
-def hw():
-    name = "silentwave."
-    season = 'halloween'
-    background = bgi['hw']
-    logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
-    return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+# @app.route("/hw")
+# def hw():
+#     name = "silentwave."
+#     season = 'halloween'
+#     background = bgi['hw']
+#     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
+#     return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 
-@app.route("/hwtest")
-def hw_home():
-    name = "silentwave."
-    season = 'halloween'
-    background = bgi['hw']
-    logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
-    return render_template('halloweentest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+# @app.route("/hwtest")
+# def hw_home():
+#     name = "silentwave."
+#     season = 'halloween'
+#     background = bgi['hw']
+#     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
+#     return render_template('halloweentest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 @app.route("/prodtest")
 def test_prod():
@@ -109,14 +109,19 @@ def get_season_background(season):
 @app.route("/")
 def home_page():
     name = "silentwave."
-    if datetime.now().month >= 12 and datetime.now().month <= 2:
+    current_date = datetime.now()
+    if current_date.month == 10 and current_date.day == 31:
+        season = 'halloween'
+        background = bgi['hw']
+        logger.info('Добро пожаловать в %s, сейчас сезон %s. РЕЖИМ ХЭЛЛОУИНА', name, season)
+        return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+    elif current_date.month >= 12 or current_date.month <= 2:
         season = 'winter'
     else:
         season = 'summer'
     background = get_season_background(season)
-    logger.info('Welcome to %s, currently its %s season.', name, season)
+    logger.info('Добро пожаловать в %s, сейчас сезон %s.', name, season)
     return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
-
 
 @scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
 def check_tracks():
