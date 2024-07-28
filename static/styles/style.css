@@ -580,7 +580,7 @@ body.footer-visible #footer {
 	position: fixed;
 	top: 0;
 	left: 0;
-  font-family: 'VCR';
+	font-family: 'VCR';
 	color: #fff;
 	font-size: 2rem;
 	width: 100vw;
@@ -595,7 +595,7 @@ body.footer-visible #footer {
 .main .vhs {
 	position: absolute;
 	left: 2rem;
-	top: 2rem;
+	bottom: 2rem;
 	will-change: text-shadow;
 	animation: rgbText 2s steps(9) 0s infinite alternate;
 }
@@ -608,8 +608,8 @@ body.footer-visible #footer {
 
 .main .time {
 	position: absolute;
-	right: 2rem;
-	top: 2rem;
+	left: 2rem;
+	bottom: 5rem;
 	will-change: text-shadow;
 	animation: rgbText 1s steps(9) 0s infinite alternate;
 }
@@ -617,7 +617,7 @@ body.footer-visible #footer {
 .main .counter {
 	position: absolute;
 	left: 2rem;
-	bottom: 2rem;
+	top: 2rem;
 	will-change: text-shadow;
 	animation: rgbText 1s steps(9) 0s infinite alternate;
 }
