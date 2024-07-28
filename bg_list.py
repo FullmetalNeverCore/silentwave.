@@ -25,4 +25,5 @@ bglist = {
             'https://i.imgur.com/ShosiBd.png'
         ]
     }
+    'hw':' https://i.imgur.com/LS1FPPH.gif'
 }

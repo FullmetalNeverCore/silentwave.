@@ -68,6 +68,22 @@ def test_home():
     logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
+
+@app.route("/hw")
+def hw():
+    name = "silentwave."
+    background = bgi['hw']
+    logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
+    return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+
+
+@app.route("/hwtest")
+def hw_home():
+    name = "silentwave."
+    background = get_season_background(season)
+    logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
+    return render_template('halloweentest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+
 @app.route("/prodtest")
 def test_prod():
     name = "silentwave."

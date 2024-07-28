@@ -9142,3 +9142,72 @@ with app.app_context(). See the documentation for more information. - Is RadioDJ
 2024-07-27 19:01:18,067 - __main__ - INFO - Welcome to silentwave., currently its summer season.
 2024-07-27 19:01:22,606 - __main__ - INFO - Welcome to silentwave., currently its summer season.
 2024-07-27 19:01:36,769 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:38:56,600 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:38:56,600 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:39:27,953 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:39:46,496 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:40:12,657 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:42:18,056 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:42:18,056 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:42:26,038 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:43:39,199 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:43:43,920 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:46:12,006 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:46:12,069 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:47:52,996 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:47:53,220 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 20:48:27,307 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:49:06,858 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:49:35,223 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:49:54,157 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:50:21,606 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 20:52:09,361 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-07-28 21:16:44,756 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:16:44,760 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:17:01,098 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:17:01,137 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:17:05,024 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:17:23,296 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:17:24,643 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:17:36,715 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:17:41,641 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:18:04,953 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:18:31,423 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:18:40,284 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:19:03,962 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:19:51,239 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:20:19,840 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:20:25,542 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:20:26,781 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:20:48,343 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:22:34,875 - __main__ - INFO - Welcome to silentwave., currently its summer season.,HALLOWEEN MODE
+2024-07-28 21:24:41,674 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:24:44,164 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:26:19,999 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:26:21,199 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:29:37,737 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:29:41,049 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:30:56,650 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:30:59,958 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:34:17,337 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:34:19,870 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:36:14,351 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:36:16,196 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:40:00,969 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:40:01,395 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:45:39,814 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:45:53,501 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:47:41,185 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:47:46,074 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:52:14,417 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:52:16,929 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:55:50,919 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:55:52,515 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:59:01,728 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 21:59:04,696 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 22:00:38,008 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 22:00:45,320 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 22:03:40,594 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 22:03:41,625 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 22:06:26,003 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-07-28 22:06:27,672 - previous.routes - INFO - [prevTrack] Added a new track to the list.
