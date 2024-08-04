@@ -9211,3 +9211,18 @@ with app.app_context(). See the documentation for more information. - Is RadioDJ
 2024-07-28 22:03:41,625 - previous.routes - INFO - [prevTrack] Added a new track to the list.
 2024-07-28 22:06:26,003 - previous.routes - INFO - [prevTrack] Added a new track to the list.
 2024-07-28 22:06:27,672 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:21:25,339 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:21:25,453 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:23:17,197 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон summer.
+2024-08-04 21:23:20,565 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:23:20,702 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:23:22,551 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон summer.
+2024-08-04 21:23:23,346 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-08-04 21:23:38,985 - __main__ - INFO - Welcome to silentwave., currently its summer season.
+2024-08-04 21:24:26,684 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:24:31,954 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:26:40,194 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:26:40,414 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:29:30,193 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:29:30,433 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-08-04 21:29:52,891 - __main__ - INFO - Welcome to silentwave., currently its summer season.
