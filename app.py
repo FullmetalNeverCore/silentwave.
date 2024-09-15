@@ -136,5 +136,6 @@ def check_tracks():
         logger.error(f'{e} - Is RadioDJ working fine?')
 
 if __name__ == "__main__":
-    app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+    # app.debug = True
+    # app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0',debug=True,port=5000)

@@ -93,8 +93,6 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  background-color: #000000;
-  color: #ffffff;
 }
 
 canvas {
@@ -112,11 +110,16 @@ canvas.snow {
 }
 
 #screen {
-  width: 100%;
-  height: 100%;
+  position: fixed;  /* Cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: transparent linear-gradient(to bottom, #85908c 0%, #323431 100%) repeat scroll 0 0;
   background-size: cover;
+  z-index: 0;  /* Make sure it's underneath all other content */
 }
+
 
 .screen-container {
   position: fixed;
@@ -467,7 +470,7 @@ canvas.snow {
 
 .glow-image {
   width: 200px;
-  height: 300px;
+  height: 200px;
   transition: filter 0.3s ease;
 }
 
@@ -556,7 +559,7 @@ body.footer-visible #footer {
 	width: 100vw;
 	height: 100vh;
 	pointer-events: none;
-	z-index: 300;
+	z-index: 920;
 	opacity: 0.6;
 	will-change: opacity;
 	animation: opacity 3s linear infinite;
@@ -577,15 +580,14 @@ body.footer-visible #footer {
 }
 
 .main {
-	position: fixed;
-	top: 0;
-	left: 0;
+	position: relative;
 	font-family: 'VCR';
+  top:9vh;
+  left:8vw;
 	color: #fff;
 	font-size: 2rem;
 	width: 100vw;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0);
+	height: 80vh;
 }
 
 .main .noise:before {
@@ -607,15 +609,15 @@ body.footer-visible #footer {
 }
 
 .main .time {
-	position: absolute;
-	left: 2rem;
-	bottom: 5rem;
+	position: relative;
+	left: 1.8rem;
+	top: 40rem;
 	will-change: text-shadow;
 	animation: rgbText 1s steps(9) 0s infinite alternate;
 }
 
 .main .counter {
-	position: absolute;
+	position: relative;
 	left: 2rem;
 	top: 2rem;
 	will-change: text-shadow;
@@ -724,4 +726,75 @@ body.footer-visible #footer {
 	100% {
 		opacity: 1;
 	}
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-device-pixel-ratio: 2) {
+  
+  body {
+    padding: 20px; /* Adjust padding for smaller screen */
+    background-size: contain; /* Ensure background fits within screen */
+  }
+  
+  footer {
+    height: 60px; /* Adjust footer height */
+    font-size: 10px; /* Adjust font size for better readability */
+    padding: 0 15px; /* Reduce padding */
+  }
+  
+  .logo {
+    font-size: 1.5rem; /* Decrease font size */
+  }
+  
+  canvas {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .video {
+    filter: blur(2px); /* Increase blur slightly */
+    width: 100%;
+    height: auto;
+  }
+  
+  .screen-wrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .vignette {
+    background-size: cover;
+  }
+
+  .container {
+    margin-top: 10px; /* Reduce margin */
+  }
+
+  .main {
+    font-size: 1.5rem; /* Adjust font size for readability */
+    padding: 0 10px; /* Add some padding */
+    top: 10vh; /* Adjust top positioning */
+    left: 5vw; /* Adjust left positioning */
+  }
+
+  .vhs {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .glow-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  #slideout {
+    right: -400px; /* Adjust width for the slideout */
+    width: 380px;
+  }
+
+  body.footer-visible #footer {
+    bottom: 0; /* Ensure footer shows properly */
+  }
+
+  .on > .screen-wrapper, .off > .screen-wrapper {
+    animation-duration: 2000ms; /* Shorten animation for smaller screens */
+  }
 }

@@ -9,45 +9,68 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
     <script src="{{url_for('static', filename='js/radio.js')}}"></script>
+    <style>
+        body {
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
+  <div class="tv-container">
+    <img src="{{ url_for('static', filename='tv4.png') }}" 
+         style="position: fixed; 
+                top: 0; 
+                left: 0; 
+                width: 100vw; 
+                height: 100vh; 
+                object-fit: fill; 
+                z-index: 1000;
+                pointer-events: none;">
+    </img>
     <div class="lines"></div>
-      <div class="main">
-          <div class="noise"></div>
-          <div class="time" style="font-size: 0.8em;"><span id="time"></span></div>
-          <div class="vhs" id="vhs" data-splitting style="font-size: 0.8em;">NO_DATA</div>
-          <div class="counter" style="font-size: 0.8em;">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
-    </div>
+    <div class="main">
+      <div class="noise"></div>
+      <div class="vhs" id="vhs" data-splitting>NO_DATA</div>
+      <div class="time"><span id="time"></span></div>
+      <div class="counter">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
+  </div>
+    <!-- Transparent island where content is centered -->
+    <div class="center-container" style="position: absolute; top: 50%; left: 44%; transform: translate(-50%, -50%); z-index: 900; text-align: center;">
+      <img src="{{ url_for('static', filename='silentwave.png') }}" style="max-width: 100%; height: auto; margin-bottom: 0px;"></img>
 
-    <div id="screen" style="background-size: cover;background-repeat: no-repeat; background-position: center center; background-attachment: fixed;"></div>
-    <img src="{{ url_for('static', filename='silentwave.png') }}" class="vhs h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;"></img>
-    <div class="vhs h-100 d-flex align-items-center justify-content-center text-light font-family: 'SilentWave';" id="track-name">Connecting...</div>
-    <div id="audio-stream">
-        <img class="vhs glow-image img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
-        <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px; position: relative; z-index: 1;">
-            <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()" style="position: relative; z-index: 2;">
+      <div class="text-light" style="font-family: 'SilentWave'; font-size: 1.2em;">Connecting...</div>
+
+      <div id="audio-stream">
+        <img class="glow-image img-fluid rounded mx-auto d-block" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
+        <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
+          <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()">
         </div>
         <audio controls hidden>
-            <source src="{{ stream_url }}" type="audio/mpeg">
-            Your browser does not support the audio element. 
+          <source src="{{ stream_url }}" type="audio/mpeg">
+          Your browser does not support the audio element. 
         </audio>
+
+      </div>
     </div>
+  </div>
 
-    <!--Lastest played tracks-->
-    <div id="slideout">
-      <a class="vhs text-white d-flex justify-content-center">Previously on silentwave.</a>
-      <ul class="list">
-      </ul>
+        <!--Lastest played tracks-->
+        <div id="slideout" style="z-index:2000;">
+          <a class="vhs text-white d-flex justify-content-center">Previously on silentwave.</a>
+          <ul class="list">
+          </ul>
+        </div>
+    
+    
+        <div id="slideout" style="z-index:2000;">
+            <a class="vhs text-white d-flex justify-content-center">Options:</a>
+            <ul class="list">
+            </ul>
+        </div>   
+        </div>  
     </div>
-
-
-    <div id="slideout">
-        <a class="vhs text-white d-flex justify-content-center">Options:</a>
-        <ul class="list">
-        </ul>
-    </div>
-
-    <footer id="footer">
+  
+    <footer id="footer" style="z-index:2000;">
         <div class="footer-content">
           <div class="text-white footer-section-left d-flex flex-column justify-content-between align-items-center">
             <div>
@@ -67,114 +90,123 @@
     </footer>
     
     <script>
-      console.log("Welcome to silentwave.");
-      var audio = document.querySelector('audio'); 
-      var volumeControl = document.querySelector('#volume-control');
+        console.log("Welcome to silentwave.");
+        
+        // Get the necessary elements
+        var audio = document.querySelector('audio'); 
+        var volumeControl = document.querySelector('#volume-control');
+        var showWindowBtn = document.getElementById('showWindowBtn');
+        var slideout = document.getElementById('slideout');
+        var switchCheckbox = document.getElementById('switch'); // The checkbox for switch control
+        
+        
+        /* COUNTER */
+        function pad(val) {
+          var valString = val + "";
+          if (valString.length < 2) {
+              return "0" + valString;
+          } else {
+              return valString;
+          }
+        }
       
-      var showWindowBtn = document.getElementById('showWindowBtn');
-      var slideout = document.getElementById('slideout');
-
-    /* COUNTER */
-    function pad(val) {
-    var valString = val + "";
-    if (valString.length < 2) {
-        return "0" + valString;
-    } else {
-        return valString;
-    }
-    }
-
-    var totalSeconds = 0;
-
-    setInterval(setTime, 1000);
-
-    function setTime() {
-    ++totalSeconds;
-    document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
-    document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60));
-    }
-
-    /* TIME IN FORMAT HH:MM:SS */
-    function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
-    }
-
-    setInterval(getTime, 1000);
-    
-    setInterval(getCurrentFormattedDate, 1000);
-
-    function getCurrentFormattedDate() {
-        const options = { year: 'numeric', month: 'short', day: 'numeric' };
-        const date = new Date(); 
-        const year = 1995; 
-        const formattedDate = date.toLocaleDateString('en-US', options);
-        var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. ${year}`).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
-        document.getElementById('vhs').innerHTML = formattedDateOrigin;
-    }
-
-    function getTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        // add a zero in front of numbers < 10
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-        t = setTimeout(function() {
-            getTime()
-        }, 500);
-    }
+        var totalSeconds = 0;
+      
+        setInterval(setTime, 1000);
+      
+        function setTime() {
+          ++totalSeconds;
+          document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
+          document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60));
+        }
+      
+        /* TIME IN FORMAT HH:MM:SS */
+        function checkTime(i) {
+          if (i < 10) {
+              i = "0" + i;
+          }
+          return i;
+        }
+      
+        setInterval(getTime, 1000);
+        
+        setInterval(getCurrentFormattedDate, 1000);
+      
+        function getCurrentFormattedDate() {
+          const options = { year: 'numeric', month: 'short', day: 'numeric' };
+          const date = new Date(); 
+          const year = 1995; 
+          const formattedDate = date.toLocaleDateString('en-US', options);
+          var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. ${year}`).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
+          document.getElementById('vhs').innerHTML = formattedDateOrigin;
+        }
+      
+        function getTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          // add a zero in front of numbers < 10
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+          t = setTimeout(function() {
+              getTime()
+          }, 500);
+        }
+      
+        // Show/hide slideout on button click
         showWindowBtn.addEventListener('click', function(event) {
-            slideout.classList.toggle('on');
-            event.stopPropagation(); // Prevent the click event from bubbling up to the document
-          });
-
-        document.addEventListener('click', function(event) {
-            if (!slideout.contains(event.target) && !showWindowBtn.contains(event.target)) {
-              slideout.classList.remove('on');
-            }
-          });
+          slideout.classList.toggle('on');
+          event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        });
       
-
-      volumeControl.addEventListener('input', function() {
-        audio.volume = this.value;
-      });
-
-
-      document.addEventListener('mousemove', function(event) {
+        // Hide slideout when clicking outside of it
+        document.addEventListener('click', function(event) {
+          if (!slideout.contains(event.target) && !showWindowBtn.contains(event.target)) {
+            slideout.classList.remove('on');
+          }
+        });
+      
+        // Volume control
+        volumeControl.addEventListener('input', function() {
+          audio.volume = this.value;
+        });
+      
+        // Footer visibility based on mouse position
+        document.addEventListener('mousemove', function(event) {
           const screenHeight = window.innerHeight;
           const mouseY = event.clientY;
-
+      
           if (mouseY >= screenHeight - 100) { 
-              document.body.classList.add('footer-visible');
+            document.body.classList.add('footer-visible');
           } else {
-              document.body.classList.remove('footer-visible');
+            document.body.classList.remove('footer-visible');
           }
-      });
-      function updateLatestTracks() {
+        });
+      
+        // Update latest tracks from the server
+        function updateLatestTracks() {
           $.get('/previous', function(data) {
-              const list = $('.list');
-              list.empty();
-              const reversedTracks = Object.entries(data.tracks).reverse();
-              reversedTracks.forEach(([time, track_name]) => {
-                  const listItem = $('<li>', {
-                      css: {
-                          margin: '5px',
-                          marginLeft: '30px',
-                          fontSize: '15px'
-                      },
-                      text: `${time}: ${track_name}`
-                  });
-                  list.append(listItem);
+            const list = $('.list');
+            list.empty();
+            const reversedTracks = Object.entries(data.tracks).reverse();
+            reversedTracks.forEach(([time, track_name]) => {
+              const listItem = $('<li>', {
+                css: {
+                  margin: '5px',
+                  marginLeft: '30px',
+                  fontSize: '15px'
+                },
+                text: `${time}: ${track_name}`
               });
+              list.append(listItem);
+            });
           }).fail(function() {
-              console.error('Failed to fetch previous tracks.');
+            console.error('Failed to fetch previous tracks.');
           });
-      }
-  
-    </script>
+        }
+      
+      </script>
+      
 </html>
