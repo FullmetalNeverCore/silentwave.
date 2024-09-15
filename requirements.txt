@@ -5,3 +5,4 @@ datetime
 flask_apscheduler
 pytz
 pyopenssl
+Flask-Assets

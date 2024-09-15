@@ -118,6 +118,9 @@ canvas.snow {
   background: transparent linear-gradient(to bottom, #85908c 0%, #323431 100%) repeat scroll 0 0;
   background-size: cover;
   z-index: 0;  /* Make sure it's underneath all other content */
+
+  background: -webkit-linear-gradient(to left, #16222A , #3A6073);
+  background: linear-gradient(to left, #16222A , #3A6073);
 }
 
 
@@ -582,12 +585,12 @@ body.footer-visible #footer {
 .main {
 	position: relative;
 	font-family: 'VCR';
-  top:9vh;
+  top:12vh;
   left:8vw;
 	color: #fff;
 	font-size: 2rem;
 	width: 100vw;
-	height: 80vh;
+	height: 75vh;
 }
 
 .main .noise:before {
@@ -610,8 +613,8 @@ body.footer-visible #footer {
 
 .main .time {
 	position: relative;
-	left: 1.8rem;
-	top: 40rem;
+	left: 2rem;
+	top: 30rem;
 	will-change: text-shadow;
 	animation: rgbText 1s steps(9) 0s infinite alternate;
 }
@@ -798,3 +801,46 @@ body.footer-visible #footer {
     animation-duration: 2000ms; /* Shorten animation for smaller screens */
   }
 }
+
+body {
+  font-family: sans-serif;
+  background-color: #111111; /* $black */
+}
+
+a {
+  color: #ff5f2e; /* $color-link */
+}
+
+a:hover {
+  color: #fcbe32; /* $color-link-hover */
+}
+
+button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #111111;
+}
+.screen {
+  background-color: gray; /* Start with a gray screen */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+

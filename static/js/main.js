@@ -33,7 +33,6 @@ function checkTime(i) {
       return i;
       }
   
-setInterval(getTime, 1000);
 setInterval(getCurrentFormattedDate, 1000);
 
 function getCurrentFormattedDate() {

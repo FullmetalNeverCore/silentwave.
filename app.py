@@ -11,10 +11,12 @@ import conf
 import pytz
 import misc 
 
+
 # logging
 logging.basicConfig(filename='self.app.log')
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+
 
 fh = logging.FileHandler('example.log')
 fh.setLevel(logging.DEBUG)
