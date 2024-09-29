@@ -10,6 +10,7 @@ from flask_apscheduler import APScheduler
 import conf
 import pytz
 import misc 
+import static_random_gen
 
 
 # logging
@@ -61,6 +62,8 @@ def get_endpoints():
 
 @app.route("/test")
 def test_home():
+    #tape distort
+    tapedis = static_random_gen.tapestatus()
     name = "silentwave."
     if datetime.now().month >= 12 and datetime.now().month <= 2:
         season = 'winter'
@@ -68,7 +71,8 @@ def test_home():
         season = 'summer'
     background = get_season_background(season)
     logger.info('Welcome to %s, currently its %s season.', name, season)
-    return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+    print(tapeage)
+    return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background,tapeage=tapedis[0],snow=tapedis[1])
 
 
 # @app.route("/hw")
@@ -111,19 +115,20 @@ def get_season_background(season):
 @app.route("/")
 def home_page():
     name = "silentwave."
+    tapedis = static_random_gen.StaticGen.tapestatus()
     current_date = datetime.now()
     if current_date.month == 10 and current_date.day == 31:
         season = 'halloween'
         background = bgi['hw']
         logger.info('Добро пожаловать в %s, сейчас сезон %s. РЕЖИМ ХЭЛЛОУИНА', name, season)
-        return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+        return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background,tapeage=tapedis[0],snow=tapedis[1])
     elif current_date.month >= 12 or current_date.month <= 2:
         season = 'winter'
     else:
         season = 'summer'
     background = get_season_background(season)
     logger.info('Добро пожаловать в %s, сейчас сезон %s.', name, season)
-    return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+    return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background,tapeage=tapedis[0],snow=tapedis[1])
 
 @scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
 def check_tracks():
