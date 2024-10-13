@@ -2,71 +2,86 @@
 <html>
 <head>
     <title>{{ title }}</title>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+
     <meta name="description" content="An online radio streaming fogcore and similar tracks.">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylehw.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylehw.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
-    <script src="{{url_for('static', filename='js/radio.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/radio.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
-    <!--VHS header-->
-    <div class="lines"></div>
-      <div class="main">
-          <div class="noise"></div>
-          <div class="time" style="font-size: 0.8em;color: red;"><span id="time"></span></div>
-          <div class="vhs" id="vhs" data-splitting style="font-size: 0.8em;color:red;">NO_DATA</div>
-          <div class="counter" style="font-size: 0.8em;color:red;">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
-    </div>
 
+    <div class="tv-container">
+        <img src="{{ url_for('static', filename='tv5.png') }}" 
+             style="position: fixed; 
+                    top: 0; 
+                    left: 0; 
+                    width: 100vw; 
+                    height: 100vh; 
+                    object-fit: fill; 
+                    z-index: 1000;
+                    pointer-events: none;">
+            <div class="lines"></div>
+            <div id="screen"></div>
+            <div class="main">
+                <div class="noise"></div>
+                <div class="vhs" id="vhs" data-splitting>NO_DATA</div>
+                <div class="counter">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
+            </div>
+            <div class="center-container" style="position: absolute; top: 50%; left: 42%; transform: translate(-50%, -50%); z-index: 900; text-align: center;">
+                <img src="{{ url_for('static', filename='silentwave.png') }}" style="max-width: 100%; height: auto; margin-bottom: 0px;"></img>
+                <div class="vhs text-light" style="font-family: 'SilentWave'; font-size: 1em;" id="track-name">Connecting...</div>
+                <div id="audio-stream">
+                    <img class="glow-image img-fluid rounded mx-auto d-block" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
+                    <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
+                        <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()">
+                    </div>
+                    <audio controls hidden>
+                        <source src="{{ stream_url }}" type="audio/mpeg">
+                        Your browser does not support the audio element. 
+                    </audio>
+                </div>
+            </div>
 
-    <div id="screen"></div>
-    <img src="{{ url_for('static', filename='silentwave.png') }}" class="vhs h-100 d-flex align-items-center justify-content-center text-light" style="padding-top: 85px;"></img>
-    <div class="vhs h-100 d-flex align-items-center justify-content-center text-light font-family: 'SilentWave';" id="track-name">Connecting...</div>
-    <div id="audio-stream">
-        <img class="vhs glow-image img-fluid rounded mx-auto d-block" style="padding-top: 110px;" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
-        <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px; position: relative; z-index: 1;">
-          <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()" style="position: relative; z-index: 2;">
-      </div>
-        <audio controls hidden>
-            <source src="{{ stream_url }}" type="audio/mpeg">
-            Your browser does not support the audio element. 
-        </audio>
-    </div>
-    
-    <!--Lastest played tracks-->
-    <div id="slideout">
-      <a class="vhs text-white d-flex justify-content-center">Previously on silentwave.</a>
-      <a class="vhs text-white d-flex justify-content-center small">List refreshes every midnight.</a>
-      <ul class="list">
-      </ul>
-    </div>
-
-    <footer id="footer">
-      <div class="footer-content">
-        <div class="text-white footer-section-left flex-column d-flex justify-content-between align-items-center">
-          <div>
-            Created by:
-            <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
-            <a class="text-white">, EternalXero</a>
-            
-          </div>
-          
-          <a id="showWindowBtn" class="ml-3" style="color: red;">Previously on silentwave.</a>
+        <!-- Latest played tracks -->
+        <div id="slideout" style="z-index:2000;">
+            <a class="vhs text-white d-flex justify-content-center">Previously on silentwave.</a>
+            <ul class="list"></ul>
         </div>
-      </div>
-          <div class="text-white footer-section-right">
-              Current Listeners:
-              <p class="text-white" id="listeners">0</p>
-          </div>
-      </div>
+
+        <div id="slideout" style="z-index:2000;">
+            <a class="vhs text-white d-flex justify-content-center">Options:</a>
+            <ul class="list"></ul>
+        </div>   
+    </div>  
+
+    <footer id="footer" style="z-index:2000;">
+        <div class="footer-content">
+            <div class="text-white footer-section-left d-flex flex-column justify-content-between align-items-center">
+                <div>
+                    Created by:
+                    <a class="text-white" href="https://github.com/FullmetalNeverCore">0xNC</a>
+                    <a class="text-white">, EternalXero</a>
+                </div>
+                <a id="showWindowBtn" class="ml-3" style="color: red;">Previously on silentwave.</a>
+            </div>
+        </div>
+        <div class="text-white footer-section-right">
+            Current Listeners:
+            <p class="text-white" id="listeners">0</p>
+        </div>
     </footer>
-    <script src="{{ url_for('static', filename='js/mainhw.js') }}"></script>
+</body>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script>
+    
       function getRandomInt(min, max) {
           min = Math.ceil(min);
           max = Math.floor(max);
@@ -227,8 +242,8 @@
                 node.style.position = 'fixed';   // Fixed position so it covers the whole viewport
                 node.style.top = '0';
                 node.style.left = '0';
-                node.style.width = '100%';       // Full width of the viewport
-                node.style.height = '100%';      // Full height of the viewport
+                node.style.width = '75%';       // Full width of the viewport
+                node.style.height = '89%';      // Full height of the viewport
                 node.style.objectFit = 'cover';  // Maintain aspect ratio and cover whole area
 
                 wrapper.appendChild(node);
@@ -436,7 +451,7 @@
                 miny: 220,
                 miny2: 220,
                 num: 70,
-                fps: 60
+                fps: 24
               }
             },
             wobbley: { enabled: true },
