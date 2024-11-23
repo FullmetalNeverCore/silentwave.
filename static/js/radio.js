@@ -6,7 +6,7 @@ function radio() {
 
     audio.volume = 0.6; // initial loudness
     soundEffect.loop = true;
-    soundEffect.volume = 0.25;
+    soundEffect.volume = 0.35;
 
     // pressEffect.play(); // silent hill's press effect
 

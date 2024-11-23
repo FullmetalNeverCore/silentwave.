@@ -3,7 +3,6 @@
 <head>
     <title>{{ title }}</title>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
 
     <meta name="description" content="An online radio streaming fogcore and similar tracks.">
@@ -17,38 +16,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
-
     <div class="tv-container">
         <img src="{{ url_for('static', filename='tv5.png') }}" 
-             style="position: fixed; 
-                    top: 0; 
-                    left: 0; 
-                    width: 100vw; 
-                    height: 100vh; 
-                    object-fit: fill; 
-                    z-index: 1000;
-                    pointer-events: none;">
-            <div class="lines"></div>
-            <div id="screen"></div>
-            <div class="main">
-                <div class="noise"></div>
-                <div class="vhs" id="vhs" data-splitting>NO_DATA</div>
-                <div class="counter">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
-            </div>
-            <div class="center-container" style="position: absolute; top: 50%; left: 42%; transform: translate(-50%, -50%); z-index: 900; text-align: center;">
-                <img src="{{ url_for('static', filename='silentwave.png') }}" style="max-width: 100%; height: auto; margin-bottom: 0px;"></img>
-                <div class="vhs text-light" style="font-family: 'SilentWave'; font-size: 1em;" id="track-name">Connecting...</div>
-                <div id="audio-stream">
-                    <img class="glow-image img-fluid rounded mx-auto d-block" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
-                    <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
-                        <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()">
-                    </div>
-                    <audio controls hidden>
-                        <source src="{{ stream_url }}" type="audio/mpeg">
-                        Your browser does not support the audio element. 
-                    </audio>
+             class="tv-overlay">
+        <div class="lines"></div>
+        <div id="screen"></div>
+        <div class="main">
+            <div class="noise"></div>
+            <div class="vhs" id="vhs" data-splitting>NO_DATA</div>
+            <div class="counter">REC <label id="minutes">00</label>:<label id="seconds">00</label></div>
+        </div>
+        <div class="center-container" style="position: absolute; top: 50%; left: 42%; transform: translate(-50%, -50%); z-index: 900; text-align: center;">
+            <img src="{{ url_for('static', filename='silentwave.png') }}" style="max-width: 100%; height: auto; margin-bottom: 0px;"></img>
+            <div class="vhs text-light" style="font-family: 'SilentWave'; font-size: 1em;" id="track-name">Connecting...</div>
+            <div id="audio-stream">
+                <img class="glow-image img-fluid rounded mx-auto d-block" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
+                <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
+                    <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control" onchange="vol()">
                 </div>
+                <audio controls hidden>
+                    <source src="{{ stream_url }}" type="audio/mpeg">
+                    Your browser does not support the audio element. 
+                </audio>
             </div>
+        </div>
 
         <!-- Latest played tracks -->
         <div id="slideout" style="z-index:2000;">
@@ -237,15 +228,8 @@
                 wrapper = this.parent;
                 node = document.createElement('img');
                 node.classList.add(type);
-
+                node.classList.add('image');  // Add the CSS class
                 node.src = config.src;
-                node.style.position = 'fixed';   // Fixed position so it covers the whole viewport
-                node.style.top = '0';
-                node.style.left = '0';
-                node.style.width = '75%';       // Full width of the viewport
-                node.style.height = '89%';      // Full height of the viewport
-                node.style.objectFit = 'cover';  // Maintain aspect ratio and cover whole area
-
                 wrapper.appendChild(node);
                 break;        
               case "video":
