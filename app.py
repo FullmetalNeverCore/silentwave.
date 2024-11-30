@@ -11,7 +11,6 @@ import conf
 import pytz
 import misc 
 
-
 # logging
 logging.basicConfig(filename='self.app.log')
 logger = logging.getLogger(__name__)
@@ -46,6 +45,7 @@ scheduler.start()
 
 bgi = bg_list.bglist
 music_host = conf.music_host
+bgtype = ['nier','silenthill']
 
 @app.route('/endpoints', methods=['GET'])
 def get_endpoints():
@@ -99,18 +99,26 @@ def test_prod():
     logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('prodtest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
-def get_season_background(season):
-    if 9 <= datetime.now().hour < 21:
-        time = 'day'
-        background = random.choice(bgi[season][time])
-    else:
-        time = 'night'
-        background = random.choice(bgi[season][time])
+def get_background(season, bg_type):
+    match bg_type: 
+        case 'silenthill':
+            if 9 <= datetime.now().hour < 21:
+                time = 'day'
+                background = random.choice(bgi['silenthill'][season][time])
+            else:
+                time = 'night'
+                background = random.choice(bgi['silenthill'][season][time])
+        case 'nier':
+            background = random.choice(bgi['nier'])
+        case _:  
+            logger.error(f'Неизвестный тип фона: {bg_type}')
+            return None  
     return background
 
 @app.route("/")
 def home_page():
     name = "silentwave."
+    bgt = random.choice(bgtype)
     current_date = datetime.now()
     if current_date.month == 10 and current_date.day == 31:
         season = 'halloween'
@@ -121,9 +129,10 @@ def home_page():
         season = 'winter'
     else:
         season = 'summer'
-    background = get_season_background(season)
+    background = get_background(season,bgt)
+    vhstime = 2001 if bgt == 'silenthill' else 11945
     logger.info('Добро пожаловать в %s, сейчас сезон %s.', name, season)
-    return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
+    return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background,year = vhstime)
 
 @scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
 def check_tracks():

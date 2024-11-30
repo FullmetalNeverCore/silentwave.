@@ -33,15 +33,17 @@ function checkTime(i) {
       return i;
       }
   
-setInterval(getCurrentFormattedDate, 1000);
+document.addEventListener('DOMContentLoaded', function() {
+        setInterval(getCurrentFormattedDate, 1000);
+});
 
 function getCurrentFormattedDate() {
+          const yearVal = document.getElementById('yearValue').value;
           const options = { year: 'numeric', month: 'short', day: 'numeric' };
           const date = new Date(); 
-          const year = 2001; 
           const formattedDate = date.toLocaleDateString('en-US', options);
-          var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. ${year}`).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
-          document.getElementById('vhs').innerHTML = formattedDateOrigin;
+          var formattedDateOrigin = formattedDate.replace(/(\w+)\s(\d+),\s(\d+)/, `$1. $2. `).replace(/January|February|March|April|May|June|July|August|September|October|November|December/g, (match) => match.slice(0, 3).toUpperCase());
+          document.getElementById('vhs').innerHTML = formattedDateOrigin + yearVal;
       }
 
 function getTime() {
