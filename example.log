@@ -25254,3 +25254,228 @@ with app.app_context(). See the documentation for more information. - Is RadioDJ
 2024-11-30 02:47:57,203 - track_name.routes - INFO - Return of track name is successful.
 2024-11-30 02:48:02,061 - track_name.routes - WARNING - Trying to get /track_name
 2024-11-30 02:48:02,202 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:15:54,931 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:15:55,202 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:15:56,086 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 18:15:56,284 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 18:15:59,930 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:00,072 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:04,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:05,101 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:09,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:10,092 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:14,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:15,092 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:19,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:20,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:24,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:25,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:29,927 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:30,097 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:34,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:35,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:39,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:40,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:44,932 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:45,101 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:49,929 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:50,085 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:54,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:16:55,111 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:16:59,930 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:00,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:04,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:05,094 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:09,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:10,101 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:14,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:15,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:19,929 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:20,096 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:24,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:25,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:29,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:30,111 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:34,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:35,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:39,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:40,082 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:41,013 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 18:17:41,252 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 18:17:44,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:45,122 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:49,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:50,083 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:54,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:17:55,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:17:59,934 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:00,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:04,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:05,072 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:09,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:10,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:14,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:15,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:19,928 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:20,102 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:24,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:25,131 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:29,931 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:30,101 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:34,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:35,061 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:39,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:40,101 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:44,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:45,092 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:49,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:50,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:54,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:18:55,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:18:59,933 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:00,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:04,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:05,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:09,929 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:10,090 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:14,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:15,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:19,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:20,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:24,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:25,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:29,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:30,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:34,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:35,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:39,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:40,081 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:44,925 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:45,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:49,932 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:50,090 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:54,930 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:19:55,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:19:59,931 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:00,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:04,933 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:05,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:09,927 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:10,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:14,923 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:15,111 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:19,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:20,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:24,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:25,071 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:29,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:30,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:31,012 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 18:20:31,240 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 18:20:34,924 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:35,080 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:39,932 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:40,091 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:44,926 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:45,072 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:49,934 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:50,105 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:54,936 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:20:55,088 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:20:59,935 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:21:00,100 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:21:04,935 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:21:05,092 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:21:09,937 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:21:10,093 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:21:14,937 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:21:15,214 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:21:19,942 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:21:20,105 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 18:21:24,938 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 18:21:25,117 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:29,879 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:18:30,106 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:34,259 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 19:18:34,417 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 19:18:34,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:18:35,015 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:39,879 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:18:40,026 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:44,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:18:45,025 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:48,715 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон winter.
+2024-12-01 19:18:49,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:18:50,045 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:54,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:18:55,045 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:18:59,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:19:00,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:19:04,892 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:19:05,055 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:19:39,881 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:19:40,084 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:19:41,590 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 19:19:41,764 - previous.routes - INFO - [prevTrack] Added a new track to the list.
+2024-12-01 19:19:44,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:19:45,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:19:49,881 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:19:50,045 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:19:54,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:19:55,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:19:59,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:00,045 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:04,889 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:05,065 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:09,878 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:10,045 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:14,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:15,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:19,879 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:20,044 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:24,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:25,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:29,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:30,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:34,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:35,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:38,015 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон winter.
+2024-12-01 19:20:39,879 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:40,044 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:44,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:45,024 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:49,724 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон winter.
+2024-12-01 19:20:49,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:50,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:54,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:55,044 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:55,185 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:20:55,364 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:20:55,583 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон winter.
+2024-12-01 19:20:59,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:00,056 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:00,933 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:01,083 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:04,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:05,044 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:08,003 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:08,137 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:09,880 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:10,035 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:12,163 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:12,494 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:14,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:15,023 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:16,407 - __main__ - INFO - Добро пожаловать в silentwave., сейчас сезон winter.
+2024-12-01 19:21:18,243 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:18,404 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:19,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:20,034 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:22,884 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:23,044 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:24,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:25,053 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:27,813 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:27,963 - track_name.routes - INFO - Return of track name is successful.
+2024-12-01 19:21:29,877 - track_name.routes - WARNING - Trying to get /track_name
+2024-12-01 19:21:30,033 - track_name.routes - INFO - Return of track name is successful.
