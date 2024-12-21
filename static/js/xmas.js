@@ -43,7 +43,7 @@
         
         // FF seems to just be able to handle like 50... 25 with rotation
         // Safari seems fine with 150+... 75 with rotation
-        var i = 25;
+        var i = 10;
         while (i--)
         {
             addFlake(true);
