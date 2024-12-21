@@ -73,7 +73,17 @@
 </body>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script>
-    
+      document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        const start = new Date(today.getFullYear(), 11, 20);
+        const end = new Date(today.getFullYear() + 1, 0, 10);
+
+        if (today >= start || today <= end) {
+            const script = document.createElement('script');
+            script.src = "{{ url_for('static', filename='js/xmas.js') }}";
+            document.head.appendChild(script);
+        }
+      });
       function getRandomInt(min, max) {
           min = Math.ceil(min);
           max = Math.floor(max);
