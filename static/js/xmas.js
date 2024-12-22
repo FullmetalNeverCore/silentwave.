@@ -43,7 +43,7 @@
         
         // FF seems to just be able to handle like 50... 25 with rotation
         // Safari seems fine with 150+... 75 with rotation
-        var i = 10;
+        var i = 25;
         while (i--)
         {
             addFlake(true);
@@ -196,17 +196,7 @@
                 x += Math.round(xv * v);
                 x += -half_v + Math.round(Math.random() * v);
                 
-                // because flakes are rotating, the origin could be +/- the size of the flake offset
-                if (x > maxw)
-                {
-                    x = -300;
-                }
-                else if (x < minw)
-                {
-                    x = ww;
-                }
-                
-                if (y > maxh)
+                if (y > maxh || Math.random() > 2) 
                 {
                     $(this).remove();
                     flakeCount--;
