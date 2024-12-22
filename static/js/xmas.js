@@ -196,12 +196,14 @@
                 x += Math.round(xv * v);
                 x += -half_v + Math.round(Math.random() * v);
                 
-                if (y > maxh || Math.random() > 2) 
+                if (y > maxh || Math.random() > 0.99) 
                 {
-                    $(this).remove();
-                    flakeCount--;
-                    
-                    addFlake();
+                    //making them melt away 
+                    $(this).fadeOut(1000, function() {
+                        $(this).remove();
+                        flakeCount--;
+                        addFlake();
+                    });
                 }
                 else
                 {
