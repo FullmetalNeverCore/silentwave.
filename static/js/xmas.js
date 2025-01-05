@@ -11,12 +11,12 @@
     var absMax = 25;
     var flakeCount = 0;
     
+    var snowInterval = null;
+
     $(init);
 
-    function init()
-    {
-        var detectSize = function ()
-        {
+    function init() {
+        var detectSize = function () {
             ww = $(window).width();
             wh = $(window).height();
             
@@ -26,35 +26,54 @@
         };
         
         detectSize();
-        
         $(window).resize(detectSize);
         
-        if (!$('body').css('textShadow'))
-        {
+        if (!$('body').css('textShadow')) {
             textShadowSupport = false;
         }
         
-        /* Should work in Windows 7 */
-        if (/windows/i.test(navigator.userAgent))
-        {
-            snowflakes = ['*']; // Windows sucks and doesn't have Unicode chars installed
-            //snowflakes = ['T']; //No FF support for Wingdings
+        // Windows 7 fallback
+        if (/windows/i.test(navigator.userAgent)) {
+            snowflakes = ['*']; // fallback for missing Unicode
         }
         
-        // FF seems to just be able to handle like 50... 25 with rotation
-        // Safari seems fine with 150+... 75 with rotation
+        // Generate initial snowflakes
         var i = 25;
-        while (i--)
-        {
+        while (i--) {
             addFlake(true);
         }
         
         prevTime = new Date().getTime();
-        setInterval(move, 50);
+        
+        // Listen for tab visibility changes
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+
+        // ** Start the snowfall immediately **
+        startSnowfall();
+    }
+    
+    function startSnowfall() {
+        if (!snowInterval) {
+            snowInterval = setInterval(move, 50);
+        }
     }
 
-    function addFlake(initial)
-    {
+    function stopSnowfall() {
+        if (snowInterval) {
+            clearInterval(snowInterval);
+            snowInterval = null;
+        }
+    }
+    
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            stopSnowfall(); 
+        } else {
+            startSnowfall();
+        }
+    }
+    
+    function addFlake(initial) {
         flakeCount++;
         
         var sizes = [
@@ -92,37 +111,29 @@
             }
         ];
     
-        var $nowflake = $('<span class="winternetz">' + snowflakes[Math.floor(Math.random() * snowflakes.length)] + '</span>').css(
-            {
-                /*fontFamily: 'Wingdings',*/
-                color: '#eee',
-                display: 'block',
-                position: 'fixed',
-                background: 'transparent',
-                width: 'auto',
-                height: 'auto',
-                margin: '0',
-                padding: '0',
-                textAlign: 'left',
-                zIndex: 9999
-            }
-        );
+        var $nowflake = $('<span class="winternetz">' + snowflakes[Math.floor(Math.random() * snowflakes.length)] + '</span>').css({
+            color: '#eee',
+            display: 'block',
+            position: 'fixed',
+            background: 'transparent',
+            width: 'auto',
+            height: 'auto',
+            margin: '0',
+            padding: '0',
+            textAlign: 'left',
+            zIndex: 9999
+        });
         
-        if (textShadowSupport)
-        {
+        if (textShadowSupport) {
             $nowflake.css('textIndent', '-9999px');
         }
         
         var r = Math.random();
-    
         var i = sizes.length;
-        
         var v = 0;
         
-        while (i--)
-        {
-            if (r < sizes[i].r)
-            {
+        while (i--) {
+            if (r < sizes[i].r) {
                 v = sizes[i].v;
                 $nowflake.css(sizes[i].css);
                 break;
@@ -132,21 +143,13 @@
         var x = (-300 + Math.floor(Math.random() * (ww + 300)));
         
         var y = 0;
-        if (typeof initial == 'undefined' || !initial)
-        {
+        if (!initial) {
             y = -300;
-        }
-        else
-        {
+        } else {
             y = (-300 + Math.floor(Math.random() * (wh + 300)));
         }
     
-        $nowflake.css(
-            {
-                left: x + 'px',
-                top: y + 'px'
-            }
-        );
+        $nowflake.css({ left: x + 'px', top: y + 'px' });
         
         $nowflake.data('x', x);
         $nowflake.data('y', y);
@@ -156,14 +159,11 @@
         $('body').append($nowflake);
     }
     
-    function move()
-    {
-        if (Math.random() > 0.8)
-        {
+    function move() {
+        // Slight horizontal movement changes
+        if (Math.random() > 0.8) {
             xv += -1 + Math.random() * 2;
-            
-            if (Math.abs(xv) > 3)
-            {
+            if (Math.abs(xv) > 3) {
                 xv = 3 * (xv / Math.abs(xv));
             }
         }
@@ -173,57 +173,49 @@
         var diffTime = newTime - prevTime;
         prevTime = newTime;
         
-        if (diffTime < 55 && flakeCount < absMax)
-        {
+        // Add new flake if browser is fast
+        if (diffTime < 55 && flakeCount < absMax) {
             addFlake();
         }
-        else if (diffTime > 150)
-        {
+        // Remove an old flake if browser is slow
+        else if (diffTime > 150) {
             $('span.winternetz:first').remove();
             flakeCount--;
         }
         
-        $('span.winternetz').each(
-            function ()
-            {
-                var x = $(this).data('x');
-                var y = $(this).data('y');
-                var v = $(this).data('v');
-                var half_v = $(this).data('half_v');
-                
-                y += v;
-                
-                x += Math.round(xv * v);
-                x += -half_v + Math.round(Math.random() * v);
-                
-                if (y > maxh || Math.random() > 0.99) 
-                {
-                    //making them melt away 
-                    $(this).fadeOut(1000, function() {
-                        $(this).remove();
-                        flakeCount--;
-                        addFlake();
-                    });
-                }
-                else
-                {
-                    $(this).data('x', x);
-                    $(this).data('y', y);
+        // Move each flake
+        $('span.winternetz').each(function () {
+            var x = $(this).data('x');
+            var y = $(this).data('y');
+            var v = $(this).data('v');
+            var half_v = $(this).data('half_v');
+            
+            y += v;
+            x += Math.round(xv * v);
+            x += -half_v + Math.round(Math.random() * v);
+            
+            // Melt flake if it goes out of range or randomly
+            if (y > maxh || Math.random() > 0.99) {
+                $(this).fadeOut(1000, () => {
+                    $(this).remove();
+                    flakeCount--;
+                    addFlake();
+                });
+            } else {
+                $(this).data('x', x);
+                $(this).data('y', y);
 
-                    $(this).css(
-                        {
-                            left: x + 'px',
-                            top: y + 'px'
-                        }
-                    );
-                    
-                    // only spin biggest three flake sizes
-                    if (v >= 6)
-                    {
-                        $(this).animate({rotate: '+=' + half_v + 'deg'}, 0);
-                    }
+                $(this).css({
+                    left: x + 'px',
+                    top: y + 'px'
+                });
+                
+                // Rotate bigger flakes
+                if (v >= 6) {
+                    // Note: requires a rotate plugin or CSS transforms
+                    $(this).animate({rotate: '+=' + half_v + 'deg'}, 0);
                 }
             }
-        );
+        });
     }
 })(jQuery);
