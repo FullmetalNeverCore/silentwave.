@@ -492,7 +492,7 @@ canvas.snow {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 10px; 
+  width: 200px; 
   z-index: 2000;
   cursor: pointer;
 }
