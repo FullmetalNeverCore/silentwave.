@@ -496,6 +496,13 @@ canvas.snow {
   z-index: 2000;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  #slideout-hotspot {
+    width: 10px; 
+  }
+}
+
 #slideout {
   font-family: 'SilentWave';
   background: rgba(0, 0, 0, 0.8);
