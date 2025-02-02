@@ -70,13 +70,13 @@
 
       document.addEventListener('DOMContentLoaded', function() {
         const today = new Date();
-        const start = new Date(today.getFullYear(), 11, 20);
-        const end = new Date(today.getFullYear() + 1, 0, 31);
+        const month = today.getMonth(); 
+        const date = today.getDate();
 
-        if (today >= start || today <= end) {
-            const script = document.createElement('script');
-            script.src = "{{ url_for('static', filename='js/xmas.js') }}";
-            document.head.appendChild(script);
+        if ((month === 11 && date >= 20) || (month === 0 && date <= 31)) {
+          const script = document.createElement('script');
+          script.src = "{{ url_for('static', filename='js/xmas.js') }}";
+          document.head.appendChild(script);
         }
       });
       function getRandomInt(min, max) {
