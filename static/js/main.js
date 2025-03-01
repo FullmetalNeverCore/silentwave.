@@ -94,6 +94,14 @@ function updateTrackName() {
     $('#track-name').html(data.track_name);
     $('#listeners').html(data.listeners);
   });
+  var parts = data.track_name.split('-');
+  if (parts.length > 1) {
+    document.title = "silentwave. : " +  parts[1].trim();
+  }
+  else
+  {
+    document.title = "silentwave.";
+  }
 }
 
 setInterval(updateTrackName, 5000);
