@@ -95,11 +95,13 @@ function updateTrackName() {
     $('#listeners').html(data.listeners);
   });
   var parts = data.track_name.split('-');
-  if (parts.length > 1) {
+  if (parts.length >= 1) {
+    console.log("Updating title with trimmed song title");
     document.title = "silentwave. : " +  parts[1].trim();
   }
   else
   {
+    console.log("Keeping title silentwave.");
     document.title = "silentwave.";
   }
 }
