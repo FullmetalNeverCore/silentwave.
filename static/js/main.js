@@ -93,17 +93,17 @@ function updateTrackName() {
   $.get('/track_name', function(data) {
     $('#track-name').html(data.track_name);
     $('#listeners').html(data.listeners);
+    var parts = data.track_name.split('-');
+    if (parts.length >= 1) {
+      console.log("Updating title with trimmed song title");
+      document.title = "silentwave. : " +  parts[1].trim();
+    }
+    else
+    {
+      console.log("Keeping title silentwave.");
+      document.title = "silentwave.";
+    }
   });
-  var parts = data.track_name.split('-');
-  if (parts.length >= 1) {
-    console.log("Updating title with trimmed song title");
-    document.title = "silentwave. : " +  parts[1].trim();
-  }
-  else
-  {
-    console.log("Keeping title silentwave.");
-    document.title = "silentwave.";
-  }
 }
 
 setInterval(updateTrackName, 5000);
