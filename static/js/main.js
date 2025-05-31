@@ -91,17 +91,39 @@ volumeControl.addEventListener('input', function() {
 
 function updateTrackName() {
   $.get('/track_name', function(data) {
+    var previousTrack = $('#track-name').text();
     $('#track-name').html(data.track_name);
     $('#listeners').html(data.listeners);
     var parts = data.track_name.split('-');
-    if (parts.length >= 1) {
-      console.log("Updating title with trimmed song title");
-      document.title = "silentwave. : " +  parts[1].trim();
+    if (previousTrack != data.track_name){
+      if (parts.length >= 1) {
+        console.log("Updating title with trimmed song title");
+        document.title = "silentwave. : " + parts[1].trim();
+      } else {
+        console.log("Keeping title silentwave.");
+        document.title = "silentwave.";
+      } 
     }
-    else
-    {
-      console.log("Keeping title silentwave.");
-      document.title = "silentwave.";
+    if (previousTrack != "Connecting..." && previousTrack != data.track_name) {
+      var body = $('body');
+      var originalBg = body.css('background-image');
+      var staticBgUrl = '/static/pictures/tv.gif';
+      body.css('background-image', 'url(' + staticBgUrl + ')');
+      if (typeof screen !== 'undefined' && screen.effects) {
+        screen.remove('video');
+        screen.remove('image');
+        screen.add('image', { src: staticBgUrl, blur: 1.2 });
+      }
+      setTimeout(function() {
+        $.get('/random_bg', function(resp) {
+          var newBg = resp.bg_img;
+          body.css('background-image', 'url(\'' + newBg + '\')');
+          if (typeof screen !== 'undefined' && screen.effects && screen.effects.image) {
+            screen.remove('image');
+            screen.add('image', { src: newBg, blur: 1.2 });
+          }
+        });
+      }, 2000);
     }
   });
 }
