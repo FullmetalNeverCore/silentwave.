@@ -3,6 +3,7 @@ var audio = document.querySelector('audio');
 var volumeControl = document.querySelector('#volume-control');
 var showWindowBtn = document.getElementById('showWindowBtn');
 var slideout = document.getElementById('slideout');
+var lastTrack = '';
 
 
 /* COUNTER */
@@ -91,22 +92,25 @@ volumeControl.addEventListener('input', function() {
 
 function updateTrackName() {
   $.get('/track_name', function(data) {
-    var previousTrack = $('#track-name').text();
-    $('#track-name').html(data.track_name);
+    var newTrack = data.track_name;
+    var previousTrack = lastTrack;
+    // update DOM
+    $('#track-name').html(newTrack);
     $('#listeners').html(data.listeners);
-    var parts = data.track_name.split('-');
-    if (previousTrack != data.track_name){
-      if (parts.length >= 1) {
+    // update document title only when track changes
+    if (previousTrack && previousTrack !== newTrack) {
+      var parts = newTrack.split('-');
+      if (parts.length >= 2) {
         console.log("Updating title with trimmed song title");
         document.title = "silentwave. : " + parts[1].trim();
       } else {
         console.log("Keeping title silentwave.");
         document.title = "silentwave.";
-      } 
+      }
     }
-    if (previousTrack != "Connecting..." && previousTrack != data.track_name) {
+    // if actual track changed, flash static then load new background
+    if (previousTrack && previousTrack !== newTrack) {
       var body = $('body');
-      var originalBg = body.css('background-image');
       var staticBgUrl = '/static/pictures/tv.gif';
       body.css('background-image', 'url(' + staticBgUrl + ')');
       if (typeof screen !== 'undefined' && screen.effects) {
@@ -117,7 +121,7 @@ function updateTrackName() {
       setTimeout(function() {
         $.get('/random_bg', function(resp) {
           var newBg = resp.bg_img;
-          body.css('background-image', 'url(\'' + newBg + '\')');
+          body.css('background-image', 'url("' + newBg + '")');
           if (typeof screen !== 'undefined' && screen.effects && screen.effects.image) {
             screen.remove('image');
             screen.add('image', { src: newBg, blur: 1.2 });
@@ -125,6 +129,8 @@ function updateTrackName() {
         });
       }, 2000);
     }
+    // remember for next poll
+    lastTrack = newTrack;
   });
 }
 
