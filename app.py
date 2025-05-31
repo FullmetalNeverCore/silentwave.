@@ -146,6 +146,20 @@ def check_tracks():
     except Exception as e:
         logger.error(f'{e} - Is RadioDJ working fine?')
 
+@app.route('/random_bg')
+def random_bg():
+    now = datetime.now()
+    if now.month == 10 and now.day == 31:
+        background = bgi.get('hw')
+    else:
+        if now.month >= 12 or now.month <= 2:
+            season = 'winter'
+        else:
+            season = 'summer'
+        bgt_choice = random.choice(bgtype)
+        background = get_background(season, bgt_choice)
+    return jsonify({'bg_img': background})
+
 if __name__ == "__main__":
     # app.debug = True
     # app.run(host='0.0.0.0', port=5000)
