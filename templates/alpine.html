@@ -421,7 +421,8 @@ function render(){
 function softInvert(value){ for(var j=0,n=data.length;j<n;j+=4){ data[j]=Math.abs(value-data[j]); data[j+1]=Math.abs(value-data[j+1]); data[j+2]=Math.abs(value-data[j+2]); data[j+3]=255 } }
 function animate(){ window._animating=true; clearImageData(); render(); context.putImageData(imageData,0,0); requestAnimationFrame(animate) }
 window.requestAnimFrame=(function(){ return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(callback){ window.setTimeout(callback,1000/60) } })()
-init()
+function boot(){ var bg=document.querySelector('#deck > img'); var ov=document.getElementById('alpineOverlay'); var waits=[]; function w(img){ if(!img) return; if(img.complete) return; waits.push(new Promise(function(res){ img.addEventListener('load', res, {once:true}); img.addEventListener('error', res, {once:true}) })) } w(bg); w(ov); if(waits.length>0){ Promise.all(waits).then(init) } else { init() } }
+boot()
     </script>
 </body>
 </html>
