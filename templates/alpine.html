@@ -231,8 +231,13 @@ async function listAudioDevices(){
 async function captureSelectedDevice(){
   try{
     var id = deviceSelect.value
-    if(!id){ txtStatus.innerText = 'No device selected'; return }
-    var stream = await requestUserMedia({ audio: { deviceId: id ? { exact: id } : undefined, echoCancellation:false, noiseSuppression:false, autoGainControl:false } })
+    if(!id){
+      await requestUserMedia({ audio: true })
+      await listAudioDevices()
+      id = deviceSelect.value
+      if(!id){ txtStatus.innerText = 'No device available'; return }
+    }
+    var stream = await requestUserMedia({ audio: { deviceId: { exact: id }, echoCancellation:false, noiseSuppression:false, autoGainControl:false } })
     startStream(stream)
     txtStatus.innerText = 'Using selected device'
   }catch(e){ txtStatus.innerText = 'Device start failed' }
