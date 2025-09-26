@@ -12,6 +12,8 @@
         <a id="micBtn" class="bt" style="display:none;">Capture Microphone</a>
         <select id="deviceSelect" class="bt"></select>
         <a id="useDeviceBtn" class="bt">Use Device</a>
+        <a id="loadFileBtn" class="bt">Load File</a>
+        <input id="fileInput" type="file" accept="audio/*,video/*">
     </div>
     <div id="deck">
         <img src="{{ url_for('static', filename='alpine-2.png') }}" alt="alpine">
@@ -41,6 +43,7 @@
             </div>
             <div class="scanlines"></div>
         </div>
+        <div id="branding">Created by 0xNC@2025</div>
     </div>
     <div id="hud"></div>
     <p id="txtStatus"></p>
@@ -65,6 +68,7 @@ var mouseDown = false
 var mousePos = { x:0, y:0 }
 var fov = 250
 var baseSpeed = 0.6
+var idleSpeed = 0.18
 var speedGain = 7.5
 var speedAccelLerp = 0.22
 var speedDecelLerp = 0.08
@@ -88,6 +92,8 @@ var blockMaxRise = 45
 var bassPortion = 0.14
 var bassFloor = 55
 var bassCeil = 165
+var bootStart = 0
+var bootDuration = 1200
 
 function getRGBColor(color){ var r=Math.sin(color.r+=0.010)*1+1; var g=Math.sin(color.g+=0.007)*1+1; var b=Math.sin(color.b+=0.013)*1+1; return {r:r,g:g,b:b} }
 function getRGBColor2(color){ var r=Math.sin(color.r+=0.040)*1+1; var g=Math.sin(color.g+=0.028)*1+1; var b=Math.sin(color.b+=0.052)*1+1; return {r:r,g:g,b:b} }
@@ -103,6 +109,7 @@ function init(){
   context = canvas.getContext('2d')
   window.addEventListener('resize', onResize, false)
   onResize()
+  var tcv=document.getElementById('tunnelCanvas'); if(tcv){ tcv.classList.add('bootOn') }
   addCircles()
   render()
   clearImageData()
@@ -231,15 +238,15 @@ async function listAudioDevices(){
 async function captureSelectedDevice(){
   try{
     var id = deviceSelect.value
-    if(!id){
-      await requestUserMedia({ audio: true })
-      await listAudioDevices()
-      id = deviceSelect.value
-      if(!id){ txtStatus.innerText = 'No device available'; return }
-    }
-    var stream = await requestUserMedia({ audio: { deviceId: { exact: id }, echoCancellation:false, noiseSuppression:false, autoGainControl:false } })
+    if(!id){ txtStatus.innerText = 'No device selected'; return }
+    var stream = await requestUserMedia({ audio: { deviceId: id ? { exact: id } : undefined, echoCancellation:false, noiseSuppression:false, autoGainControl:false } })
     startStream(stream)
     txtStatus.innerText = 'Using selected device'
+    var items=document.querySelectorAll('#trackInfo .leftCol .item');
+    items.forEach(function(it){ it.classList.remove('dim') })
+    if(items[0]) items[0].classList.add('dim')
+    if(items[2]) items[2].classList.add('dim')
+    var disc=document.querySelector('#trackInfo .discId'); if(disc){ disc.textContent='D2' }
   }catch(e){ txtStatus.innerText = 'Device start failed' }
 }
 
@@ -350,6 +357,10 @@ function mouseMoveHandler(event){}
 function getMousePos(canvas,event){ var rect=canvas.getBoundingClientRect(); return { x:event.clientX-rect.left, y:event.clientY-rect.top } }
 
 function render(){
+  var now = performance.now()
+  if(bootStart===0){ bootStart = now }
+  var bootT = Math.min(1, (now-bootStart)/bootDuration)
+  var bootEase = bootT*bootT*(3-2*bootT)
   var aa=false; if(analyser){ aa=true }
   var frequencySource; if(aa===true){ frequencySource=new Uint8Array(analyser.frequencyBinCount); analyser.getByteFrequencyData(frequencySource); updateVUBars(frequencySource) }
   if(aa===true){
@@ -360,12 +371,14 @@ function render(){
     energy = energy / end
     var norm = 0
     if(energy > bassFloor){ norm = Math.min(1, (energy-bassFloor)/(bassCeil-bassFloor)) }
-    var target = baseSpeed + norm * speedGain
+    var targetBase = norm>0 ? baseSpeed : idleSpeed
+    var target = targetBase + norm * speedGain
     var lerp = target < speed ? speedDecelLerp : speedAccelLerp
     speed += (target - speed) * lerp
   } else {
-    speed += (baseSpeed - speed) * speedDecelLerp
+    speed += (idleSpeed - speed) * speedDecelLerp
   }
+  speed *= bootEase
   var sortArray=false
   var col=getRGBColor2(rgb); var col2=getRGBColor(rgb2); limitRGBColor(col,0.45); limitRGBColor(col2,0.25)
   for(var i=0,l=circleHolder.length;i<l;i++){
@@ -422,6 +435,9 @@ function softInvert(value){ for(var j=0,n=data.length;j<n;j+=4){ data[j]=Math.ab
 function animate(){ window._animating=true; clearImageData(); render(); context.putImageData(imageData,0,0); requestAnimationFrame(animate) }
 window.requestAnimFrame=(function(){ return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(callback){ window.setTimeout(callback,1000/60) } })()
 function boot(){ var bg=document.querySelector('#deck > img'); var ov=document.getElementById('alpineOverlay'); var waits=[]; function w(img){ if(!img) return; if(img.complete) return; waits.push(new Promise(function(res){ img.addEventListener('load', res, {once:true}); img.addEventListener('error', res, {once:true}) })) } w(bg); w(ov); if(waits.length>0){ Promise.all(waits).then(init) } else { init() } }
+function attachFileLoader(){ var btn=document.getElementById('loadFileBtn'); var inp=document.getElementById('fileInput'); if(!btn||!inp) return; btn.addEventListener('click', function(){ inp.click() }); inp.addEventListener('change', async function(){ var f=inp.files&&inp.files[0]; if(!f) return; try{ var url=URL.createObjectURL(f); var audioEl=new Audio(); audioEl.src=url; audioEl.crossOrigin='anonymous'; audioEl.loop=true; audioEl.muted=false; await audioEl.play().catch(function(){}); if(audioContext && typeof audioContext.close==='function'){ try{ audioContext.close() }catch(_){} } audioContext=new (window.AudioContext||window.webkitAudioContext)(); if(audioContext.state==='suspended'){ try{ audioContext.resume() }catch(_){} } analyser=audioContext.createAnalyser(); analyser.smoothingTimeConstant=smoothingTimeConstant; analyser.fftSize=fftSize; var src=audioContext.createMediaElementSource(audioEl); var playback=audioContext.createGain(); playback.gain.value=1.0; src.connect(analyser); src.connect(playback); playback.connect(audioContext.destination); txtStatus.innerText='Playing '+(f.name||'file'); var titleEl=document.querySelector('#trackInfo .title .line:nth-child(2)'); if(titleEl){ var dn=(f.name||'TRACK TITLE').replace(/\.[^/.]+$/, ''); typeWrite(titleEl, dn, 50) } var numEl=document.querySelector('#trackInfo .trackNum'); if(numEl){ numEl.textContent='001' } var items=document.querySelectorAll('#trackInfo .leftCol .item'); if(items[1]) items[1].classList.add('dim'); if(items[2]) items[2].classList.add('dim') }catch(e){ txtStatus.innerText='File load failed' } }) }
+function typeWrite(el, text, delay){ if(!el) return; el.textContent=''; var i=0; function tick(){ if(i<=text.length){ el.textContent=text.slice(0,i); i++; setTimeout(tick, delay) } } tick() }
+attachFileLoader()
 boot()
     </script>
 </body>
