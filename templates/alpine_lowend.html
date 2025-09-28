@@ -13,6 +13,7 @@
         <select id="deviceSelect" class="bt"></select>
         <a id="useDeviceBtn" class="bt">Use Device</a>
         <a id="loadFileBtn" class="bt">Load File</a>
+        <a id="silentwaveBtn" class="bt">Silentwave. freq</a>
         <a id="clearFileBtn" class="bt" style="display:none;">Clear File</a>
         <select id="fftSelect" class="bt"></select>
         <input id="fileInput" type="file" accept="audio/*,video/*">
@@ -38,7 +39,7 @@
                         <div class="line">TRACK TITLE</div>
                     </div>
                     <div class="trackRow">
-                        <div class="trackNum">001</div>
+                        <div class="trackNum">???</div>
                         <div class="trackLabel">TRACK No.</div>
                     </div>
                 </div>
@@ -49,6 +50,10 @@
     </div>
     <div id="hud"></div>
     <p id="txtStatus"></p>
+
+    <audio id="silentwaveAudio" controls hidden crossorigin="anonymous">
+        <source src="{{ stream_url }}" type="audio/mpeg">
+    </audio>
 
     <script type="module" src="{{ url_for('static', filename='js/alpine_lowend.js') }}"></script>
 </body>
