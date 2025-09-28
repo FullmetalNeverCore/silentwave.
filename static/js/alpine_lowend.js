@@ -25,6 +25,7 @@ let imageData
 let pixels
 let ctx
 let wasmMemory = null
+let swPollStarted = false
 
 function resizeCanvas(){
   if(!canvas) return
@@ -195,6 +196,7 @@ async function start(){
   const micBtn = document.getElementById('micBtn')
   const fileBtn = document.getElementById('loadFileBtn')
   const clearBtn = document.getElementById('clearFileBtn')
+  const silentwaveBtn = document.getElementById('silentwaveBtn')
   const fileInput = document.getElementById('fileInput')
   const sel = document.getElementById('deviceSelect')
   if(useBtn && sel){
@@ -264,6 +266,43 @@ async function start(){
       if(clearBtn){ clearBtn.style.display = 'none' }
     }, false)
   }
+  if(silentwaveBtn){
+    silentwaveBtn.addEventListener('click', async ()=>{
+      try{
+        const el = document.getElementById('silentwaveAudio')
+        if(!el) return
+        el.crossOrigin = 'anonymous'
+        if(!el.src || el.src === window.location.href){
+          const srcEl = el.querySelector('source')
+          if(srcEl && srcEl.src){ el.src = srcEl.src }
+        }
+        try{ el.load() }catch(_){ }
+        if(!ac){ ac = new (window.AudioContext||window.webkitAudioContext)() }
+        const src = ac.createMediaElementSource(el)
+        analyser = ac.createAnalyser()
+        analyser.smoothingTimeConstant = 0.34
+        analyser.minDecibels = -90
+        analyser.maxDecibels = -10
+        analyser.fftSize = FFT_SIZE
+        src.connect(analyser)
+        const gain = ac.createGain()
+        gain.gain.value = 1.0
+        src.connect(gain)
+        gain.connect(ac.destination)
+        fftBuf = new Uint8Array(analyser.frequencyBinCount)
+        hasAudioSource = true
+        if(ac.state === 'suspended'){ await ac.resume() }
+        const doPlay = ()=> el.play().catch(()=>{})
+        el.addEventListener('canplay', doPlay, { once:true })
+        setTimeout(doPlay, 0)
+        const discId = document.querySelector('#trackInfo .discId')
+        if(discId){ discId.textContent = 'D3' }
+        const left = document.querySelectorAll('#trackInfo .leftCol .item')
+        if(left.length>=2){ left[2].classList.add('dim'); left[0].classList.remove('dim'); left[0].classList.add('active'); left[2].classList.remove('active') }
+        startSilentwavePolling()
+      }catch(_){ }
+    }, false)
+  }
   const ptr = wasm.frame_ptr()
   const len = wasm.frame_len()
   pixels = new Uint8ClampedArray(wasmMemory.buffer, ptr, len)
@@ -275,6 +314,7 @@ async function start(){
     setupTextCells(SCREEN_TEXT)
   }
   setupTrackInfoFlicker()
+  
   // fps label
   const fpsEl = document.getElementById('fpsCounter')
   window._alpineFps = { el: fpsEl, lastT: performance.now(), frames: 0, fps: 0 }
@@ -313,5 +353,24 @@ if(document.readyState==='complete' || document.readyState==='interactive'){
   setTimeout(start, 0)
 } else {
   document.addEventListener('DOMContentLoaded', start)
+}
+
+function startSilentwavePolling(){
+  if(swPollStarted) return
+  swPollStarted = true
+  try{
+    const titleLines = document.querySelectorAll('#trackInfo .title .line')
+    async function pollTrack(){
+      try{
+        const r = await fetch('/track_name', { cache:'no-store' })
+        if(!r.ok) return
+        const j = await r.json()
+        const t = j && j.track_name ? j.track_name : ''
+        if(t && titleLines[1]){ titleLines[1].textContent = t }
+      }catch(_){ }
+    }
+    setInterval(pollTrack, 5000)
+    pollTrack()
+  }catch(_){ }
 }
 
