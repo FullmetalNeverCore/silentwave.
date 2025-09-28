@@ -162,9 +162,9 @@ def random_bg():
 
 @app.route('/alpine')
 def alpine():
-    return render_template('alpine_lowend.html', title='Alpine Visualizer')
+    return render_template('alpine_lowend.html', title='Alpine Visualizer', stream_url=f'{music_host}')
 
 if __name__ == "__main__":
     # app.debug = True
     app.run(host='0.0.0.0', port=5000)
-    # app.run(host='0.0.0.0', debug=True, port=5000, ssl_context=('192.168.8.145+2.pem','192.168.8.145+2-key.pem'))
+    # app.run(host='0.0.0.0', debug=True, port=5001, ssl_context=('192.168.8.145+2.pem','192.168.8.145+2-key.pem'))
