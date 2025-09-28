@@ -162,7 +162,7 @@ def random_bg():
 
 @app.route('/alpine')
 def alpine():
-    return render_template('alpine.html', title='Alpine Visualizer')
+    return render_template('alpine_lowend.html', title='Alpine Visualizer')
 
 if __name__ == "__main__":
     # app.debug = True
