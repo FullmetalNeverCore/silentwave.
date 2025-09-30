@@ -2,6 +2,7 @@
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
 export const set_low_end_mode: (a: number) => void;
+export const set_sensitivity: (a: number) => void;
 export const set_render_scale: (a: number) => void;
 export const set_performance_mode: (a: number) => void;
 export const wasm_init_canvas: (a: number, b: number) => void;

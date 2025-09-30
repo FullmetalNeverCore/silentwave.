@@ -1,6 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export function set_low_end_mode(enabled: boolean): void;
+export function set_sensitivity(value: number): void;
 export function set_render_scale(scale: number): void;
 export function set_performance_mode(mode: number): void;
 export function wasm_init_canvas(width: number, height: number): void;
@@ -16,6 +17,7 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly set_low_end_mode: (a: number) => void;
+  readonly set_sensitivity: (a: number) => void;
   readonly set_render_scale: (a: number) => void;
   readonly set_performance_mode: (a: number) => void;
   readonly wasm_init_canvas: (a: number, b: number) => void;

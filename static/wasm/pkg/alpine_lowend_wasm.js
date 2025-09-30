@@ -184,6 +184,13 @@ export function set_low_end_mode(enabled) {
 }
 
 /**
+ * @param {number} value
+ */
+export function set_sensitivity(value) {
+    wasm.set_sensitivity(value);
+}
+
+/**
  * @param {number} scale
  */
 export function set_render_scale(scale) {
