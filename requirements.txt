@@ -7,3 +7,6 @@ pytz
 pyopenssl
 user_agents
 Flask-Assets
+Flask-Cors
+scipy
+numpy
