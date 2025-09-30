@@ -17,6 +17,10 @@
         <a id="clearFileBtn" class="bt" style="display:none;">Clear File</a>
         <select id="fftSelect" class="bt"></select>
         <input id="fileInput" type="file" accept="audio/*,video/*">
+        <div class="control-container">
+            <label for="sensitivitySlider">Sensitivity</label>
+            <input type="range" id="sensitivitySlider" min="5" max="40" value="22" class="slider">
+        </div>
     </div>
     <div id="deck">
         <img src="{{ url_for('static', filename='alpine-2.png') }}" alt="alpine">
