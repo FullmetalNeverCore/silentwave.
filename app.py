@@ -1,5 +1,5 @@
 import random
-from flask import Flask, render_template, jsonify, request, abort, Response
+from flask import Flask, render_template, jsonify, request, abort, Response, url_for, send_file
 import requests
 import socket
 from datetime import datetime
@@ -10,23 +10,24 @@ from flask_apscheduler import APScheduler
 import conf
 import pytz
 import misc 
+import numpy as np
+import threading
+import time
+from scipy import signal
+from scipy.io import wavfile
+import json
 
-# logging
 logging.basicConfig(filename='self.app.log')
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-
 fh = logging.FileHandler('example.log')
 fh.setLevel(logging.DEBUG)
-
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
-
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
-
 logger.addHandler(fh)
 logger.addHandler(ch)
 
@@ -34,10 +35,17 @@ import previous.routes
 from previous.routes import prev_bp
 from track_name.routes import tn_bp
 
-# flask app
 app = Flask(__name__)
 app.register_blueprint(prev_bp, url_prefix='/previous')
 app.register_blueprint(tn_bp, url_prefix='/track_name')
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers.set('Access-Control-Allow-Origin', '*')
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, HEAD')
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, Range, Accept')
+    response.headers.set('Access-Control-Expose-Headers', 'Content-Length, Content-Range')
+    return response
 
 scheduler = APScheduler()
 scheduler.init_app(app)
@@ -62,41 +70,11 @@ def get_endpoints():
 @app.route("/test")
 def test_home():
     name = "silentwave."
-    if datetime.now().month >= 12 and datetime.now().month <= 2:
-        season = 'winter'
-    else:
-        season = 'summer'
-    background = get_season_background(season)
-    logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
-
-
-# @app.route("/hw")
-# def hw():
-#     name = "silentwave."
-#     season = 'halloween'
-#     background = bgi['hw']
-#     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
-#     return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
-
-
-# @app.route("/hwtest")
-# def hw_home():
-#     name = "silentwave."
-#     season = 'halloween'
-#     background = bgi['hw']
-#     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
-#     return render_template('halloweentest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 @app.route("/prodtest")
 def test_prod():
     name = "silentwave."
-    if datetime.now().month >= 12 and datetime.now().month <= 2:
-        season = 'winter'
-    else:
-        season = 'summer'
-    background = get_season_background(season)
-    logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('prodtest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 def get_background(season, bg_type):
@@ -123,7 +101,6 @@ def home_page():
     if current_date.month == 10 and current_date.day == 31:
         season = 'halloween'
         background = bgi['hw']
-        logger.info('Добро пожаловать в %s, сейчас сезон %s. РЕЖИМ ХЭЛЛОУИНА', name, season)
         return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
     elif current_date.month >= 12 or current_date.month <= 2:
         season = 'winter'
@@ -131,40 +108,58 @@ def home_page():
         season = 'summer'
     background = get_background(season,bgt)
     vhstime = 2001 if bgt == 'silenthill' else 11945
-    logger.info('Добро пожаловать в %s, сейчас сезон %s.', name, season)
     return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background,year = vhstime)
 
 @scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
 def check_tracks():
-    status_url = f'{conf.host}/status.xsl'
-    response = requests.get(status_url)
-    html = response.text
-    try:
-        track_name = html.split('<td class="streamstats">')[7].split('</td>')[0]
-        current_time = misc.get_time_zone() #getting time in correct time zone
-        previous.routes.add_tracks(time=current_time, track=track_name)
-    except Exception as e:
-        logger.error(f'{e} - Is RadioDJ working fine?')
+    pass
 
 @app.route('/random_bg')
 def random_bg():
-    now = datetime.now()
-    if now.month == 10 and now.day == 31:
-        background = bgi.get('hw')
-    else:
-        if now.month >= 12 or now.month <= 2:
-            season = 'winter'
-        else:
-            season = 'summer'
-        bgt_choice = random.choice(bgtype)
-        background = get_background(season, bgt_choice)
-    return jsonify({'bg_img': background})
+    pass
 
 @app.route('/alpine')
 def alpine():
-    return render_template('alpine_lowend.html', title='Alpine Visualizer', stream_url=f'{music_host}')
+    return render_template('alpine_lowend.html', title='Alpine Visualizer',
+                         stream_url=url_for('stream'),
+                         test_audio_url=url_for('test_audio'))
+
+@app.route('/test-audio')
+def test_audio():
+    try:
+        return send_file('static/test_audio.wav', mimetype='audio/wav')
+    except Exception as e:
+        logger.error(f"Test audio error: {e}")
+        return Response("Test audio not found", status=404)
+
+@app.route('/stream', methods=['GET', 'HEAD', 'OPTIONS'])
+def stream():
+    if request.method == 'OPTIONS':
+        response = Response()
+        return response
+
+    try:
+        upstream_url = conf.music_host
+        logger.info(f"Proxying request for {request.path} to {upstream_url}")
+        range_header = request.headers.get('Range', None)
+        proxy_headers = {'Range': range_header} if range_header else {}
+        r = requests.get(upstream_url, stream=True, headers=proxy_headers, timeout=10)
+        response_headers = {}
+        copy_headers = ['Content-Type', 'Content-Length', 'Accept-Ranges', 'Content-Range']
+        for h in copy_headers:
+            if h in r.headers:
+                response_headers[h] = r.headers[h]
+        response = Response(
+            r.iter_content(chunk_size=8192), 
+            status=r.status_code, 
+            headers=response_headers,
+            mimetype=r.headers.get('Content-Type')
+        )
+        return response
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Stream proxy error: {e}")
+        return Response("Stream error: could not connect to upstream server", status=502)
 
 if __name__ == "__main__":
-    # app.debug = True
-    app.run(host='0.0.0.0', port=5000)
-    # app.run(host='0.0.0.0', debug=True, port=5001, ssl_context=('192.168.8.145+2.pem','192.168.8.145+2-key.pem'))
+    app.run(host='0.0.0.0', debug=True, port=5000)
