@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+    <meta name="description" content="An online radio streaming silent hill's and other games great ost.">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/tv_3d.css') }}">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+    <script src="{{ url_for('static', filename='js/radio.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    
+    <!-- Three.js and loaders -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/TGALoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fflate@0.7.4/umd/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS3DRenderer.js"></script>
+</head>
+<body>
+    <div id="intro-overlay">
+        <img id="intro-image" src="{{ url_for('static', filename='pictures/boot_seq/silentwave2_1.png') }}" style="opacity: 1;">
+    </div>
+
+    <div id="dialogue-container">
+        <div id="dialogue-text"></div>
+        <div id="continue-prompt">Press Enter to continue</div>
+    </div>
+    <div id="noise-overlay"></div>
+    <div id="vignette-overlay"></div>
+    <div id="three-container"></div>
+    <div id="css-container"></div>
+
+    <div id="tv-content-source" style="display: none;">
+        <div id="showWindowBtn"></div>
+        <div id="listeners"></div>
+        <footer id="footer"></footer>
+        
+        <div class="tv-container">
+            <div id="crt-menu">
+                <div class="crt-header">
+                    <span>settings</span>
+                    <span style="font-size: 0.5em; opacity: 0.7;">prev tracks</span>
+                </div>
+                <ul class="crt-list" id="crt-track-list"></ul>
+            </div>
+            <div class="lines"></div>
+            <div id="screen"></div>
+            <div class="main">
+                <div class="noise"></div>
+                <div class="vhs" id="vhs" data-splitting>NODATA</div>
+                <input type="hidden" id="yearValue" value="{{ year }}">
+                <div class="counter" style="color: #00ff00;"><label id="viewers-count" style="color: #00ff00;">0</label></div>
+            </div>
+            <div class="center-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 900; text-align: center; width: 80%;">
+                <img src="{{ url_for('static', filename='silentwave.png') }}" style="max-width: 100%; height: auto; margin-bottom: 0px;">
+                <div class="vhs text-light" style="font-family: 'SilentWave'; font-size: 1em;" id="track-name">Connecting...</div>
+                <div id="audio-stream">
+                    <img class="glow-image img-fluid rounded mx-auto d-block" id="audio-button" src="static/play.png" width="120" height="120" onclick="radio()"> 
+                    <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
+                        <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control">
+                    </div>
+                    <audio id="main-audio" controls hidden>
+                        <source src="{{ stream_url }}" type="audio/mpeg">
+                        Your browser does not support the audio element. 
+                    </audio>
+                </div>
+            </div>
+            <div id="slideout-hotspot"></div>
+            <div id="slideout" >
+                <a class="vhs text-white d-flex justify-content-center">Previously on silentwave.</a>
+                <ul class="list"></ul>
+            </div>  
+        </div>
+    </div>
+
+    <script>
+        window.CONFIG = {
+            bg_img: "{{ bg_img }}",
+            year: "{{ year }}"
+        };
+        window.ASSETS = {
+            interaction2: "{{ url_for('static', filename='audio/interaction2.wav') }}",
+            boot_img1: "{{ url_for('static', filename='pictures/boot_seq/silentwave2_1.png') }}",
+            boot_img2: "{{ url_for('static', filename='pictures/boot_seq/silentwave2.png') }}",
+            bar_model: "{{ url_for('static', filename='model/heavens-night/heavens_night.glb') }}",
+            tv_model: "{{ url_for('static', filename='model/psx-crt-tv/source/TV.fbx') }}",
+            tv_texture: "{{ url_for('static', filename='model/psx-crt-tv/textures/T_TVCRT.png') }}",
+            mary_letter: "{{ url_for('static', filename='model/marysletter/image.png') }}",
+            maria_model: "{{ url_for('static', filename='model/maria/maria.glb') }}",
+            ashley_model: "{{ url_for('static', filename='model/ashley/ashley_rigged.glb') }}",
+            ada_model: "{{ url_for('static', filename='model/ada/ada_wong_rigged.glb') }}",
+            lunar_model: "{{ url_for('static', filename='model/lunar_tear/lunar_tear.glb') }}",
+            sh1_model: "{{ url_for('static', filename='model/sh1case/sh1ps1.glb') }}",
+            sh3_model: "{{ url_for('static', filename='model/sh3case/sh3ps2.glb') }}",
+            simon_model: "{{ url_for('static', filename='model/simonphone/simonphone.glb') }}",
+            doge_model: "{{ url_for('static', filename='model/doge/doge.glb') }}",
+            mirror_model: "{{ url_for('static', filename='model/mirror/mirror.glb') }}",
+            fukuro_model: "{{ url_for('static', filename='model/fukuro/fukuro.glb') }}",
+            devilz_model: "{{ url_for('static', filename='model/devilz/devilz.glb') }}",
+            pyramid_model: "{{ url_for('static', filename='model/pyramidHead/pyrHd.glb') }}",
+            tyrant_model: "{{ url_for('static', filename='model/tyrant/resident_evil_tyrant.glb') }}"
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tv_3d.js') }}"></script>
+</body>
+</html>

@@ -6,25 +6,7 @@ var slideout = document.getElementById('slideout');
 var lastTrack = '';
 
 
-/* COUNTER */
-function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
-  }
-}
-
-var totalSeconds = 0;
-
-setInterval(setTime, 1000);
-
-function setTime() {
-  ++totalSeconds;
-  document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
-  document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60));
-}
+/* COUNTER REMOVED */
 
     /* TIME IN FORMAT HH:MM:SS */
 function checkTime(i) {
@@ -97,6 +79,7 @@ function updateTrackName() {
     // update DOM
     $('#track-name').html(newTrack);
     $('#listeners').html(data.listeners);
+    $('#viewers-count').html(data.listeners);
     // update document title only when track changes
     if (previousTrack && previousTrack !== newTrack) {
       var parts = newTrack.split('-');
@@ -112,19 +95,29 @@ function updateTrackName() {
     if (previousTrack && previousTrack !== newTrack) {
       var body = $('body');
       var staticBgUrl = '/static/pictures/tv.gif';
-      body.css('background-image', 'url(' + staticBgUrl + ')');
-      if (typeof screen !== 'undefined' && screen.effects) {
-        screen.remove('video');
-        screen.remove('image');
-        screen.add('image', { src: staticBgUrl, blur: 1.2 });
+      
+      // Only update body background if NOT in 3D mode
+      if (document.getElementById('three-container') === null) {
+        body.css('background-image', 'url(' + staticBgUrl + ')');
+      }
+
+      if (typeof screenEffect !== 'undefined' && screenEffect.effects) {
+        screenEffect.remove('video');
+        screenEffect.remove('image');
+        screenEffect.add('image', { src: staticBgUrl, blur: 1.2 });
       }
       setTimeout(function() {
         $.get('/random_bg', function(resp) {
           var newBg = resp.bg_img;
-          body.css('background-image', 'url("' + newBg + '")');
-          if (typeof screen !== 'undefined' && screen.effects && screen.effects.image) {
-            screen.remove('image');
-            screen.add('image', { src: newBg, blur: 1.2 });
+          
+          if (document.getElementById('three-container') === null) {
+            body.css('background-image', 'url("' + newBg + '")');
+          }
+
+          if (typeof screenEffect !== 'undefined' && screenEffect.effects && (screenEffect.effects.image || screenEffect.effects.video)) {
+            screenEffect.remove('video');
+            screenEffect.remove('image');
+            screenEffect.add('image', { src: newBg, blur: 1.2 });
           }
         });
       }, 2000);
@@ -142,14 +135,26 @@ function updateLatestTracks() {
   $.get('/previous', function(data) {
     var list = $('.list'); 
     list.empty();
+    
+    // Also update CRT menu if it exists (for 3D mode)
+    const crtList = document.getElementById('crt-track-list');
+    if (crtList) crtList.innerHTML = '';
+
     if(Object.entries(data.tracks).reverse() != prevTracks)
     {
       console.log("New entry.")
       prevTracks = Object.entries(data.tracks).reverse();
       prevTracks.forEach(function([time, track_name]) {
-      var li = $('<li style="margin:5px;margin-left:30px;text-size:5px;"></li>').html(time + ": " + track_name);
-      list.append(li);
-    });
+        var li = $('<li style="margin:5px;margin-left:30px;text-size:5px;"></li>').html(time + ": " + track_name);
+        list.append(li);
+        
+        if (crtList) {
+          const crtLi = document.createElement('li');
+          crtLi.className = 'crt-item';
+          crtLi.innerHTML = `<span class="crt-time">${time}</span><span class="crt-track">${track_name}</span>`;
+          crtList.appendChild(crtLi);
+        }
+      });
     };
   });
 }

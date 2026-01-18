@@ -94,10 +94,30 @@ var bassFloor = 55
 var bassCeil = 165
 var bootStart = 0
 var bootDuration = 1200
+var currentMediaElement
+function stopAnyPlayback(){ try{ if(currentMediaElement){ currentMediaElement.pause(); currentMediaElement.src=''; currentMediaElement.load(); currentMediaElement=null } }catch(_){} }
 
 function getRGBColor(color){ var r=Math.sin(color.r+=0.010)*1+1; var g=Math.sin(color.g+=0.007)*1+1; var b=Math.sin(color.b+=0.013)*1+1; return {r:r,g:g,b:b} }
 function getRGBColor2(color){ var r=Math.sin(color.r+=0.040)*1+1; var g=Math.sin(color.g+=0.028)*1+1; var b=Math.sin(color.b+=0.052)*1+1; return {r:r,g:g,b:b} }
 function limitRGBColor(color, percent=0.45){ if(color.r<percent) color.r=percent; if(color.g<percent) color.g=percent; if(color.b<percent) color.b=percent }
+
+var lastTick=0
+var targetFps=60
+var resScale=1
+var baseSegments=64
+var minSegments=64
+var currentSegments=64
+var baseZStep=5
+var maxZStep=5
+var currentZStep=5
+var isLowEnd = function(){ return false }
+var lowPower = false
+var isAndroid = /Android/i.test(navigator.userAgent)
+function isK2401(){ try{ var ua=navigator.userAgent||''; var w=Math.max(screen.width,screen.height); var h=Math.min(screen.width,screen.height); return /Android/i.test(ua) && (w>=1200 && w<=1280) && (h>=720 && h<=800) }catch(_){ return false } }
+if(isAndroid){ lowPower = true; resScale = 0.55; targetFps = 30; baseSegments = 32; currentSegments = 32; minSegments = 24; baseZStep = 9; currentZStep = 9; maxZStep = 12; fftSize = 1024; smoothingTimeConstant = 0.16; try{ document.documentElement.classList.add('android-lite') }catch(_){} }
+var fpsMeasureStart = 0
+var frameCount = 0
+var skipFrame = false
 
 function init(){
   canvas = document.getElementById('tunnelCanvas')
@@ -106,15 +126,22 @@ function init(){
   canvas.addEventListener('mousemove', mouseMoveHandler, false)
   canvas.addEventListener('mouseenter', mouseEnterHandler, false)
   canvas.addEventListener('mouseleave', mouseLeaveHandler, false)
-  context = canvas.getContext('2d')
+  context = canvas.getContext('2d', { alpha: false, willReadFrequently: true })
+  context.imageSmoothingEnabled = false
+  offscreenCanvas = document.createElement('canvas')
+  offscreenContext = offscreenCanvas.getContext('2d', { willReadFrequently: true })
+  offscreenContext.imageSmoothingEnabled = false
   window.addEventListener('resize', onResize, false)
   onResize()
-  var tcv=document.getElementById('tunnelCanvas'); if(tcv){ tcv.classList.add('bootOn') }
+  var tcv=document.getElementById('tunnelCanvas'); if(tcv && !isAndroid){ tcv.classList.add('bootOn') }
+  var sc=document.querySelector('#upperOverlay .scanlines'); if(sc && isAndroid){ sc.style.display='none' }
   addCircles()
   render()
   clearImageData()
   render()
-  context.putImageData(imageData, 0, 0)
+  offscreenContext.putImageData(imageData, 0, 0)
+  context.globalCompositeOperation='copy'
+  context.drawImage(offscreenCanvas,0,0)
   micBtn = document.getElementById('micBtn')
   micBtn.addEventListener('click', captureMic, false)
   deviceSelect = document.getElementById('deviceSelect')
@@ -240,6 +267,7 @@ async function captureSelectedDevice(){
     var id = deviceSelect.value
     if(!id){ txtStatus.innerText = 'No device selected'; return }
     var stream = await requestUserMedia({ audio: { deviceId: id ? { exact: id } : undefined, echoCancellation:false, noiseSuppression:false, autoGainControl:false } })
+    stopAnyPlayback()
     startStream(stream)
     txtStatus.innerText = 'Using selected device'
     var items=document.querySelectorAll('#trackInfo .leftCol .item');
@@ -301,13 +329,16 @@ function getCirclePosition(centerX,centerY,radius,index,segments){ var angle=ind
 function drawCircle(centerPosition,radius,segments){ var coordinates=[]; var radiusSave; var diff=0; for(var i=0;i<=segments;i++){ var radiusRandom=radius; if(i===0){ radiusSave=radiusRandom } if(i===segments){ radiusRandom=radiusSave } var centerX=centerPosition.x; var centerY=centerPosition.y; var position=getCirclePosition(centerX,centerY,radiusRandom,i,segments); coordinates.push({ x:position.x, y:position.y, index:i+diff, radius:radiusRandom, segments:segments }) } return coordinates }
 function addCircleSegment(x,y,z,audioBufferIndex){ var circleSegment={}; circleSegment.x=x; circleSegment.y=y; circleSegment.x2d=0; circleSegment.y2d=0; circleSegment.audioBufferIndex=audioBufferIndex; return circleSegment }
 
+function rebuildCircles(){ circleHolder=[]; addCircles() }
+function adjustGeometry(fps){ if(lowPower){ return } if(fps<targetFps*0.8 && currentSegments>minSegments){ currentSegments=Math.max(minSegments,currentSegments-4); currentZStep=Math.min(maxZStep, currentZStep+1); rebuildCircles() } else if(fps>targetFps*1.1 && currentSegments<baseSegments){ currentSegments=Math.min(baseSegments,currentSegments+4); currentZStep=Math.max(baseZStep, currentZStep-1); rebuildCircles() } }
+
 function addCircles(){
   var audioBufferIndexMin=8; var audioBufferIndexMax=1024; var audioBufferIndex=audioBufferIndexMin
   var centerPosition={ x:0, y:0 }; var center={ x:0, y:0 }
   var toggle=1; var index=0; var audioIndex=audioBufferIndexMin
   var mp={ x:Math.random()*w, y:Math.random()*h }
   for(var z=-fov; z<fov; z+=5){
-    var coordinates=drawCircle(centerPosition,75,64)
+    var coordinates=drawCircle(centerPosition,75,currentSegments)
     var circleObj={}; circleObj.segmentsOutside=[]; circleObj.segmentsInside=[]; circleObj.segmentsInside2=[]; circleObj.segmentsCount=0; circleObj.index=index; circleObj.z=z; circleObj.center=center; circleObj.circleCenter={ x:0, y:0 }; circleObj.mp={ x:mp.x, y:mp.y }; circleObj.radius=coordinates[0].radius; circleObj.color={ r:0,g:0,b:0 }
     toggle=index%2; index++
     if(z<0){ audioIndex++ } else { audioIndex-- }
@@ -338,13 +369,20 @@ function addCircles(){
 
 function onResize(){
   var rect = canvas.getBoundingClientRect()
-  w = Math.max(1, Math.floor(rect.width))
-  h = Math.max(1, Math.floor(rect.height))
-  canvas.width = w
-  canvas.height = h
-  context.fillStyle = '#000000'
-  context.fillRect(0,0,w,h)
-  imageData = context.getImageData(0,0,w,h)
+  var dpr = (isAndroid ? 1 : (window.devicePixelRatio||1))
+  var cw = Math.max(1, Math.floor(rect.width * dpr))
+  var ch = Math.max(1, Math.floor(rect.height * dpr))
+  w = cw
+  h = ch
+  canvas.width = cw
+  canvas.height = ch
+  offscreenCanvas.width = cw
+  offscreenCanvas.height = ch
+  offscreenContext.setTransform(1,0,0,1,0,0)
+  offscreenContext.imageSmoothingEnabled = false
+  offscreenContext.fillStyle = '#000000'
+  offscreenContext.fillRect(0,0,w,h)
+  imageData = offscreenContext.getImageData(0,0,w,h)
   data = imageData.data
 }
 
@@ -362,12 +400,13 @@ function render(){
   var bootT = Math.min(1, (now-bootStart)/bootDuration)
   var bootEase = bootT*bootT*(3-2*bootT)
   var aa=false; if(analyser){ aa=true }
-  var frequencySource; if(aa===true){ frequencySource=new Uint8Array(analyser.frequencyBinCount); analyser.getByteFrequencyData(frequencySource); updateVUBars(frequencySource) }
+  var levelsChanged=false
+  if(aa===true){ if(!freqBuf || freqBuf.length!==analyser.frequencyBinCount){ freqBuf=new Uint8Array(analyser.frequencyBinCount) } analyser.getByteFrequencyData(freqBuf); levelsChanged=true; if(!lowPower || (frameCount%3===0)){ updateVUBars(freqBuf) } }
   if(aa===true){
-    var bins = frequencySource.length
+    var bins = freqBuf.length
     var end = Math.max(8, Math.floor(bins*bassPortion))
     var energy=0
-    for(var ei=0; ei<end; ei++){ energy += frequencySource[ei] }
+    for(var ei=0; ei<end; ei++){ energy += freqBuf[ei] }
     energy = energy / end
     var norm = 0
     if(energy > bassFloor){ norm = Math.min(1, (energy-bassFloor)/(bassCeil-bassFloor)) }
@@ -379,6 +418,8 @@ function render(){
     speed += (idleSpeed - speed) * speedDecelLerp
   }
   speed *= bootEase
+  if(lowPower){ skipFrame = !skipFrame; if(skipFrame){ return } }
+  if(!fpsMeasureStart){ fpsMeasureStart=now; frameCount=0 } frameCount++; var dtm=now-fpsMeasureStart; if(dtm>=1000){ fpsMeasureStart=now; frameCount=0 }
   var sortArray=false
   var col=getRGBColor2(rgb); var col2=getRGBColor(rgb2); limitRGBColor(col,0.45); limitRGBColor(col2,0.25)
   for(var i=0,l=circleHolder.length;i<l;i++){
@@ -398,14 +439,14 @@ function render(){
         circleSegmentOutside.x2d=(circleSegmentOutside.x*scale)+circleObj.center.x
         circleSegmentOutside.y2d=(circleSegmentOutside.y*scale)+circleObj.center.y
         if(aa===true){
-          frequency=(frequencySource[circleSegmentOutside.audioBufferIndex]||0)
+          frequency=(freqBuf[circleSegmentOutside.audioBufferIndex]||0)
           var amt = Math.min(blockMaxRise, (frequency/20)*blockGain)
           frequencyAdd = amt
           circleSegmentOutside.radiusAudio = circleSegmentOutside.radius - frequencyAdd
         }
         var lineColorValue=0
         if(j>0){ if(aa===true){ lineColorValue=Math.round(i/l*(55+frequency)); if(lineColorValue>255){ lineColorValue=255 } } else { lineColorValue=Math.round(i/l*200) } }
-        if(i>0 && i<l-1){
+        if(i>0 && i<l-1 && !lowPower){
           var sub1=circleSegmentOutside.subs[0]; var sub1angle=sub1.index*(MATHPI2/circleSegmentOutside.segments)+time; sub1.x2d=(sub1.x*scale)+circleObj.center.x; sub1.y2d=(sub1.y*scale)+circleObj.center.y; sub1.x=circleObj.circleCenter.x+Math.cos(sub1angle)*circleSegmentOutside.radiusAudio; sub1.y=circleObj.circleCenter.y+Math.sin(sub1angle)*circleSegmentOutside.radiusAudio
           var sub2=circleSegmentOutside.subs[1]; var sub2angle=sub2.index*(MATHPI2/circleSegmentOutside.segments)+time; sub2.x2d=(sub2.x*scaleBack)+circleObjBack.center.x; sub2.y2d=(sub2.y*scaleBack)+circleObjBack.center.y; sub2.x=circleObj.circleCenter.x+Math.cos(sub2angle)*circleSegmentOutside.radiusAudio; sub2.y=circleObj.circleCenter.y+Math.sin(sub2angle)*circleSegmentOutside.radiusAudio
           var sub3=circleSegmentOutside.subs[2]; var sub3angle=sub3.index*(MATHPI2/circleSegmentOutside.segments)+time; sub3.x2d=(sub3.x*scaleBack)+circleObjBack.center.x; sub3.y2d=(sub3.y*scaleBack)+circleObjBack.center.y; sub3.x=circleObj.circleCenter.x+Math.cos(sub3angle)*circleSegmentOutside.radiusAudio; sub3.y=circleObj.circleCenter.y+Math.sin(sub3angle)*circleSegmentOutside.radiusAudio
@@ -418,6 +459,9 @@ function render(){
           var cr=Math.round(circleObj.color.r*lineColorValue); var cg=Math.round(circleObj.color.g*lineColorValue); var cb=Math.round(circleObj.color.b*lineColorValue)
           drawLine(p1.x2d|0,p1.y2d|0,p2.x2d|0,p2.y2d|0,cr,cg,cb,255); drawLine(p2.x2d|0,p2.y2d|0,p3.x2d|0,p3.y2d|0,cr,cg,cb,255); drawLine(p3.x2d|0,p3.y2d|0,p4.x2d|0,p4.y2d|0,cr,cg,cb,255); drawLine(p4.x2d|0,p4.y2d|0,p1.x2d|0,p1.y2d|0,cr,cg,cb,255); drawLine(p5.x2d|0,p5.y2d|0,p1.x2d|0,p1.y2d|0,cr,cg,cb,255); drawLine(p6.x2d|0,p6.y2d|0,p4.x2d|0,p4.y2d|0,cr,cg,cb,255); drawLine(p7.x2d|0,p7.y2d|0,p3.x2d|0,p3.y2d|0,cr,cg,cb,255); drawLine(p8.x2d|0,p8.y2d|0,p2.x2d|0,p2.y2d|0,cr,cg,cb,255)
           if(circleObj.z<fov/2){ drawLine(p5.x2d|0,p5.y2d|0,p6.x2d|0,p6.y2d|0,cr,cg,cb,255); drawLine(p6.x2d|0,p6.y2d|0,p7.x2d|0,p7.y2d|0,cr,cg,cb,255); drawLine(p7.x2d|0,p7.y2d|0,p8.x2d|0,p8.y2d|0,cr,cg,cb,255); drawLine(p8.x2d|0,p8.y2d|0,p5.x2d|0,p5.y2d|0,cr,cg,cb,255) }
+        } else if(i>0 && i<l-1 && lowPower){
+          var cr2=Math.round(circleObj.color.r*lineColorValue); var cg2=Math.round(circleObj.color.g*lineColorValue); var cb2=Math.round(circleObj.color.b*lineColorValue)
+          drawLine(circleSegmentOutside.x2d|0,circleSegmentOutside.y2d|0,(circleObj.center.x)|0,(circleObj.center.y)|0,cr2,cg2,cb2,255)
         }
         var circleSegmentOutsideangle = circleSegmentOutside.index*(MATHPI2/circleSegmentOutside.segments)+time
         circleSegmentOutside.x = circleObj.circleCenter.x + Math.cos(circleSegmentOutsideangle)*circleSegmentOutside.radiusAudio
@@ -432,10 +476,23 @@ function render(){
 }
 
 function softInvert(value){ for(var j=0,n=data.length;j<n;j+=4){ data[j]=Math.abs(value-data[j]); data[j+1]=Math.abs(value-data[j+1]); data[j+2]=Math.abs(value-data[j+2]); data[j+3]=255 } }
-function animate(){ window._animating=true; clearImageData(); render(); context.putImageData(imageData,0,0); requestAnimationFrame(animate) }
+var lastDrawTs = 0
+function animate(){
+  window._animating=true
+  var now=performance.now()
+  var interval=isAndroid?50:0
+  if(interval && now-lastDrawTs<interval){ requestAnimationFrame(animate); return }
+  lastDrawTs=now
+  clearImageData()
+  render()
+  offscreenContext.putImageData(imageData,0,0)
+  context.globalCompositeOperation='copy'
+  context.drawImage(offscreenCanvas,0,0)
+  requestAnimationFrame(animate)
+}
 window.requestAnimFrame=(function(){ return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(callback){ window.setTimeout(callback,1000/60) } })()
 function boot(){ var bg=document.querySelector('#deck > img'); var ov=document.getElementById('alpineOverlay'); var waits=[]; function w(img){ if(!img) return; if(img.complete) return; waits.push(new Promise(function(res){ img.addEventListener('load', res, {once:true}); img.addEventListener('error', res, {once:true}) })) } w(bg); w(ov); if(waits.length>0){ Promise.all(waits).then(init) } else { init() } }
-function attachFileLoader(){ var btn=document.getElementById('loadFileBtn'); var inp=document.getElementById('fileInput'); if(!btn||!inp) return; btn.addEventListener('click', function(){ inp.click() }); inp.addEventListener('change', async function(){ var f=inp.files&&inp.files[0]; if(!f) return; try{ var url=URL.createObjectURL(f); var audioEl=new Audio(); audioEl.src=url; audioEl.crossOrigin='anonymous'; audioEl.loop=true; audioEl.muted=false; await audioEl.play().catch(function(){}); if(audioContext && typeof audioContext.close==='function'){ try{ audioContext.close() }catch(_){} } audioContext=new (window.AudioContext||window.webkitAudioContext)(); if(audioContext.state==='suspended'){ try{ audioContext.resume() }catch(_){} } analyser=audioContext.createAnalyser(); analyser.smoothingTimeConstant=smoothingTimeConstant; analyser.fftSize=fftSize; var src=audioContext.createMediaElementSource(audioEl); var playback=audioContext.createGain(); playback.gain.value=1.0; src.connect(analyser); src.connect(playback); playback.connect(audioContext.destination); txtStatus.innerText='Playing '+(f.name||'file'); var titleEl=document.querySelector('#trackInfo .title .line:nth-child(2)'); if(titleEl){ var dn=(f.name||'TRACK TITLE').replace(/\.[^/.]+$/, ''); typeWrite(titleEl, dn, 50) } var numEl=document.querySelector('#trackInfo .trackNum'); if(numEl){ numEl.textContent='001' } var items=document.querySelectorAll('#trackInfo .leftCol .item'); if(items[1]) items[1].classList.add('dim'); if(items[2]) items[2].classList.add('dim') }catch(e){ txtStatus.innerText='File load failed' } }) }
+function attachFileLoader(){ var btn=document.getElementById('loadFileBtn'); var inp=document.getElementById('fileInput'); if(!btn||!inp) return; btn.addEventListener('click', function(){ inp.click() }); inp.addEventListener('change', async function(){ var f=inp.files&&inp.files[0]; if(!f) return; try{ stopAnyPlayback(); var url=URL.createObjectURL(f); var audioEl=new Audio(); currentMediaElement=audioEl; audioEl.src=url; audioEl.crossOrigin='anonymous'; audioEl.loop=true; audioEl.muted=false; await audioEl.play().catch(function(){}); if(audioContext && typeof audioContext.close==='function'){ try{ audioContext.close() }catch(_){} } audioContext=new (window.AudioContext||window.webkitAudioContext)(); if(audioContext.state==='suspended'){ try{ audioContext.resume() }catch(_){} } analyser=audioContext.createAnalyser(); analyser.smoothingTimeConstant=smoothingTimeConstant; analyser.fftSize=fftSize; var src=audioContext.createMediaElementSource(audioEl); var playback=audioContext.createGain(); playback.gain.value=1.0; src.connect(analyser); src.connect(playback); playback.connect(audioContext.destination); txtStatus.innerText='Playing '+(f.name||'file'); var titleEl=document.querySelector('#trackInfo .title .line:nth-child(2)'); if(titleEl){ var dn=(f.name||'TRACK TITLE').replace(/\.[^/.]+$/, ''); typeWrite(titleEl, dn, 50) } var numEl=document.querySelector('#trackInfo .trackNum'); if(numEl){ numEl.textContent='001' } var items=document.querySelectorAll('#trackInfo .leftCol .item'); if(items[1]) items[1].classList.add('dim'); if(items[2]) items[2].classList.add('dim') }catch(e){ txtStatus.innerText='File load failed' } }) }
 function typeWrite(el, text, delay){ if(!el) return; el.textContent=''; var i=0; function tick(){ if(i<=text.length){ el.textContent=text.slice(0,i); i++; setTimeout(tick, delay) } } tick() }
 attachFileLoader()
 boot()

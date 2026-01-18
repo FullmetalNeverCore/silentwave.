@@ -11,7 +11,7 @@ input[type="file"] { display: none; }
 #deck img { width: 100%; height: 100%; display: block; }
 #tunnelCanvas { position: absolute; left: 4.88%; top: 66.4%; width: 90.2%; height: 29.7%; image-rendering: pixelated; z-index:5; transform: rotate(0deg); transform-origin: center center; }
 #alpineOverlay { position:absolute; inset:0; width:50%; height:90%; object-fit:cover; pointer-events:none; z-index:6; }
-#upperOverlay { position: absolute; left: 42%; top: 23%; width: 40%; height: 18%; display: block; pointer-events: none; z-index:3; transform: rotate(0deg); transform-origin: center center; }
+#upperOverlay { position: absolute; left: 42%; top: 23%; width: 40%; height: 18%; display: block; pointer-events: none; z-index:12; transform: rotate(0deg); transform-origin: center center; }
 #upperOverlay { --cell-w: 1.7vw; --cell-gap: 0.25vw; }
 @keyframes slideIn { from { transform: translateX(100vw); } to { transform: translateX(0); } }
 #screenText { position: absolute; left: 34%; right: auto; top: 0; color: #ffe07a; font-family: 'DigitalDreamSkew', monospace; font-size: 1.5vw; letter-spacing: 0; text-shadow: 0 0 0.6vw rgba(255,224,122,.45); z-index: 2; display: flex; gap: var(--cell-gap); }
@@ -67,4 +67,30 @@ input[type="file"] { display: none; }
 #branding { position:absolute; left: 60%; top: 90.5%; color: #ffe07a; font-family: 'DigitalDreamSkew', monospace; font-size: 1.1vw; letter-spacing: .02em; text-shadow: 0 0 0.6vw rgba(255,224,122,.45); z-index: 12; pointer-events: none; opacity: 0; transform: translateY(0.2vw); animation: glowIn 800ms ease-out forwards 520ms; }
 @keyframes tunnelPowerOn { 0% { opacity: 0; filter: brightness(0.4) blur(0.6px) } 8% { opacity: .6 } 12% { opacity: .2 } 20% { opacity: .8 } 28% { opacity: .3 } 40% { opacity: .85 } 55% { opacity: .5 } 70% { opacity: .95; filter: brightness(1) blur(0.2px) } 85% { opacity: .75 } 100% { opacity: 1; filter: none } }
 #tunnelCanvas.bootOn { animation: tunnelPowerOn 1200ms ease-out forwards }
+
+html.android-lite #upperOverlay .scanlines { display: none !important; }
+html.android-lite #screenText .glyph { background: none !important; color: #ffe07a !important; text-shadow: none !important; }
+html.android-lite #textCells .cell { background-image: none !important; box-shadow: none !important; }
+html.android-lite #trackInfo .discId,
+html.android-lite #trackInfo .trackNum { background: none !important; color: #ffe07a !important; text-shadow: none !important; }
+html.android-lite #trackInfo .title,
+html.android-lite #trackInfo .trackLabel,
+html.android-lite #trackInfo .leftCol .item { color: #e2b94e !important; text-shadow: none !important; opacity: 1 !important; }
+html.android-lite #trackInfo .leftCol .item.dim { filter: grayscale(0.8) brightness(0.6) !important; animation: none !important; }
+html.android-lite #vuBars .seg::after { background: none !important; }
+html.android-lite #vuBars .cut { box-shadow: none !important; animation: none !important; background: #ff4d45 !important; }
+html.android-lite #vuBars .cut::before { display: none !important; }
+html.android-lite #trackInfo,
+html.android-lite #trackInfo .leftCol .item,
+html.android-lite #trackInfo .discId,
+html.android-lite #trackInfo .title,
+html.android-lite #trackInfo .trackRow,
+html.android-lite #branding,
+html.android-lite #tunnelCanvas { animation: none !important; transition: none !important; filter: none !important; opacity: 1 !important; }
+html.android-lite #screenText .glyph { animation: none !important; transform: none !important; }
+html.android-lite #vuBars .seg { transition: none !important; }
+html.android-lite #vuBars .bar { box-shadow: none !important; border: 1px solid rgba(255,255,255,.06) !important; }
+html.android-lite #screenText { opacity: 1 !important; visibility: visible !important; }
+html.android-lite #deck { contain: paint; }
+html.android-lite #tunnelCanvas { contain: paint; }
 

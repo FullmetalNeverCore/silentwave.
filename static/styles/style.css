@@ -155,7 +155,8 @@ canvas.snow {
 
 .image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   filter: blur(1.2px);
 }
 
@@ -653,7 +654,7 @@ body.footer-visible #footer {
 	left: 2rem;
 	top: 2rem;
 	will-change: text-shadow;
-	animation: rgbText 1s steps(9) 0s infinite alternate;
+	animation: greenText 1s steps(9) 0s infinite alternate;
 }
 
 @keyframes noise {
@@ -746,6 +747,30 @@ body.footer-visible #footer {
 	}
 	100% {
 		text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3), 1px -1px 8px rgba(240, 240, 240, 0.35), 5px 0 1px rgba(220, 220, 220, 0.4), 0 -5px 1px rgba(200, 200, 200, 0.4), -5px 0 1px rgba(180, 180, 180, 0.4), 0 5px 1px rgba(160, 160, 160, 0.4), -5px 0 1px rgba(140, 140, 140, 0.4);
+	}
+}
+
+@keyframes greenText {
+	0% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 200, 0, 0.35), 0px 0 1px rgba(0, 220, 0, 0.4), 0 0px 3px rgba(0, 180, 0, 0.4), 0px 0 3px rgba(0, 240, 0, 0.4), 0 0px 3px rgba(0, 200, 0, 0.4), 0px 0 3px rgba(0, 160, 0, 0.4);
+	}
+	25% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 220, 0, 0.35), 0px 0 1px rgba(0, 240, 0, 0.4), 0 0px 3px rgba(0, 200, 0, 0.4), 0px 0 3px rgba(0, 180, 0, 0.4), 0 0px 3px rgba(0, 160, 0, 0.4), 0px 0 3px rgba(0, 140, 0, 0.4);
+	}
+	45% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 240, 0, 0.35), 5px 0 1px rgba(0, 220, 0, 0.4), 0 5px 1px rgba(0, 200, 0, 0.4), -5px 0 1px rgba(0, 180, 0, 0.4), 0 -5px 1px rgba(0, 160, 0, 0.4), 5px 0 1px rgba(0, 140, 0, 0.4);
+	}
+	50% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 220, 0, 0.35), -5px 0 1px rgba(0, 240, 0, 0.4), 0 -5px 1px rgba(0, 200, 0, 0.4), 5px 0 1px rgba(0, 180, 0, 0.4), 0 5px 1px rgba(0, 160, 0, 0.4), -5px 0 1px rgba(0, 140, 0, 0.4);
+	}
+	55% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 240, 0, 0.35), 0px 0 3px rgba(0, 220, 0, 0.4), 0 0px 3px rgba(0, 200, 0, 0.4), 0px 0 3px rgba(0, 180, 0, 0.4), 0 0px 3px rgba(0, 160, 0, 0.4), 0px 0 3px rgba(0, 140, 0, 0.4);
+	}
+	90% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 220, 0, 0.35), -5px 0 1px rgba(0, 240, 0, 0.4), 0 5px 1px rgba(0, 200, 0, 0.4), 5px 0 1px rgba(0, 180, 0, 0.4), 0 -5px 1px rgba(0, 160, 0, 0.4), 5px 0 1px rgba(0, 140, 0, 0.4);
+	}
+	100% {
+		text-shadow: -1px 1px 8px rgba(0, 255, 0, 0.3), 1px -1px 8px rgba(0, 240, 0, 0.35), 5px 0 1px rgba(0, 220, 0, 0.4), 0 -5px 1px rgba(0, 200, 0, 0.4), -5px 0 1px rgba(0, 180, 0, 0.4), 0 5px 1px rgba(0, 160, 0, 0.4), -5px 0 1px rgba(0, 140, 0, 0.4);
 	}
 }
 
@@ -877,8 +902,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 75%;
-  height: 89%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
