@@ -419,7 +419,6 @@ window.addEventListener('keydown', (e) => {
     
     if (keyMatch) {
         konamiIndex++;
-        console.log(`Konami Progress: ${konamiIndex}/10 (Key: ${pressedKey}, Code: ${pressedCode})`);
         
         if (pressedKey && pressedKey.includes('Arrow')) {
             e.preventDefault();
@@ -427,8 +426,7 @@ window.addEventListener('keydown', (e) => {
         }
 
         if (konamiIndex === konamiSequence.length) {
-            console.log("Konami Code Successfully Triggered!");
-            alert("There was developer gone here. Its gone now.\nsilentwave2@0xNC(https://github.com/FullmetalNeverCore),EternalXero");
+            alert("There was developer mode here. Its gone now.\nsilentwave2@0xNC(https://github.com/FullmetalNeverCore),EternalXero");
             
             if (eventManager) eventManager.triggerEvent("Complete Blackout");
             if (screenEffect) {
@@ -439,7 +437,6 @@ window.addEventListener('keydown', (e) => {
         }
     } else {
         if (konamiIndex > 0) {
-            console.log(`Konami Reset (Key: ${pressedKey}, Code: ${pressedCode}, Expected one of: ${targets.join(', ')})`);
             konamiIndex = 0;
         }
     }
@@ -1249,9 +1246,4 @@ function animate() {
 }
 
 init();
-
-// TEMPORARY - Remove after testing
-window.addEventListener('keydown', (e) => {
-    console.log('DEBUG - Key:', e.key, 'Code:', e.code, 'KeyCode:', e.keyCode);
-}, true);
 
