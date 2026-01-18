@@ -8,23 +8,23 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/tv_3d.css') }}">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/dat.gui.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/radio.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/gsap.min.js') }}"></script>
     
     <!-- Three.js and loaders -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/TGALoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fflate@0.7.4/umd/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS3DRenderer.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/three.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/FBXLoader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/PointerLockControls.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/TGALoader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/GLTFLoader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/fflate.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/CSS3DRenderer.js') }}"></script>
 </head>
 <body>
     <div id="intro-overlay">
@@ -111,7 +111,7 @@
             tyrant_model: "{{ url_for('static', filename='model/tyrant/resident_evil_tyrant.glb') }}"
         };
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="{{ url_for('static', filename='js/vendor/html2canvas.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/tv_3d.js') }}"></script>
 </body>

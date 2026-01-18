@@ -52,12 +52,16 @@ class ScreenEffect {
   
   onResize(e) {
     this.rect = this.parent.getBoundingClientRect();
+    if (this.rect.width === 0 || this.rect.height === 0) {
+        this.rect = { width: 1920, height: 1080 }; 
+    }
     if ( this.effects.vcr && !!this.effects.vcr.enabled ) {
       this.generateVCRNoise();
     }
   }
   
   add(type, options) {
+    this.onResize();
     const config = Object.assign({}, {
       fps: 30,
       blur: 1
@@ -133,13 +137,15 @@ class ScreenEffect {
         wrapper.appendChild(node);
         break;
       case "image":
-        wrapper = this.parent;
-        node = document.createElement('img');
-        node.classList.add(type);
-        node.classList.add('image');
-        node.src = config.src;
-        wrapper.appendChild(node);
-        break;        
+            wrapper = this.parent;
+            node = document.createElement('img');
+            node.classList.add(type);
+            node.classList.add('image');
+            node.crossOrigin = "anonymous";
+            node.src = config.src;
+            console.log("Adding image to screen:", config.src);
+            wrapper.appendChild(node);
+            break;       
     }
     this.effects[type] = {
       wrapper,
@@ -263,15 +269,15 @@ class Events {
     this.eventTimer = 0;
     
     this.eventChances = {
-      "Normal State": 0.20,
+      "Normal State": 0.29,
       "Lunar Tear": 0.05,
       "Lamps Blackout": 0.08,      
       "Sign Blackout": 0.08,
       "Complete Blackout": 0.08,
       "Marys Letter": 0.08,
-      "Maria Appearance": 0.04,
-      "Ashley Appearance": 0.04,
-      "Ada Appearance": 0.04,
+      "Maria Appearance": 0.03,
+      "Ashley Appearance": 0.03,
+      "Ada Appearance": 0.03,
       "SH1 Case": 0.05,
       "SH3 Case": 0.05,
       "Simon Phone": 0.05,
@@ -559,6 +565,8 @@ function init() {
     cssRenderer.setSize(window.innerWidth, window.innerHeight);
     cssRenderer.domElement.style.position = 'absolute';
     cssRenderer.domElement.style.top = '0';
+    cssRenderer.domElement.style.pointerEvents = 'none'; 
+    cssRenderer.domElement.style.zIndex = '10';
     document.getElementById('css-container').appendChild(cssRenderer.domElement);
 
     ambientLight = new THREE.AmbientLight(0x404040, 0.01); 
