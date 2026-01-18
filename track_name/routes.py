@@ -31,7 +31,7 @@ logger.addHandler(ch)
 
 
 #Get current song data
-@tn_bp.route('/')
+@tn_bp.route('')
 def track_name():
     logger.warning('Trying to get /track_name')
     status_url = f'{conf.host}/status.xsl'

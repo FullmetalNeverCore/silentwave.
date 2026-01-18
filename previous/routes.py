@@ -35,7 +35,7 @@ logger.addHandler(fh)
 logger.addHandler(ch)
 
 
-@prev_bp.route("/",methods=['GET'])
+@prev_bp.route("",methods=['GET'])
 def returnList():
     return jsonify(prevTracks)
 
