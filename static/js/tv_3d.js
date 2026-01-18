@@ -1,6 +1,8 @@
 let screenMesh; 
 let controls, moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
 let devMode = false;
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
 const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
 
@@ -269,23 +271,24 @@ class Events {
     this.eventTimer = 0;
     
     this.eventChances = {
-      "Normal State": 0.29,
+      "Normal State": 0.50,
       "Lunar Tear": 0.05,
-      "Lamps Blackout": 0.08,      
-      "Sign Blackout": 0.08,
-      "Complete Blackout": 0.08,
-      "Marys Letter": 0.08,
-      "Maria Appearance": 0.03,
-      "Ashley Appearance": 0.03,
-      "Ada Appearance": 0.03,
-      "SH1 Case": 0.05,
-      "SH3 Case": 0.05,
-      "Simon Phone": 0.05,
-      "Doge Appearance": 0.04,
-      "Mirror Event": 0.05,
-      "Devilz Event": 0.0233,
-      "Pyramid Head": 0.0233,
-      "Tyrant Appearance": 0.0234
+      "Lamps Blackout": 0.07,      
+      "Sign Blackout": 0.07,
+      "Complete Blackout": 0.07,
+      "Marys Letter": 0.07,
+      "Maria Appearance": 0.005,
+      "Ashley Appearance": 0.005,
+      "Ada Appearance": 0.005,
+      "Fukuro Event": 0.005,
+      "SH1 Case": 0.04,
+      "SH3 Case": 0.04,
+      "Simon Phone": 0.03,
+      "Doge Appearance": 0.005,
+      "Mirror Event": 0.03,
+      "Devilz Event": 0.0016,
+      "Pyramid Head": 0.0017,
+      "Tyrant Appearance": 0.0017
     };
 
     // Trigger the check immediately on initialization
@@ -382,6 +385,65 @@ function typeWriter(text, elementId, speed) {
 }
 
 window.addEventListener('keydown', (e) => {
+    // Prevent Konami trigger if user is typing in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    // Konami Code Mapping
+    const konamiSequence = [
+        ['ArrowUp', 'Up'], 
+        ['ArrowUp', 'Up'], 
+        ['ArrowDown', 'Down'], 
+        ['ArrowDown', 'Down'], 
+        ['ArrowLeft', 'Left'], 
+        ['ArrowRight', 'Right'], 
+        ['ArrowLeft', 'Left'], 
+        ['ArrowRight', 'Right'], 
+        ['b', 'KeyB'], 
+        ['a', 'KeyA']
+    ];
+
+    const pressedKey = e.key;
+    const pressedCode = e.code;
+    const targets = konamiSequence[konamiIndex];
+    
+    // More robust comparison
+    const keyMatch = targets.some(t => {
+        const targetLower = t.toLowerCase();
+        const pressedKeyLower = pressedKey ? pressedKey.toLowerCase() : '';
+        const pressedCodeLower = pressedCode ? pressedCode.toLowerCase() : '';
+        
+        return pressedKeyLower === targetLower || 
+               pressedCodeLower === targetLower ||
+               pressedCodeLower === 'key' + targetLower; // Handle 'KeyB' vs 'b'
+    });
+    
+    if (keyMatch) {
+        konamiIndex++;
+        console.log(`Konami Progress: ${konamiIndex}/10 (Key: ${pressedKey}, Code: ${pressedCode})`);
+        
+        if (pressedKey && pressedKey.includes('Arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        if (konamiIndex === konamiSequence.length) {
+            console.log("Konami Code Successfully Triggered!");
+            alert("There was developer gone here. Its gone now.\nsilentwave2@0xNC(https://github.com/FullmetalNeverCore),EternalXero");
+            
+            if (eventManager) eventManager.triggerEvent("Complete Blackout");
+            if (screenEffect) {
+                screenEffect.remove('image');
+                screenEffect.add('image', { src: 'https://i.imgur.com/LS1FPPH.gif', blur: 1.2 });
+            }
+            konamiIndex = 0;
+        }
+    } else {
+        if (konamiIndex > 0) {
+            console.log(`Konami Reset (Key: ${pressedKey}, Code: ${pressedCode}, Expected one of: ${targets.join(', ')})`);
+            konamiIndex = 0;
+        }
+    }
+
     if (e.key === 'Enter') {
         const dialogue = document.getElementById('dialogue-container');
         if (dialogue && dialogue.style.display === 'block') {
@@ -740,7 +802,7 @@ function init() {
                 const geometry = new THREE.PlaneGeometry(2 * aspect, 2);
                 const material = new THREE.MeshStandardMaterial({ map: tex, side: THREE.DoubleSide, transparent: true, roughness: 0.7, metalness: 0.1 });
                 marysLetter = new THREE.Mesh(geometry, material);
-                marysLetter.position.set(-0.4, -3.0, 2.6); 
+                marysLetter.position.set(-0.4, -3.0, 2.2); 
                 marysLetter.rotation.x = -1.52;
                 marysLetter.rotation.y = -0.01;
                 marysLetter.scale.set(0.7, 0.7, 0.7);
@@ -1070,7 +1132,7 @@ function animate() {
     }
     
     // --- LIGHTING LOGIC ---
-    const isSpecialEvent = eventManager && (eventManager.activeEvent === "Pyramid Head" || eventManager.activeEvent === "Tyrant Appearance");
+    const isSpecialEvent = eventManager && (eventManager.activeEvent === "Pyramid Head" || eventManager.activeEvent === "Tyrant Appearance" || eventManager.activeEvent === "Complete Blackout");
 
     if (isSpecialEvent) {
         // ROOM IN COMPLETE DARKNESS
@@ -1145,7 +1207,7 @@ function animate() {
 
         // Room Lights Logic
         if (stripperLight || paradiseLight) {
-            if (eventManager && (eventManager.activeEvent === "Lamps Blackout" || eventManager.activeEvent === "Complete_Blackout")) {
+            if (eventManager && (eventManager.activeEvent === "Lamps Blackout" || eventManager.activeEvent === "Complete Blackout")) {
                 if (stripperLight) stripperLight.intensity = 0;
                 if (paradiseLight) paradiseLight.intensity = 0;
             } else {
@@ -1187,4 +1249,9 @@ function animate() {
 }
 
 init();
+
+// TEMPORARY - Remove after testing
+window.addEventListener('keydown', (e) => {
+    console.log('DEBUG - Key:', e.key, 'Code:', e.code, 'KeyCode:', e.keyCode);
+}, true);
 
