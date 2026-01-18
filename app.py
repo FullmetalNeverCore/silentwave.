@@ -157,6 +157,14 @@ def check_tracks():
     except Exception as e:
         logger.error(f'{e} - Is RadioDJ working fine?')
 
+@app.route('/robots.txt')
+def robots():
+    return app.send_static_file('robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return app.send_static_file('sitemap.xml')
+
 @app.route('/random_bg')
 def random_bg():
     now = datetime.now()
