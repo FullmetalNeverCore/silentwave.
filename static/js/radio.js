@@ -10,7 +10,6 @@ function radio() {
 
     // pressEffect.play(); // silent hill's press effect
 
-    // Check if vhs static sound is already playing, to prevent stacking
     if (soundEffect.paused) {
         soundEffect.play();
     } else {
@@ -18,18 +17,16 @@ function radio() {
     }
 
     if (audio.paused) {
-        // Force refresh stream to prevent stuttering/stale buffer
         const currentSrc = audio.querySelector('source').src.split('?')[0];
         audio.src = currentSrc + "?t=" + new Date().getTime();
         audio.load();
 
-        button.src = "static/pause.png";
+        button.src = "/static/pause.png";
         soundEffect.play();
         audio.play();
     } else {
-        button.src = "static/play.png";
+        button.src = "/static/play.png";
         audio.pause();
-        // Clear src on pause to prevent background buffering
         audio.src = "";
         soundEffect.pause();
     }
@@ -52,7 +49,6 @@ function getSongData(type,title)
 
 window.addEventListener('keydown', function(e) {
     if (e.code === 'Space') {
-        // Prevent page scrolling when space is pressed
         if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
             e.preventDefault();
             radio();

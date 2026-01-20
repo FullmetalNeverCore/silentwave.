@@ -259,7 +259,9 @@ body, html {
     overflow: hidden  !important;
     outline: 1px solid transparent; 
     transform-style: preserve-3d !important; 
-    backface-visibility: visible !important;
+    backface-visibility: hidden !important;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 @keyframes crt-flicker {
@@ -360,6 +362,8 @@ body, html {
     border-radius: 100px !important;
     overflow: hidden !important;
     background-color: transparent !important;
+    backface-visibility: hidden !important;
+    will-change: opacity;
 }
 
 .image, .video {
@@ -367,9 +371,6 @@ body, html {
     display: block !important;
     transform: translateZ(0.1px);
     -webkit-transform: translateZ(0.1px);
-}
-    -webkit-transform: translateZ(0);
-    will-change: transform;
 }
 
 .lines::before {

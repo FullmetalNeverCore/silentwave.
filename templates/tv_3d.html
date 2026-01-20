@@ -101,9 +101,8 @@
                     <div id="volume-mixer" class="d-flex justify-content-center" style="padding-top: 32px;">
                         <input type="range" min="0.0" max="1.0" step="0.1" value="0.5" id="volume-control">
                     </div>
-                    <audio id="main-audio" controls hidden>
-                        <source src="{{ stream_url }}" type="audio/mpeg">
-                        Your browser does not support the audio element. 
+                    <audio id="main-audio" crossorigin="anonymous" controls hidden>
+                        <source src="/stream_proxy" type="audio/mpeg">
                     </audio>
                 </div>
             </div>
@@ -140,7 +139,19 @@
             fukuro_model: "{{ url_for('static', filename='model/fukuro/fukuro.glb') }}",
             devilz_model: "{{ url_for('static', filename='model/devilz/devilz.glb') }}",
             pyramid_model: "{{ url_for('static', filename='model/pyramidHead/pyrHd.glb') }}",
-            tyrant_model: "{{ url_for('static', filename='model/tyrant/resident_evil_tyrant.glb') }}"
+            tyrant_model: "{{ url_for('static', filename='model/tyrant/resident_evil_tyrant.glb') }}",
+            gb_model: "{{ url_for('static', filename='model/gb/gb.glb') }}",
+            grimoires: "{{ url_for('static', filename='model/grimoires/grimoires.glb') }}",
+            pages_model: "{{ url_for('static', filename='model/pages/pages.glb') }}",
+            tallman_model: "{{ url_for('static', filename='model/tallman/tallman.glb') }}",
+            dmeter_model: "{{ url_for('static', filename='model/dmeter/dmeter.glb') }}",
+            ylwking_model: "{{ url_for('static', filename='model/ylwking/ylwking.glb') }}",
+            gb_cartridge: "{{ url_for('static', filename='model/gameboy-cartridge/source/Gameboy_cartridge_low.fbx') }}",
+            gb_cart_base: "{{ url_for('static', filename='model/gameboy-cartridge/textures/Material.001_Base_color.png') }}",
+            gb_cart_metal: "{{ url_for('static', filename='model/gameboy-cartridge/textures/Material.001_Metallic.png') }}",
+            gb_cart_rough: "{{ url_for('static', filename='model/gameboy-cartridge/textures/Material.001_Roughness.png') }}",
+            gb_cart_ao: "{{ url_for('static', filename='model/gameboy-cartridge/textures/Material.001_Mixed_AO.png') }}",
+            gb_cart_norm: "{{ url_for('static', filename='model/gameboy-cartridge/textures/Material.001_Normal_OpenGL.png') }}"
         };
     </script>
     <script src="{{ url_for('static', filename='js/vendor/html2canvas.min.js') }}"></script>

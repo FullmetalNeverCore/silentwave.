@@ -115,6 +115,16 @@ def get_background(season, bg_type):
             return None  
     return background
 
+@app.route('/stream_proxy')
+def stream_proxy():
+    import requests
+    from flask import Response
+    def generate():
+        r = requests.get(conf.music_host, stream=True, timeout=10)
+        for chunk in r.iter_content(chunk_size=1024):
+            yield chunk
+    return Response(generate(), content_type="audio/mpeg")
+
 @app.route("/")
 def home_page():
     name = "silentwave."
@@ -186,4 +196,4 @@ def alpine():
 if __name__ == "__main__":
     # app.debug = True
     app.run(host='0.0.0.0',debug=True, port=5000)
-    # app.run(host='0.0.0.0', debug=True, port=5000, ssl_context=('192.168.8.145+2.pem','192.168.8.145+2-key.pem'))
+    # app.run(host='0.0.0.0', debug=True, port=5000, ssl_context=('192.168.8.14.pem','192.168.8.14-key.pem'))
