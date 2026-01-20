@@ -2,9 +2,7 @@
     let devMode = false;
     let isDevModeAuthorized = false;
 
-    let screenMesh; 
     let controls, moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
     const velocity = new THREE.Vector3();
     const direction = new THREE.Vector3();
@@ -23,7 +21,6 @@
         }
         
         this.config = Object.assign({}, {
-          //
         }, options)
         
         this.effects = {};
@@ -381,7 +378,6 @@
           "Yellow King Appearance": 0.05
         };
 
-        // Trigger the check immediately on initialization
         this.tryTriggerEvent();
       }
 
@@ -475,10 +471,8 @@
     }
 
     window.addEventListener('keydown', (e) => {
-        // Prevent Konami trigger if user is typing in an input
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-        // Konami Code Mapping
         const konamiSequence = [
             ['ArrowUp', 'Up'], 
             ['ArrowUp', 'Up'], 
@@ -496,7 +490,6 @@
         const pressedCode = e.code;
         const targets = konamiSequence[konamiIndex];
         
-        // More robust comparison
         const keyMatch = targets.some(t => {
             const targetLower = t.toLowerCase();
             const pressedKeyLower = pressedKey ? pressedKey.toLowerCase() : '';
@@ -504,7 +497,7 @@
             
             return pressedKeyLower === targetLower || 
                    pressedCodeLower === targetLower ||
-                   pressedCodeLower === 'key' + targetLower; // Handle 'KeyB' vs 'b'
+                   pressedCodeLower === 'key' + targetLower;
         });
         
         if (keyMatch) {
@@ -528,7 +521,6 @@
                 //     eventManager.triggerEvent("Complete Blackout");
                 // }
                 
-                // Change TV image
                 if (screenEffect) {
                     screenEffect.remove('image');
                     screenEffect.add('image', { src: 'https://i.imgur.com/LS1FPPH.gif', blur: 1.2 });
@@ -913,7 +905,6 @@
             if (eventManager && eventManager.activeEvent === "Game Boy Appearance") {
                 gltfLoader.load(window.ASSETS.gb_model, (gltf) => {
                     gbModel = gltf.scene;
-                    // Initial placement on the table
                     gbModel.position.set(-2.8110, -2.3530, -0.4820);
                     gbModel.rotation.set(-0.3190, -0.0440, -0.0080);
                     gbModel.scale.set(9.3774, 9.3774, 9.3774);
@@ -924,7 +915,6 @@
                             child.castShadow = true; 
                             child.receiveShadow = true; 
                             
-                            // Keep original materials but adjust for scene lighting
                             if (child.material) {
                                 const mats = Array.isArray(child.material) ? child.material : [child.material];
                                 mats.forEach(m => {
@@ -1139,7 +1129,6 @@
                     
                     scene.add(ylwkingModel);
                     onModelLoaded();
-                    // setupGUI();
                 });
             }
 
@@ -1279,14 +1268,9 @@
                             materials.forEach(mat => { if (mat && mat.map) { mat.map.encoding = THREE.sRGBEncoding; mat.map.anisotropy = 16; } });
                         }
                     });
-                    // if (gltf.animations && gltf.animations.length > 0) {
-                    //     adaMixer = new THREE.AnimationMixer(adaModel);
-                    //     adaMixer.clipAction(gltf.animations[0]).play();
-                    // }
                     adaModel.visible = false; 
                     scene.add(adaModel);
                     onModelLoaded();
-                    // setupGUI(); 
                 });
             }
 
@@ -1539,7 +1523,6 @@
             const element = screenUI.element; 
 
             if (isPagesEvent) {
-                // Aggressive shaking for Pages Event using left/top to not conflict with CSS3DRenderer transform
                 if (Math.random() > 0.9) {
                     element.style.left = `${(Math.random()-0.5)*10}px`;
                     element.style.top = `${(Math.random()-0.5)*10}px`;
@@ -1568,25 +1551,20 @@
             }
         }
         
-        // --- LIGHTING LOGIC ---
         const isSpecialEvent = eventManager && (eventManager.activeEvent === "Pyramid Head" || eventManager.activeEvent === "Tyrant Appearance" || eventManager.activeEvent === "Complete Blackout" || eventManager.activeEvent === "Pages Event");
 
         if (isSpecialEvent) {
-            // ROOM IN COMPLETE DARKNESS
             if (ambientLight) ambientLight.intensity = 0;
             if (hemisphereLight) hemisphereLight.intensity = 0;
             if (directionalLight) directionalLight.intensity = 0;
             if (stripperLight) stripperLight.intensity = 0;
             if (paradiseLight) paradiseLight.intensity = 0;
 
-            // ONLY Heavens Night lamp rare flicker
             if (signLight && nightHalo) {
                 if (signFlickerTimer > 0) {
-                    // LIGHT ON PHASE
                     signFlickerTimer--;
                     
                     let currentIntensity = 72;
-                    // Dying flicker effect (last 60 frames / ~1 second)
                     if (signFlickerTimer < 60) {
                         if (Math.random() > 0.7) {
                             currentIntensity = 0;
@@ -1598,12 +1576,10 @@
                     signLight.intensity = currentIntensity;
                     nightHalo.intensity = currentIntensity;
 
-                    // Sync Tallman visibility with the light if he was chosen to appear
                     if (eventManager.activeEvent === "Pages Event" && tallmanModel && tallmanModel.userData.isChosenToBeVisible) {
                         tallmanModel.visible = currentIntensity > 0;
                     }
                     
-                    // When light ends, start mandatory darkness pause
                     if (signFlickerTimer <= 0) {
                         signDarknessTimer = 180 + Math.random() * 120; // 3-5 seconds of darkness
                         if (tallmanModel) {
@@ -1612,7 +1588,6 @@
                         }
                     }
                 } else if (signDarknessTimer > 0) {
-                    // DARKNESS PAUSE PHASE
                     signDarknessTimer--;
                     signLight.intensity = 0;
                     nightHalo.intensity = 0;
@@ -1621,12 +1596,9 @@
                         tallmanModel.userData.isChosenToBeVisible = false;
                     }
                 } else if (Math.random() > 0.995) { 
-                    // TRIGGER NEW FLICKER
                     signFlickerTimer = 120 + Math.random() * 60; // Stay glowing for 2-3 seconds
                     
-                    // Tallman appearance chance when flicker starts
                     if (eventManager.activeEvent === "Pages Event" && tallmanModel) {
-                        // Check if this is the first flicker of the event
                         if (tallmanModel.userData.hasFlickeredOnce) {
                             tallmanModel.userData.isChosenToBeVisible = Math.random() < 0.15;
                         } else {
@@ -1645,15 +1617,12 @@
                 }
             }
         } else {
-            // --- NORMAL LIGHTING / OTHER EVENTS ---
             if (tallmanModel) tallmanModel.visible = false; 
             
-            // Restore scene lights if they were off
             if (ambientLight && ambientLight.intensity === 0) ambientLight.intensity = 0.01;
             if (hemisphereLight && hemisphereLight.intensity === 0) hemisphereLight.intensity = 0.02;
             if (directionalLight && directionalLight.intensity === 0) directionalLight.intensity = 0.2;
 
-        // TV Screen Flicker
         if (screenLight && screenLight.color) {
             try {
                 const baseIntensity = 5;
@@ -1664,7 +1633,6 @@
             } catch (e) {}
         }
 
-        // Divergence Meter Flicker
         if (dmeterModel && eventManager.activeEvent === "Divergence Meter Appearance") {
             let flickerFactor = Math.random();
             let baseScale = 1.0;
@@ -1678,7 +1646,6 @@
                     const materials = Array.isArray(child.material) ? child.material : [child.material];
                     materials.forEach(mat => {
                         if (mat && mat.emissive && !mat.toneMapped) {
-                            // Only flicker the emissive intensity of the digits
                             let localFlicker = baseScale * 35.0; 
                             if (Math.random() > 0.85) localFlicker *= (0.3 + Math.random() * 0.7);
                             mat.emissiveIntensity = localFlicker;
@@ -1688,7 +1655,6 @@
             });
         }
 
-        // Neon Sign Logic
             if (signLight && nightHalo) {
                 if (eventManager && (eventManager.activeEvent === "Sign Blackout" || eventManager.activeEvent === "Complete Blackout" || eventManager.activeEvent === "Ada Appearance")) {
                     signLight.intensity = 0; nightHalo.intensity = 0;
@@ -1697,7 +1663,6 @@
                     if (Math.random() < 0.95) { signLight.intensity = 72; nightHalo.intensity = 72; }
                     else { signLight.intensity = 0; nightHalo.intensity = 0; }
                 } else {
-                    // Reset to normal colors
                     if (signLight.color.getHex() !== 0xff00ff) signLight.color.setHex(0xff00ff);
                     if (nightHalo.color.getHex() !== 0x8000FF) nightHalo.color.setHex(0x8000FF);
                     const neonChance = Math.random();
@@ -1707,7 +1672,6 @@
                 }
             }
 
-            // Room Lights Logic
             if (stripperLight || paradiseLight) {
                 if (eventManager && (eventManager.activeEvent === "Lamps Blackout" || eventManager.activeEvent === "Complete Blackout")) {
                     if (stripperLight) stripperLight.intensity = 0;
@@ -1770,7 +1734,6 @@
         if (typeof dat === 'undefined') return;
         
         try {
-            // Remove existing GUI to avoid duplicates
             const existing = document.querySelector('.dg.main');
             if (existing) existing.parentElement.removeChild(existing);
             
@@ -1893,7 +1856,6 @@
 
     init();
 
-    // Create protected devMode property on window that checks authorization
     Object.defineProperty(window, 'devMode', {
         get: function() {
             return devMode;
@@ -1910,7 +1872,6 @@
         enumerable: true
     });
 
-    // Export variables that other scripts need to access
     window.screenEffect = screenEffect;
     window.eventManager = eventManager;
     window.setupGUI = setupGUI;
