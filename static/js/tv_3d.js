@@ -98,7 +98,7 @@
           canvas.height = this.rect.height / 2;
           this.nodes.wrapper2.appendChild(canvas);
           
-          // Memory optimization: Pre-allocate ImageData and buffer
+
           const imgData = ctx.createImageData(canvas.width, canvas.height);
           const buffer = new Uint32Array(imgData.data.buffer);
           
@@ -121,7 +121,7 @@
           this.nodes.wrapper2.appendChild(canvas);
           canvas.width = this.rect.width / 2;
           canvas.height = this.rect.height / 2;
-          canvas.style.filter = `blur(${config.blur}px)`; // Set once here
+          canvas.style.filter = `blur(${config.blur}px)`;
           this.effects[type] = {
             wrapper: this.nodes.wrapper2,
             node: canvas,
@@ -185,7 +185,7 @@
           const isPagesEvent = typeof eventManager !== 'undefined' && eventManager && eventManager.activeEvent === "Pages Event";
           
           if (isPagesEvent) {
-            targetOpacity = 0.6 + Math.random() * 0.35; // Much denser snow
+            targetOpacity = 0.6 + Math.random() * 0.35;
           } else if (Math.random() > 0.97) {
             targetOpacity = 0.05 + Math.random() * 0.4; 
           }  
@@ -276,7 +276,7 @@
         
         let currentNum = config.num || 20;
         if (isPagesEvent) {
-            currentNum = 80 + Math.random() * 100; // Much more glitch lines
+            currentNum = 80 + Math.random() * 100;
         } else if (Math.random() > 0.98) {
             currentNum = currentNum * (0.5 + Math.random() * 1.5);
         }
@@ -289,7 +289,7 @@
             posy1 = 0;
             posy2 = canvas.height;
             posy3 = canvas.height;
-            ctx.fillStyle = Math.random() > 0.9 ? "#f00" : "#fff"; // Occasional red glitches
+            ctx.fillStyle = Math.random() > 0.9 ? "#f00" : "#fff";
         }
 
         if ( xmax === undefined ) xmax = canvas.width;
@@ -353,29 +353,31 @@
         this.eventTimer = 0;
 
         this.eventChances = {
-          "Pages Event": 0.01,
-          "Game Boy Appearance": 0.04,
-          "Normal State": 0.45,
-          "Lunar Tear": 0.04,
-          "Lamps Blackout": 0.03,      
-          "Sign Blackout": 0.03,
-          "Complete Blackout": 0.03,
-          "Marys Letter": 0.04,
-          "Maria Appearance": 0.015,
-          "Ashley Appearance": 0.015,
-          "Ada Appearance": 0.015,
-          "Fukuro Event": 0.015,
-          "SH1 Case": 0.03,
-          "SH3 Case": 0.03,
-          "Simon Phone": 0.03,
-          "Doge Appearance": 0.015,
-          "Mirror Event": 0.03,
-          "Devilz Event": 0.01,
-          "Pyramid Head": 0.01,
-          "Tyrant Appearance": 0.01,
-          "Grimoires Appearance": 0.04,
-          "Divergence Meter Appearance": 0.04,
-          "Yellow King Appearance": 0.04
+          "Pages Event": 0.02,
+          "Game Boy Appearance": 0.05,
+          "Normal State": 0.30,
+          "Lunar Tear": 0.05,
+          "Lamps Blackout": 0.04,      
+          "Sign Blackout": 0.04,
+          "Complete Blackout": 0.04,
+          "Marys Letter": 0.05,
+          "Maria Appearance": 0.02,
+          "Ashley Appearance": 0.02,
+          "Ada Appearance": 0.02,
+          "Fukuro Event": 0.02,
+          "SH1 Case": 0.04,
+          "SH3 Case": 0.04,
+          "Simon Phone": 0.04,
+          "Doge Appearance": 0.02,
+          "Mirror Event": 0.04,
+          "Devilz Event": 0.02,
+          "Pyramid Head": 0.02,
+          "Tyrant Appearance": 0.02,
+          "Grimoires Appearance": 0.05,
+          "Divergence Meter Appearance": 0.05,
+          "Yellow King Appearance": 0.05,
+          "Parking Appearance": 0.005,
+          "Cafe Appearance": 0.005
         };
 
         this.tryTriggerEvent();
@@ -407,9 +409,13 @@
     }
 
     let scene, camera, renderer, cssRenderer;
-    let tvModel, barModel, screenEffect, screenUI, screenLight, signLight, signHalo, nightHalo, stripperLight, paradiseLight, meterLight;
+    let tvModel, barModel, parkingModel, parkingSkybox, parkingGroundPlane, cafeModel, cafeGroundPlane, cafeDustModel, cafeFogVolume, screenEffect, screenUI, screenLight, signLight, signHalo, nightHalo, stripperLight, paradiseLight, meterLight, parkingFillLight1, parkingFillLight2, parkingFillLight3, parkingSkyLight, cafeFillLight1, cafeFillLight2, cafeFillLight3, cafeSkyLight;
+    let parkingSkyboxRotationSpeed = 0.05;
+    let cafeFogDensityTime = 0;
+    let lastImageColorUpdate = 0;
+    let extractedImageColor = { r: 0.8, g: 0.8, b: 1.0 };
     let ambientLight, hemisphereLight, directionalLight;
-    let eventManager, marysLetter, mariaModel, mariaMixer, ashleyModel, ashleyMixer, adaModel, adaMixer, lunarModel, sh1Model, sh3Model, sh1Mixer, sh3Mixer, simonPhoneModel, simonPhoneMixer, dogeModel, dogeMixer, mirrorModel, mirrorMixer, fukuroModel, fukuroMixer, devilzModel, devilzMixer, pyramidHeadModel, pyramidHeadMixer, tyrantModel, tyrantMixer, gbModel, gbMixer,gbCartridgeModel,grimoiresModel,grimoiresMixer,pagesModel,pagesMixer,tallmanModel,tallmanMixer,dmeterModel,dmeterMixer,ylwkingModel,ylwkingMixer; 
+    let eventManager, marysLetter, mariaModel, mariaMixer, ashleyModel, ashleyMixer, adaModel, adaMixer, lunarModel, sh1Model, sh3Model, sh1Mixer, sh3Mixer, simonPhoneModel, simonPhoneMixer, dogeModel, dogeMixer, mirrorModel, mirrorMixer, fukuroModel, fukuroMixer, devilzModel, devilzMixer, pyramidHeadModel, pyramidHeadMixer, tyrantModel, tyrantMixer, gbModel, gbMixer,gbCartridgeModel,grimoiresModel,grimoiresMixer,pagesModel,pagesMixer,tallmanModel,tallmanMixer,dmeterModel,dmeterMixer,ylwkingModel,ylwkingMixer,cafeDustMixer; 
     let pagesList = [];let signFlickerTimer = 0;
     let signDarknessTimer = 0;
     const clock = new THREE.Clock();
@@ -513,13 +519,13 @@
                 alert("There was developer mode here. Its gone now.\nsilentwave2@0xNC(https://github.com/FullmetalNeverCore),EternalXero");
                 
                 isDevModeAuthorized = true; 
-                // devMode = true;        
+
                 
                 if (controls) controls.lock();
 
-                // if (eventManager) {
-                //     eventManager.triggerEvent("Complete Blackout");
-                // }
+
+
+
                 
                 if (screenEffect) {
                     screenEffect.remove('image');
@@ -702,6 +708,49 @@
 
     window.initSpatialAudio = initSpatialAudio;
 
+    function extractImageColor() {
+        if (!screenEffect || !screenEffect.effects || !screenEffect.effects.image || !screenEffect.effects.image.node) {
+            return null;
+        }
+        
+        const img = screenEffect.effects.image.node;
+        if (!img.complete || img.naturalWidth === 0) {
+            return null;
+        }
+        
+        try {
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.min(img.naturalWidth, 100);
+            canvas.height = Math.min(img.naturalHeight, 100);
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            
+            let r = 0, g = 0, b = 0, count = 0;
+
+            for (let i = 0; i < data.length; i += 16) {
+                r += data[i];
+                g += data[i + 1];
+                b += data[i + 2];
+                count++;
+            }
+            
+            if (count > 0) {
+                return {
+                    r: (r / count) / 255,
+                    g: (g / count) / 255,
+                    b: (b / count) / 255
+                };
+            }
+        } catch (e) {
+            console.warn('Failed to extract image color:', e);
+        }
+        
+        return null;
+    }
+
     function init() {
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -716,6 +765,11 @@
         scene.add(controls.getObject());
 
         eventManager = new Events();
+
+
+        if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
+            camera.position.set(0, -1.25, 8);
+        }
 
         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -761,7 +815,7 @@
         screenLight.castShadow = true;
         screenLight.shadow.bias = -0.001;
 
-        let modelsToLoad = 2; // Bar and TV
+        let modelsToLoad = 2;
         let modelsLoadedCount = 0;
         
         const onModelLoaded = () => {
@@ -772,61 +826,370 @@
             }
         };
 
-        barLoader.load(window.ASSETS.bar_model, (gltf) => {
-            barModel = gltf.scene;
-            barModel.scale.set(15.0, 15.0, 15.0); 
-            barModel.position.set(60, 14, 30); 
-            barModel.rotation.y = -3;
-            scene.add(barModel);
+        if (eventManager && eventManager.activeEvent === "Parking Appearance") {
+
+            scene.fog = new THREE.FogExp2(0xcccccc, 0.001);
             
-            barModel.traverse((child) => {
-                if (child.isMesh) {
-                    child.castShadow = true;
-                    child.receiveShadow = true;
-                    const oldMat = child.material;
-                    const materials = Array.isArray(oldMat) ? oldMat : [oldMat];
-                    
-                    const newMaterials = materials.map(mat => {
-                        if (!mat) return mat;
-                        const newMat = new THREE.MeshStandardMaterial({
-                            map: mat.map,
-                            color: mat.color,
-                            side: THREE.DoubleSide,
-                            roughness: 1.0,
-                            metalness: 0.0
-                        });
-                        if (newMat.map) {
-                            newMat.map.encoding = THREE.sRGBEncoding;
-                            newMat.map.anisotropy = 16;
-                        }
-                        return newMat;
-                    });
-                    child.material = Array.isArray(oldMat) ? newMaterials : newMaterials[0];
+
+            const textureLoader = new THREE.TextureLoader();
+            textureLoader.load(window.ASSETS.parking_skybox, (texture) => {
+                texture.encoding = THREE.sRGBEncoding;
+                texture.mapping = THREE.EquirectangularReflectionMapping;
+                
+
+                const skyGeometry = new THREE.SphereGeometry(500, 32, 32);
+                const skyMaterial = new THREE.MeshBasicMaterial({
+                    map: texture,
+                    side: THREE.BackSide
+                });
+                parkingSkybox = new THREE.Mesh(skyGeometry, skyMaterial);
+                parkingSkybox.scale.set(1.9, 1.9, 1.9);
+                parkingSkybox.rotation.y = 0;
+                scene.add(parkingSkybox);
+            });
+            
+
+            if (ambientLight) {
+                ambientLight.color.setHex(0xffffff);
+                ambientLight.intensity = 0.6;
+            }
+            if (hemisphereLight) {
+                hemisphereLight.color.setHex(0xffffff);
+                hemisphereLight.groundColor.setHex(0xdddddd);
+                hemisphereLight.intensity = 0.8;
+            }
+            if (directionalLight) {
+                directionalLight.color.setHex(0xffffff);
+                directionalLight.intensity = 1.2;
+                directionalLight.position.set(10, 20, 10);
+
+                directionalLight.castShadow = true;
+                directionalLight.shadow.camera.left = -200;
+                directionalLight.shadow.camera.right = 200;
+                directionalLight.shadow.camera.top = 200;
+                directionalLight.shadow.camera.bottom = -200;
+                directionalLight.shadow.camera.near = 0.5;
+                directionalLight.shadow.camera.far = 500;
+                directionalLight.shadow.mapSize.width = 2048;
+                directionalLight.shadow.mapSize.height = 2048;
+                directionalLight.shadow.bias = -0.0001;
+            }
+            
+
+            parkingFillLight1 = new THREE.DirectionalLight(0xffffff, 0.5);
+            parkingFillLight1.position.set(-20, 15, 20);
+            parkingFillLight1.castShadow = false;
+            scene.add(parkingFillLight1);
+            
+            parkingFillLight2 = new THREE.DirectionalLight(0xffffff, 0.4);
+            parkingFillLight2.position.set(0, 25, 30);
+            parkingFillLight2.castShadow = false;
+            scene.add(parkingFillLight2);
+            
+            parkingFillLight3 = new THREE.DirectionalLight(0xffffff, 0.3);
+            parkingFillLight3.position.set(20, 10, 15);
+            parkingFillLight3.castShadow = false;
+            scene.add(parkingFillLight3);
+            
+
+            parkingSkyLight = new THREE.DirectionalLight(0xffffff, 0.6);
+            parkingSkyLight.position.set(0, 50, 0);
+            parkingSkyLight.castShadow = true;
+            parkingSkyLight.shadow.camera.left = -300;
+            parkingSkyLight.shadow.camera.right = 300;
+            parkingSkyLight.shadow.camera.top = 300;
+            parkingSkyLight.shadow.camera.bottom = -300;
+            parkingSkyLight.shadow.camera.near = 0.5;
+            parkingSkyLight.shadow.camera.far = 500;
+            parkingSkyLight.shadow.mapSize.width = 2048;
+            parkingSkyLight.shadow.mapSize.height = 2048;
+            parkingSkyLight.shadow.bias = -0.0001;
+            scene.add(parkingSkyLight);
+            
+            barLoader.load(window.ASSETS.parking_model, (gltf) => {
+                parkingModel = gltf.scene;
+                parkingModel.scale.set(31.53, 31.53, 31.53); 
+                parkingModel.position.set(73.04, -68.95, -17.42); 
+                parkingModel.rotation.set(0.05, -1.30, 0.05);
+                scene.add(parkingModel);
+                
+
+                const groundGeometry = new THREE.PlaneGeometry(2000, 2000);
+                const groundMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x666666,
+                    roughness: 0.9,
+                    metalness: 0.0
+                });
+                parkingGroundPlane = new THREE.Mesh(groundGeometry, groundMaterial);
+                parkingGroundPlane.rotation.x = -Math.PI / 2;
+
+                parkingGroundPlane.position.set(
+                    parkingModel.position.x,
+                    parkingModel.position.y - 5,
+                    parkingModel.position.z
+                );
+                parkingGroundPlane.receiveShadow = true;
+                parkingGroundPlane.castShadow = false;
+                scene.add(parkingGroundPlane);
+                
+
+                if (directionalLight) {
+                    directionalLight.shadow.camera.left = -300;
+                    directionalLight.shadow.camera.right = 300;
+                    directionalLight.shadow.camera.top = 300;
+                    directionalLight.shadow.camera.bottom = -300;
+                    directionalLight.shadow.camera.updateProjectionMatrix();
                 }
+                
+                if (parkingSkyLight) {
+                    parkingSkyLight.shadow.camera.left = -300;
+                    parkingSkyLight.shadow.camera.right = 300;
+                    parkingSkyLight.shadow.camera.top = 300;
+                    parkingSkyLight.shadow.camera.bottom = -300;
+                    parkingSkyLight.shadow.camera.updateProjectionMatrix();
+                }
+                
+                parkingModel.traverse((child) => {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                        const oldMat = child.material;
+                        const materials = Array.isArray(oldMat) ? oldMat : [oldMat];
+                        
+                        const newMaterials = materials.map(mat => {
+                            if (!mat) return mat;
+                            const newMat = new THREE.MeshStandardMaterial({
+                                map: mat.map,
+                                color: mat.color,
+                                side: THREE.DoubleSide,
+                                roughness: 1.0,
+                                metalness: 0.0
+                            });
+                            if (newMat.map) {
+                                newMat.map.encoding = THREE.sRGBEncoding;
+                                newMat.map.anisotropy = 16;
+                            }
+                            return newMat;
+                        });
+                        child.material = Array.isArray(oldMat) ? newMaterials : newMaterials[0];
+                    }
+                });
+                onModelLoaded();
+            });
+        } else if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
+
+            scene.fog = null;
+            if (renderer) renderer.setClearColor(0xcccccc, 1);
+            
+
+            const textureLoader = new THREE.TextureLoader();
+            textureLoader.load(window.ASSETS.parking_skybox, (texture) => {
+                texture.encoding = THREE.sRGBEncoding;
+                texture.mapping = THREE.EquirectangularReflectionMapping;
+                const skyGeometry = new THREE.SphereGeometry(500, 32, 32);
+                const skyMaterial = new THREE.MeshBasicMaterial({
+                    map: texture,
+                    side: THREE.BackSide
+                });
+                parkingSkybox = new THREE.Mesh(skyGeometry, skyMaterial);
+                parkingSkybox.scale.set(1.9, 1.9, 1.9);
+                scene.add(parkingSkybox);
             });
 
-            signLight = new THREE.PointLight(0xff00ff, 72, 50);
-            signLight.position.set(29, 16, -50); 
-            scene.add(signLight);
 
-            nightHalo = new THREE.PointLight(0x8000FF, 72, 50);
-            nightHalo.position.set(29, 13, -50); 
-            scene.add(nightHalo);
+            if (ambientLight) {
+                ambientLight.color.setHex(0xffffff);
+                ambientLight.intensity = 0.05;
+            }
+            if (hemisphereLight) {
+                hemisphereLight.color.setHex(0xffffff);
+                hemisphereLight.groundColor.setHex(0x111111);
+                hemisphereLight.intensity = 0.08;
+            }
+            if (directionalLight) {
+                directionalLight.color.setHex(0xffffff);
+                directionalLight.intensity = 0.2;
+                directionalLight.position.set(10, 20, 10);
+                directionalLight.castShadow = true;
+                directionalLight.shadow.camera.left = -300;
+                directionalLight.shadow.camera.right = 300;
+                directionalLight.shadow.camera.top = 300;
+                directionalLight.shadow.camera.bottom = -300;
+                directionalLight.shadow.camera.updateProjectionMatrix();
+            }
+            
 
-            stripperLight= new THREE.PointLight(0xffcb00, 3000, 0); 
-            stripperLight.decay = 1; 
-            stripperLight.position.set(-2, 9, 23); 
-            stripperLight.castShadow = true;
-            stripperLight.shadow.bias = -0.001;
-            scene.add(stripperLight);
+            cafeFillLight1 = new THREE.DirectionalLight(0xffffff, 0.05);
+            cafeFillLight1.position.set(-20, 15, 20);
+            scene.add(cafeFillLight1);
+            
+            cafeFillLight2 = new THREE.DirectionalLight(0xffffff, 0.03);
+            cafeFillLight2.position.set(0, 25, 30);
+            scene.add(cafeFillLight2);
+            
+            cafeFillLight3 = new THREE.DirectionalLight(0xffffff, 0.02);
+            cafeFillLight3.position.set(20, 10, 15);
+            scene.add(cafeFillLight3);
+            
+            cafeSkyLight = new THREE.DirectionalLight(0xffffff, 0.08);
+            cafeSkyLight.position.set(0, 50, 0);
+            cafeSkyLight.castShadow = true;
+            scene.add(cafeSkyLight);
+            
+            barLoader.load(
+                window.ASSETS.cafe_model,
+                (gltf) => {
+                    cafeModel = gltf.scene;
+                    cafeModel.scale.set(1.41, 1.41, 1.41); 
+                    cafeModel.position.set(-5.09, -2.84, -0.49); 
+                    cafeModel.rotation.set(0, 0.89, 0);
+                    cafeModel.visible = true;
+                    scene.add(cafeModel);
+                    
+                    const groundGeometry = new THREE.PlaneGeometry(2000, 2000);
+                    const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x666666, roughness: 0.9 });
+                    cafeGroundPlane = new THREE.Mesh(groundGeometry, groundMaterial);
+                    cafeGroundPlane.rotation.x = -Math.PI / 2;
+                    cafeGroundPlane.position.set(-5.09, -2.9, -0.49);
+                    cafeGroundPlane.receiveShadow = true;
+                    scene.add(cafeGroundPlane);
+                    
+                    cafeModel.traverse((child) => {
+                        if (child.isMesh) {
+                            child.castShadow = true;
+                            child.receiveShadow = true;
+                            if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding;
+                        }
+                    });
 
-            paradiseLight= new THREE.PointLight(0xff0000, 15, 100);
-            paradiseLight.position.set(-9, 23, 19); 
-            paradiseLight.castShadow = true;
-            paradiseLight.shadow.bias = -0.001;
-            scene.add(paradiseLight);
-            onModelLoaded();
-        });
+                    onModelLoaded();
+                },
+                undefined,
+                (error) => {
+                    console.error('Failed to load cafe model:', error);
+                    onModelLoaded();
+                }
+            );
+            
+
+            const fogGeometry = new THREE.SphereGeometry(15, 32, 32);
+            const fogMaterial = new THREE.MeshStandardMaterial({
+                color: 0xcccccc,
+                transparent: true,
+                opacity: 0.3,
+                side: THREE.DoubleSide,
+                fog: false
+            });
+            cafeFogVolume = new THREE.Mesh(fogGeometry, fogMaterial);
+            cafeFogVolume.position.set(0.04, -1.40, 4.85);
+            cafeFogVolume.scale.set(1, 1.5, 1);
+            cafeFogVolume.visible = true;
+            cafeFogVolume.renderOrder = -1;
+            scene.add(cafeFogVolume);
+            
+
+            if (window.ASSETS.cafe_dust) {
+                barLoader.load(
+                    window.ASSETS.cafe_dust,
+                    (gltf) => {
+                        cafeDustModel = gltf.scene;
+
+                        cafeDustModel.position.set(0.04, -1.40, 4.85);
+                        cafeDustModel.rotation.set(0, 0, 0);
+                        cafeDustModel.scale.set(1.41, 1.41, 1.41);
+                        cafeDustModel.visible = true;
+                        scene.add(cafeDustModel);
+                        
+
+                        cafeDustModel.traverse((child) => {
+                            if (child.isMesh) {
+                                child.frustumCulled = false;
+                                child.castShadow = false;
+                                child.receiveShadow = false;
+
+                                if (child.material) {
+                                    const materials = Array.isArray(child.material) ? child.material : [child.material];
+                                    materials.forEach(mat => {
+                                        if (mat) {
+                                            if (mat.transparent === undefined) mat.transparent = true;
+                                            if (mat.opacity === undefined) mat.opacity = 0.5;
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        
+
+                        if (gltf.animations && gltf.animations.length > 0) {
+                            cafeDustMixer = new THREE.AnimationMixer(cafeDustModel);
+                            gltf.animations.forEach(clip => {
+                                cafeDustMixer.clipAction(clip).play();
+                            });
+                        }
+                    },
+                    undefined,
+                    (error) => {
+                        console.warn('Failed to load cafe dust effect:', error);
+                    }
+                );
+            }
+        } else {
+            barLoader.load(window.ASSETS.bar_model, (gltf) => {
+                barModel = gltf.scene;
+                barModel.scale.set(15.0, 15.0, 15.0); 
+                barModel.position.set(60, 14, 30); 
+                barModel.rotation.y = -3;
+                scene.add(barModel);
+                
+                barModel.traverse((child) => {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                        const oldMat = child.material;
+                        const materials = Array.isArray(oldMat) ? oldMat : [oldMat];
+                        
+                        const newMaterials = materials.map(mat => {
+                            if (!mat) return mat;
+                            const newMat = new THREE.MeshStandardMaterial({
+                                map: mat.map,
+                                color: mat.color,
+                                side: THREE.DoubleSide,
+                                roughness: 1.0,
+                                metalness: 0.0
+                            });
+                            if (newMat.map) {
+                                newMat.map.encoding = THREE.sRGBEncoding;
+                                newMat.map.anisotropy = 16;
+                            }
+                            return newMat;
+                        });
+                        child.material = Array.isArray(oldMat) ? newMaterials : newMaterials[0];
+                    }
+                });
+
+                signLight = new THREE.PointLight(0xff00ff, 72, 50);
+                signLight.position.set(29, 16, -50); 
+                scene.add(signLight);
+
+                nightHalo = new THREE.PointLight(0x8000FF, 72, 50);
+                nightHalo.position.set(29, 13, -50); 
+                scene.add(nightHalo);
+
+                stripperLight= new THREE.PointLight(0xffcb00, 3000, 0); 
+                stripperLight.decay = 1; 
+                stripperLight.position.set(-2, 9, 23); 
+                stripperLight.castShadow = true;
+                stripperLight.shadow.bias = -0.001;
+                scene.add(stripperLight);
+
+                paradiseLight= new THREE.PointLight(0xff0000, 15, 100);
+                paradiseLight.position.set(-9, 23, 19); 
+                paradiseLight.castShadow = true;
+                paradiseLight.shadow.bias = -0.001;
+                scene.add(paradiseLight);
+                onModelLoaded();
+            });
+        }
 
         tvLoader.load(window.ASSETS.tv_model, (object) => {
             tvModel = object;
@@ -884,9 +1247,23 @@
                 }
             });
 
-            tvModel.position.set(0.3, -3, 0); 
-            tvModel.rotation.y = 0; 
-            tvModel.scale.set(0.05, 0.05, 0.05); 
+            if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
+                tvModel.position.set(0.04, -1.40, 4.85); 
+                tvModel.rotation.set(0, 0, 0); 
+                tvModel.scale.set(0.006, 0.006, 0.006);
+
+                if (screenLight) {
+                    screenLight.castShadow = false;
+                }
+            } else {
+                tvModel.position.set(0.3, -3, 0); 
+                tvModel.rotation.y = 0; 
+                tvModel.scale.set(0.05, 0.05, 0.05);
+
+                if (screenLight) {
+                    screenLight.castShadow = true;
+                }
+            }
             scene.add(tvModel);
             tvModel.add(screenLight); 
 
@@ -1150,35 +1527,35 @@
                     });
 
                     pagesList.forEach((page, index) => {
-                        if (index === 0) { // Page 1 (pCube2)
+                        if (index === 0) {
                             page.position.set(0, -3.16, 0);
                             page.rotation.set(0, 0.03, 0.63);
                             page.scale.set(1.138, 1.138, 1.138);
-                        } else if (index === 1) { // Page 2 (pCube3)
+                        } else if (index === 1) {
                             page.position.set(-0.48, 3.73, 0.29);
                             page.rotation.set(0, 0, 0);
                             page.scale.set(1.52, 1.52, 1.52);
-                        } else if (index === 2) { // Page 3 (pCube4)
+                        } else if (index === 2) {
                             page.position.set(0, -1.24, 0);
                             page.rotation.set(0, 0, -0.63);
                             page.scale.set(1.5, 1.5, 1.5);
-                        } else if (index === 3) { // Page 4 (pCube5)
+                        } else if (index === 3) {
                             page.position.set(-6.99, 0, 0);
                             page.rotation.set(0, 0, 0);
                             page.scale.set(1.5, 1.5, 1.5);
-                        } else if (index === 4) { // Page 5 (pCube6)
+                        } else if (index === 4) {
                             page.position.set(-2.78, 4.12, 0);
                             page.rotation.set(0, 0, -0.56);
                             page.scale.set(1.52, 1.52, 1.52);
-                        } else if (index === 5) { // Page 6 (pCube7)
+                        } else if (index === 5) {
                             page.position.set(2.2, 0, 0);
                             page.rotation.set(0, 0, 0);
                             page.scale.set(1.5, 1.5, 1.5);
-                        } else if (index === 6) { // Page 7 (pCube8)
+                        } else if (index === 6) {
                             page.position.set(-1.63, -3.16, 0);
                             page.rotation.set(0, 0, 0.6);
                             page.scale.set(1.5, 1.5, 1.5);
-                        } else if (index === 7) { // Page 8 (pCube9)
+                        } else if (index === 7) {
                             page.position.set(0, 1.44, 0);
                             page.rotation.set(0, 0, 0.17);
                             page.scale.set(1.5, 1.5, 1.5);
@@ -1510,6 +1887,7 @@
         if (pagesMixer) pagesMixer.update(delta);
         if (tallmanMixer) tallmanMixer.update(delta);
         if (ylwkingMixer) ylwkingMixer.update(delta);
+        if (cafeDustMixer) cafeDustMixer.update(delta);
 
         camera.updateMatrixWorld();
         projScreenMatrix.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
@@ -1551,9 +1929,82 @@
             }
         }
         
+        const isParkingEvent = eventManager && eventManager.activeEvent === "Parking Appearance";
+        const isCafeEvent = eventManager && eventManager.activeEvent === "Cafe Appearance";
         const isSpecialEvent = eventManager && (eventManager.activeEvent === "Pyramid Head" || eventManager.activeEvent === "Tyrant Appearance" || eventManager.activeEvent === "Complete Blackout" || eventManager.activeEvent === "Pages Event");
 
-        if (isSpecialEvent) {
+        if (isParkingEvent) {
+
+            if (!scene.fog) {
+                scene.fog = new THREE.FogExp2(0xcccccc, 0.015);
+            }
+            if (ambientLight && ambientLight.intensity < 0.6) {
+                ambientLight.color.setHex(0xffffff);
+                ambientLight.intensity = 0.6;
+            }
+            if (hemisphereLight && hemisphereLight.intensity < 0.8) {
+                hemisphereLight.color.setHex(0xffffff);
+                hemisphereLight.groundColor.setHex(0xdddddd);
+                hemisphereLight.intensity = 0.8;
+            }
+            if (directionalLight && directionalLight.intensity < 1.2) {
+                directionalLight.color.setHex(0xffffff);
+                directionalLight.intensity = 1.2;
+            }
+
+            if (parkingFillLight1 && parkingFillLight1.intensity < 0.5) {
+                parkingFillLight1.intensity = 0.5;
+            }
+            if (parkingFillLight2 && parkingFillLight2.intensity < 0.4) {
+                parkingFillLight2.intensity = 0.4;
+            }
+            if (parkingFillLight3 && parkingFillLight3.intensity < 0.3) {
+                parkingFillLight3.intensity = 0.3;
+            }
+
+            if (parkingSkybox) {
+                parkingSkybox.rotation.y += delta * parkingSkyboxRotationSpeed;
+            }
+        } else if (isCafeEvent) {
+
+            
+
+            if (cafeFogVolume && cafeFogVolume.material) {
+                cafeFogDensityTime += delta;
+                const baseOpacity = 0.2;
+                const opacityVariation = 0.15;
+                const fogOpacity = baseOpacity + (Math.sin(cafeFogDensityTime * 0.3) * 0.5 + 0.5) * opacityVariation;
+                cafeFogVolume.material.opacity = fogOpacity;
+            }
+            
+
+            if (ambientLight && ambientLight.intensity > 0.05) {
+                ambientLight.color.setHex(0xffffff);
+                ambientLight.intensity = 0.05;
+            }
+            if (hemisphereLight && hemisphereLight.intensity > 0.08) {
+                hemisphereLight.color.setHex(0xffffff);
+                hemisphereLight.groundColor.setHex(0x111111);
+                hemisphereLight.intensity = 0.08;
+            }
+            if (directionalLight && directionalLight.intensity > 0.2) {
+                directionalLight.color.setHex(0xffffff);
+                directionalLight.intensity = 0.2;
+            }
+
+            if (cafeFillLight1 && cafeFillLight1.intensity > 0.05) {
+                cafeFillLight1.intensity = 0.05;
+            }
+            if (cafeFillLight2 && cafeFillLight2.intensity > 0.03) {
+                cafeFillLight2.intensity = 0.03;
+            }
+            if (cafeFillLight3 && cafeFillLight3.intensity > 0.02) {
+                cafeFillLight3.intensity = 0.02;
+            }
+            if (cafeSkyLight && cafeSkyLight.intensity > 0.08) {
+                cafeSkyLight.intensity = 0.08;
+            }
+        } else if (isSpecialEvent) {
             if (ambientLight) ambientLight.intensity = 0;
             if (hemisphereLight) hemisphereLight.intensity = 0;
             if (directionalLight) directionalLight.intensity = 0;
@@ -1581,7 +2032,7 @@
                     }
                     
                     if (signFlickerTimer <= 0) {
-                        signDarknessTimer = 180 + Math.random() * 120; // 3-5 seconds of darkness
+                        signDarknessTimer = 180 + Math.random() * 120;
                         if (tallmanModel) {
                             tallmanModel.visible = false; 
                             tallmanModel.userData.isChosenToBeVisible = false;
@@ -1596,14 +2047,14 @@
                         tallmanModel.userData.isChosenToBeVisible = false;
                     }
                 } else if (Math.random() > 0.995) { 
-                    signFlickerTimer = 120 + Math.random() * 60; // Stay glowing for 2-3 seconds
+                    signFlickerTimer = 120 + Math.random() * 60;
                     
                     if (eventManager.activeEvent === "Pages Event" && tallmanModel) {
                         if (tallmanModel.userData.hasFlickeredOnce) {
                             tallmanModel.userData.isChosenToBeVisible = Math.random() < 0.15;
                         } else {
                             tallmanModel.userData.hasFlickeredOnce = true;
-                            tallmanModel.userData.isChosenToBeVisible = false; // Never visible on first flicker
+                            tallmanModel.userData.isChosenToBeVisible = false;
                         }
                         tallmanModel.visible = tallmanModel.userData.isChosenToBeVisible;
                     }
@@ -1619,16 +2070,99 @@
         } else {
             if (tallmanModel) tallmanModel.visible = false; 
             
-            if (ambientLight && ambientLight.intensity === 0) ambientLight.intensity = 0.01;
-            if (hemisphereLight && hemisphereLight.intensity === 0) hemisphereLight.intensity = 0.02;
-            if (directionalLight && directionalLight.intensity === 0) directionalLight.intensity = 0.2;
+
+            if (!isParkingEvent && !isCafeEvent) {
+
+                if (scene.fog) scene.fog = null;
+                
+
+                if (parkingFillLight1 && scene.children.includes(parkingFillLight1)) {
+                    scene.remove(parkingFillLight1);
+                    parkingFillLight1 = null;
+                }
+                if (parkingFillLight2 && scene.children.includes(parkingFillLight2)) {
+                    scene.remove(parkingFillLight2);
+                    parkingFillLight2 = null;
+                }
+                if (parkingFillLight3 && scene.children.includes(parkingFillLight3)) {
+                    scene.remove(parkingFillLight3);
+                    parkingFillLight3 = null;
+                }
+
+                if (parkingSkyLight && scene.children.includes(parkingSkyLight)) {
+                    scene.remove(parkingSkyLight);
+                    parkingSkyLight = null;
+                }
+
+                if (parkingGroundPlane && scene.children.includes(parkingGroundPlane)) {
+                    scene.remove(parkingGroundPlane);
+                    parkingGroundPlane = null;
+                }
+                
+
+                if (cafeFillLight1 && scene.children.includes(cafeFillLight1)) {
+                    scene.remove(cafeFillLight1);
+                    cafeFillLight1 = null;
+                }
+                if (cafeFillLight2 && scene.children.includes(cafeFillLight2)) {
+                    scene.remove(cafeFillLight2);
+                    cafeFillLight2 = null;
+                }
+                if (cafeFillLight3 && scene.children.includes(cafeFillLight3)) {
+                    scene.remove(cafeFillLight3);
+                    cafeFillLight3 = null;
+                }
+
+                if (cafeSkyLight && scene.children.includes(cafeSkyLight)) {
+                    scene.remove(cafeSkyLight);
+                    cafeSkyLight = null;
+                }
+
+                if (cafeGroundPlane && scene.children.includes(cafeGroundPlane)) {
+                    scene.remove(cafeGroundPlane);
+                    cafeGroundPlane = null;
+                }
+
+                if (cafeDustModel && scene.children.includes(cafeDustModel)) {
+                    scene.remove(cafeDustModel);
+                    cafeDustModel = null;
+                }
+
+                if (cafeFogVolume && scene.children.includes(cafeFogVolume)) {
+                    scene.remove(cafeFogVolume);
+                    cafeFogVolume = null;
+                }
+                
+
+                cafeFogDensityTime = 0;
+                
+                if (ambientLight && ambientLight.intensity === 0) ambientLight.intensity = 0.01;
+                if (hemisphereLight && hemisphereLight.intensity === 0) hemisphereLight.intensity = 0.02;
+                if (directionalLight && directionalLight.intensity === 0) directionalLight.intensity = 0.2;
+            }
 
         if (screenLight && screenLight.color) {
             try {
                 const baseIntensity = 5;
                 screenLight.intensity = (baseIntensity * 0.8) + Math.random() * baseIntensity;
-                const colorVal = 0.8 + Math.random() * 0.2;
-                screenLight.color.setRGB(colorVal * 0.8, colorVal * 0.8, colorVal);
+                
+
+                const now = performance.now();
+                if (now - lastImageColorUpdate > 500) {
+                    const extractedColor = extractImageColor();
+                    if (extractedColor) {
+                        extractedImageColor = extractedColor;
+                        lastImageColorUpdate = now;
+                    }
+                }
+                
+
+                const colorVariation = 0.1;
+                const r = Math.max(0, Math.min(1, extractedImageColor.r + (Math.random() - 0.5) * colorVariation));
+                const g = Math.max(0, Math.min(1, extractedImageColor.g + (Math.random() - 0.5) * colorVariation));
+                const b = Math.max(0, Math.min(1, extractedImageColor.b + (Math.random() - 0.5) * colorVariation));
+                screenLight.color.setRGB(r, g, b);
+                
                 if (Math.random() > 0.99) screenLight.intensity = baseIntensity * 0.2;
             } catch (e) {}
         }
@@ -1709,6 +2243,8 @@
         if (fukuroModel) fukuroModel.visible = (eventManager && eventManager.activeEvent === "Fukuro Event");
         if (devilzModel) devilzModel.visible = (eventManager && eventManager.activeEvent === "Devilz Event");
         if (ylwkingModel) ylwkingModel.visible = (eventManager && eventManager.activeEvent === "Yellow King Appearance");
+        if (cafeDustModel) cafeDustModel.visible = (eventManager && eventManager.activeEvent === "Cafe Appearance");
+        if (cafeFogVolume) cafeFogVolume.visible = (eventManager && eventManager.activeEvent === "Cafe Appearance");
         if (gbModel) {
             const isGBActive = (eventManager && eventManager.activeEvent === "Game Boy Appearance");
             gbModel.visible = isGBActive;
@@ -1722,7 +2258,7 @@
             if (!window._lastCSSRender) window._lastCSSRender = 0;
             
             if (cssRenderer && scene && camera && screenUI && screenUI.element.style.display !== 'none') {
-                if (now - window._lastCSSRender > 32) { // ~30 fps throttle
+                if (now - window._lastCSSRender > 32) {
                     cssRenderer.render(scene, camera);
                     window._lastCSSRender = now;
                 }
@@ -1742,112 +2278,207 @@
                 gui.domElement.style.zIndex = "10005";
             }
 
-            if (adaModel) {
-                const adaFolder = gui.addFolder('Ada Wong Position');
-                const adaParams = {
-                    posX: adaModel.position.x,
-                    posY: adaModel.position.y,
-                    posZ: adaModel.position.z,
-                    rotX: adaModel.rotation.x,
-                    rotY: adaModel.rotation.y,
-                    scale: adaModel.scale.x,
-                    print: () => {
-                        console.log(`Ada Position: [${adaModel.position.x.toFixed(2)}, ${adaModel.position.y.toFixed(2)}, ${adaModel.position.z.toFixed(2)}]`);
-                        console.log(`Ada Rotation X: ${adaModel.rotation.x.toFixed(2)}`);
-                        console.log(`Ada Rotation Y: ${adaModel.rotation.y.toFixed(2)}`);
-                        console.log(`Ada Scale: ${adaModel.scale.x.toFixed(2)}`);
-                        alert(`Ada Pos: ${adaModel.position.x.toFixed(2)}, ${adaModel.position.y.toFixed(2)}, ${adaModel.position.z.toFixed(2)}\nRotX: ${adaModel.rotation.x.toFixed(2)}\nRotY: ${adaModel.rotation.y.toFixed(2)}\nScale: ${adaModel.scale.x.toFixed(2)}`);
-                    }
-                };
+            const addFolderDefensive = (name, model, isTV = false) => {
+                if (!model || !model.position || !model.rotation || !model.scale) return;
+                
+                try {
+                    const folder = gui.addFolder(name);
+                    const params = {
+                        posX: model.position.x,
+                        posY: model.position.y,
+                        posZ: model.position.z,
+                        rotX: model.rotation.x,
+                        rotY: model.rotation.y,
+                        rotZ: model.rotation.z || 0,
+                        scale: model.scale.x,
+                        print: () => {
+                            console.log(`${name} Position: [${model.position.x.toFixed(2)}, ${model.position.y.toFixed(2)}, ${model.position.z.toFixed(2)}]`);
+                            console.log(`${name} Rotation: [${model.rotation.x.toFixed(2)}, ${model.rotation.y.toFixed(2)}, ${model.rotation.z.toFixed(2)}]`);
+                            console.log(`${name} Scale: ${model.scale.x.toFixed(4)}`);
+                            alert(`${name} Pos: ${model.position.x.toFixed(2)}, ${model.position.y.toFixed(2)}, ${model.position.z.toFixed(2)}\nRot: [${model.rotation.x.toFixed(2)}, ${model.rotation.y.toFixed(2)}, ${model.rotation.z.toFixed(2)}]\nScale: ${model.scale.x.toFixed(4)}`);
+                        }
+                    };
 
-                adaFolder.add(adaParams, 'posX', -100, 100).step(0.1).onChange(v => adaModel.position.x = v);
-                adaFolder.add(adaParams, 'posY', -100, 100).step(0.1).onChange(v => adaModel.position.y = v);
-                adaFolder.add(adaParams, 'posZ', -100, 100).step(0.1).onChange(v => adaModel.position.z = v);
-                adaFolder.add(adaParams, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => adaModel.rotation.x = v);
-                adaFolder.add(adaParams, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => adaModel.rotation.y = v);
-                adaFolder.add(adaParams, 'scale', 0.01, 50).step(0.01).onChange(v => adaModel.scale.set(v,v,v));
-                adaFolder.add(adaParams, 'print').name('PRINT POSITION');
-                adaFolder.open();
-            }
-            if (grimoiresModel) {
-                const grimoiresFolder = gui.addFolder('Grimoires Position');
-                const grimoiresParams = {
-                    posX: grimoiresModel.position.x,
-                    posY: grimoiresModel.position.y,
-                    posZ: grimoiresModel.position.z,
-                    rotX: grimoiresModel.rotation.x,
-                    rotY: grimoiresModel.rotation.y,
-                    scale: grimoiresModel.scale.x,
-                    print: () => {
-                        console.log(`Grimoires Position: [${grimoiresModel.position.x.toFixed(2)}, ${grimoiresModel.position.y.toFixed(2)}, ${grimoiresModel.position.z.toFixed(2)}]`);
-                        console.log(`Grimoires Rotation X: ${grimoiresModel.rotation.x.toFixed(2)}`);
-                        console.log(`Grimoires Rotation Y: ${grimoiresModel.rotation.y.toFixed(2)}`);
-                        console.log(`Grimoires Scale: ${grimoiresModel.scale.x.toFixed(2)}`);
-                        alert(`Grimoires Pos: ${grimoiresModel.position.x.toFixed(2)}, ${grimoiresModel.position.y.toFixed(2)}, ${grimoiresModel.position.z.toFixed(2)}\nRotX: ${grimoiresModel.rotation.x.toFixed(2)}\nRotY: ${grimoiresModel.rotation.y.toFixed(2)}\nScale: ${grimoiresModel.scale.x.toFixed(2)}`);
-                    }
-                };
-                grimoiresFolder.add(grimoiresParams, 'posX', -100, 100).step(0.1).onChange(v => grimoiresModel.position.x = v);
-                grimoiresFolder.add(grimoiresParams, 'posY', -100, 100).step(0.1).onChange(v => grimoiresModel.position.y = v);
-                grimoiresFolder.add(grimoiresParams, 'posZ', -100, 100).step(0.1).onChange(v => grimoiresModel.position.z = v);
-                grimoiresFolder.add(grimoiresParams, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => grimoiresModel.rotation.x = v);
-                grimoiresFolder.add(grimoiresParams, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => grimoiresModel.rotation.y = v);
-                grimoiresFolder.add(grimoiresParams, 'scale', 0.01, 50).step(0.01).onChange(v => grimoiresModel.scale.set(v,v,v));
-                grimoiresFolder.add(grimoiresParams, 'print').name('PRINT POSITION');
-                grimoiresFolder.open();
+                    folder.add(params, 'posX', -200, 200).step(0.01).onChange(v => model.position.x = v);
+                    folder.add(params, 'posY', -200, 200).step(0.01).onChange(v => model.position.y = v);
+                    folder.add(params, 'posZ', -200, 200).step(0.01).onChange(v => model.position.z = v);
+                    folder.add(params, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => model.rotation.x = v);
+                    folder.add(params, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => model.rotation.y = v);
+                    folder.add(params, 'rotZ', -Math.PI, Math.PI).step(0.01).onChange(v => model.rotation.z = v);
+                    
+                    const minScale = isTV ? 0.001 : 0.01;
+                    const maxScale = isTV ? 1 : 100;
+                    folder.add(params, 'scale', minScale, maxScale).step(isTV ? 0.001 : 0.01).onChange(v => model.scale.set(v, v, v));
+                    folder.add(params, 'print').name('PRINT POSITION');
+                } catch (e) {
+                    console.warn(`Could not add GUI folder for ${name}:`, e);
+                }
+            };
+
+            addFolderDefensive('Ada Wong', adaModel);
+            addFolderDefensive('Grimoires', grimoiresModel);
+            addFolderDefensive('Tallman', tallmanModel);
+            addFolderDefensive('Yellow King', ylwkingModel);
+            addFolderDefensive('Parking', parkingModel);
+            addFolderDefensive('Cafe', cafeModel);
+            addFolderDefensive('TV', tvModel, true);
+
+
+            if (cafeDustModel) {
+                try {
+                    const dustFolder = gui.addFolder('Dust Effect');
+                    const dustParams = {
+                        posX: cafeDustModel.position.x,
+                        posY: cafeDustModel.position.y,
+                        posZ: cafeDustModel.position.z,
+                        rotX: cafeDustModel.rotation.x,
+                        rotY: cafeDustModel.rotation.y,
+                        rotZ: cafeDustModel.rotation.z || 0,
+                        scale: cafeDustModel.scale.x,
+                        opacity: 0.8,
+                        print: () => {
+                            console.log(`Dust Position: [${cafeDustModel.position.x.toFixed(2)}, ${cafeDustModel.position.y.toFixed(2)}, ${cafeDustModel.position.z.toFixed(2)}]`);
+                            console.log(`Dust Rotation: [${cafeDustModel.rotation.x.toFixed(2)}, ${cafeDustModel.rotation.y.toFixed(2)}, ${cafeDustModel.rotation.z.toFixed(2)}]`);
+                            console.log(`Dust Scale: ${cafeDustModel.scale.x.toFixed(4)}`);
+                            alert(`Dust Pos: ${cafeDustModel.position.x.toFixed(2)}, ${cafeDustModel.position.y.toFixed(2)}, ${cafeDustModel.position.z.toFixed(2)}\nRot: [${cafeDustModel.rotation.x.toFixed(2)}, ${cafeDustModel.rotation.y.toFixed(2)}, ${cafeDustModel.rotation.z.toFixed(2)}]\nScale: ${cafeDustModel.scale.x.toFixed(4)}`);
+                        }
+                    };
+                    dustFolder.add(dustParams, 'posX', -200, 200).step(0.01).onChange(v => cafeDustModel.position.x = v);
+                    dustFolder.add(dustParams, 'posY', -200, 200).step(0.01).onChange(v => cafeDustModel.position.y = v);
+                    dustFolder.add(dustParams, 'posZ', -200, 200).step(0.01).onChange(v => cafeDustModel.position.z = v);
+                    dustFolder.add(dustParams, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => cafeDustModel.rotation.x = v);
+                    dustFolder.add(dustParams, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => cafeDustModel.rotation.y = v);
+                    dustFolder.add(dustParams, 'rotZ', -Math.PI, Math.PI).step(0.01).onChange(v => cafeDustModel.rotation.z = v);
+                    dustFolder.add(dustParams, 'scale', 0.01, 100).step(0.01).onChange(v => cafeDustModel.scale.set(v, v, v));
+                    dustFolder.add(dustParams, 'opacity', 0, 1).step(0.01).onChange(v => {
+                        dustParams.opacity = v;
+                        cafeDustModel.traverse((child) => {
+                            if (child.isMesh && child.material) {
+                                const materials = Array.isArray(child.material) ? child.material : [child.material];
+                                materials.forEach(mat => {
+                                    if (mat) {
+                                        mat.opacity = v;
+                                        mat.transparent = v < 1;
+                                    }
+                                });
+                            }
+                        });
+                    });
+                    dustFolder.add(dustParams, 'print').name('PRINT POSITION');
+                } catch (e) {
+                    console.warn("Could not add Dust GUI:", e);
+                }
             }
 
-            if (tallmanModel) {
-                const tallmanFolder = gui.addFolder('Tallman Position');
-                const tallmanParams = {
-                    posX: tallmanModel.position.x,
-                    posY: tallmanModel.position.y,
-                    posZ: tallmanModel.position.z,
-                    rotX: tallmanModel.rotation.x,
-                    rotY: tallmanModel.rotation.y,
-                    scale: tallmanModel.scale.x,
-                    print: () => {
-                        console.log(`Tallman Position: [${tallmanModel.position.x.toFixed(2)}, ${tallmanModel.position.y.toFixed(2)}, ${tallmanModel.position.z.toFixed(2)}]`);
-                        console.log(`Tallman Rotation X: ${tallmanModel.rotation.x.toFixed(2)}`);
-                        console.log(`Tallman Rotation Y: ${tallmanModel.rotation.y.toFixed(2)}`);
-                        console.log(`Tallman Scale: ${tallmanModel.scale.x.toFixed(2)}`);
-                        alert(`Tallman Pos: ${tallmanModel.position.x.toFixed(2)}, ${tallmanModel.position.y.toFixed(2)}, ${tallmanModel.position.z.toFixed(2)}\nRotX: ${tallmanModel.rotation.x.toFixed(2)}\nRotY: ${tallmanModel.rotation.y.toFixed(2)}\nScale: ${tallmanModel.scale.x.toFixed(2)}`);
-                    }
-                };
-                tallmanFolder.add(tallmanParams, 'posX', -100, 100).step(0.1).onChange(v => tallmanModel.position.x = v);
-                tallmanFolder.add(tallmanParams, 'posY', -100, 100).step(0.1).onChange(v => tallmanModel.position.y = v);
-                tallmanFolder.add(tallmanParams, 'posZ', -100, 100).step(0.1).onChange(v => tallmanModel.position.z = v);
-                tallmanFolder.add(tallmanParams, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => tallmanModel.rotation.x = v);
-                tallmanFolder.add(tallmanParams, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => tallmanModel.rotation.y = v);
-                tallmanFolder.add(tallmanParams, 'scale', 0.01, 50).step(0.01).onChange(v => tallmanModel.scale.set(v,v,v));
-                tallmanFolder.add(tallmanParams, 'print').name('PRINT POSITION');
-                tallmanFolder.open();
+
+            if (scene.fog && scene.fog instanceof THREE.FogExp2) {
+                try {
+                    const fogFolder = gui.addFolder('Fog Settings');
+                    const fogParams = {
+                        density: scene.fog.density,
+                        colorR: (scene.fog.color.r * 255),
+                        colorG: (scene.fog.color.g * 255),
+                        colorB: (scene.fog.color.b * 255),
+                        print: () => {
+                            console.log(`Fog Density: ${scene.fog.density.toFixed(4)}`);
+                            console.log(`Fog Color: [${scene.fog.color.r.toFixed(2)}, ${scene.fog.color.g.toFixed(2)}, ${scene.fog.color.b.toFixed(2)}]`);
+                            alert(`Fog Density: ${scene.fog.density.toFixed(4)}\nFog Color RGB: [${(scene.fog.color.r * 255).toFixed(0)}, ${(scene.fog.color.g * 255).toFixed(0)}, ${(scene.fog.color.b * 255).toFixed(0)}]`);
+                        }
+                    };
+                    fogFolder.add(fogParams, 'density', 0, 0.1).step(0.001).onChange(v => scene.fog.density = v);
+                    fogFolder.add(fogParams, 'colorR', 0, 255).step(1).onChange(v => scene.fog.color.r = v / 255);
+                    fogFolder.add(fogParams, 'colorG', 0, 255).step(1).onChange(v => scene.fog.color.g = v / 255);
+                    fogFolder.add(fogParams, 'colorB', 0, 255).step(1).onChange(v => scene.fog.color.b = v / 255);
+                    fogFolder.add(fogParams, 'print').name('PRINT FOG SETTINGS');
+                } catch (e) {
+                    console.warn("Could not add Fog GUI:", e);
+                }
+            }
+            
+
+            if (cafeFogVolume) {
+                try {
+                    const fogVolumeFolder = gui.addFolder('Fog Volume Settings');
+                    const fogVolumeParams = {
+                        posX: cafeFogVolume.position.x,
+                        posY: cafeFogVolume.position.y,
+                        posZ: cafeFogVolume.position.z,
+                        scaleX: cafeFogVolume.scale.x,
+                        scaleY: cafeFogVolume.scale.y,
+                        scaleZ: cafeFogVolume.scale.z,
+                        opacity: cafeFogVolume.material.opacity,
+                        colorR: (cafeFogVolume.material.color.r * 255),
+                        colorG: (cafeFogVolume.material.color.g * 255),
+                        colorB: (cafeFogVolume.material.color.b * 255),
+                        print: () => {
+                            console.log(`Fog Volume Position: [${cafeFogVolume.position.x.toFixed(2)}, ${cafeFogVolume.position.y.toFixed(2)}, ${cafeFogVolume.position.z.toFixed(2)}]`);
+                            console.log(`Fog Volume Scale: [${cafeFogVolume.scale.x.toFixed(2)}, ${cafeFogVolume.scale.y.toFixed(2)}, ${cafeFogVolume.scale.z.toFixed(2)}]`);
+                            console.log(`Fog Volume Opacity: ${cafeFogVolume.material.opacity.toFixed(2)}`);
+                            alert(`Fog Volume Pos: ${cafeFogVolume.position.x.toFixed(2)}, ${cafeFogVolume.position.y.toFixed(2)}, ${cafeFogVolume.position.z.toFixed(2)}\nScale: [${cafeFogVolume.scale.x.toFixed(2)}, ${cafeFogVolume.scale.y.toFixed(2)}, ${cafeFogVolume.scale.z.toFixed(2)}]\nOpacity: ${cafeFogVolume.material.opacity.toFixed(2)}`);
+                        }
+                    };
+                    fogVolumeFolder.add(fogVolumeParams, 'posX', -200, 200).step(0.01).onChange(v => cafeFogVolume.position.x = v);
+                    fogVolumeFolder.add(fogVolumeParams, 'posY', -200, 200).step(0.01).onChange(v => cafeFogVolume.position.y = v);
+                    fogVolumeFolder.add(fogVolumeParams, 'posZ', -200, 200).step(0.01).onChange(v => cafeFogVolume.position.z = v);
+                    fogVolumeFolder.add(fogVolumeParams, 'scaleX', 0.1, 10).step(0.1).onChange(v => cafeFogVolume.scale.x = v);
+                    fogVolumeFolder.add(fogVolumeParams, 'scaleY', 0.1, 10).step(0.1).onChange(v => cafeFogVolume.scale.y = v);
+                    fogVolumeFolder.add(fogVolumeParams, 'scaleZ', 0.1, 10).step(0.1).onChange(v => cafeFogVolume.scale.z = v);
+                    fogVolumeFolder.add(fogVolumeParams, 'opacity', 0, 1).step(0.01).onChange(v => {
+                        fogVolumeParams.opacity = v;
+                        cafeFogVolume.material.opacity = v;
+                    });
+                    fogVolumeFolder.add(fogVolumeParams, 'colorR', 0, 255).step(1).onChange(v => cafeFogVolume.material.color.r = v / 255);
+                    fogVolumeFolder.add(fogVolumeParams, 'colorG', 0, 255).step(1).onChange(v => cafeFogVolume.material.color.g = v / 255);
+                    fogVolumeFolder.add(fogVolumeParams, 'colorB', 0, 255).step(1).onChange(v => cafeFogVolume.material.color.b = v / 255);
+                    fogVolumeFolder.add(fogVolumeParams, 'print').name('PRINT FOG VOLUME SETTINGS');
+                    fogVolumeFolder.open();
+                } catch (e) {
+                    console.warn("Could not add Fog Volume GUI:", e);
+                }
             }
 
-            if (ylwkingModel) {
-                const ylwkingFolder = gui.addFolder('Yellow King Position');
-                const ylwkingParams = {
-                    posX: ylwkingModel.position.x,
-                    posY: ylwkingModel.position.y,
-                    posZ: ylwkingModel.position.z,
-                    rotX: ylwkingModel.rotation.x,
-                    rotY: ylwkingModel.rotation.y,
-                    scale: ylwkingModel.scale.x,
-                    print: () => {
-                        console.log(`Yellow King Position: [${ylwkingModel.position.x.toFixed(2)}, ${ylwkingModel.position.y.toFixed(2)}, ${ylwkingModel.position.z.toFixed(2)}]`);
-                        console.log(`Yellow King Rotation X: ${ylwkingModel.rotation.x.toFixed(2)}`);
-                        console.log(`Yellow King Rotation Y: ${ylwkingModel.rotation.y.toFixed(2)}`);
-                        console.log(`Yellow King Scale: ${ylwkingModel.scale.x.toFixed(2)}`);
-                        alert(`Yellow King Pos: ${ylwkingModel.position.x.toFixed(2)}, ${ylwkingModel.position.y.toFixed(2)}, ${ylwkingModel.position.z.toFixed(2)}\nRotX: ${ylwkingModel.rotation.x.toFixed(2)}\nRotY: ${ylwkingModel.rotation.y.toFixed(2)}\nScale: ${ylwkingModel.scale.x.toFixed(2)}`);
-                    }
-                };
-                ylwkingFolder.add(ylwkingParams, 'posX', -100, 100).step(0.01).onChange(v => ylwkingModel.position.x = v);
-                ylwkingFolder.add(ylwkingParams, 'posY', -100, 100).step(0.01).onChange(v => ylwkingModel.position.y = v);
-                ylwkingFolder.add(ylwkingParams, 'posZ', -100, 100).step(0.01).onChange(v => ylwkingModel.position.z = v);
-                ylwkingFolder.add(ylwkingParams, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => ylwkingModel.rotation.x = v);
-                ylwkingFolder.add(ylwkingParams, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => ylwkingModel.rotation.y = v);
-                ylwkingFolder.add(ylwkingParams, 'scale', 0.01, 50).step(0.01).onChange(v => ylwkingModel.scale.set(v,v,v));
-                ylwkingFolder.add(ylwkingParams, 'print').name('PRINT POSITION');
-                ylwkingFolder.open();
+
+            if (parkingSkybox) {
+                try {
+                    const skyboxFolder = gui.addFolder('Skybox Settings');
+                    const skyboxParams = {
+                        scale: parkingSkybox.scale.x,
+                        rotationSpeed: parkingSkyboxRotationSpeed,
+                        print: () => {
+                            console.log(`Skybox Scale: ${parkingSkybox.scale.x.toFixed(2)}`);
+                            console.log(`Skybox Rotation Speed: ${parkingSkyboxRotationSpeed.toFixed(4)}`);
+                            alert(`Skybox Scale: ${parkingSkybox.scale.x.toFixed(2)}\nRotation Speed: ${parkingSkyboxRotationSpeed.toFixed(4)}`);
+                        }
+                    };
+                    skyboxFolder.add(skyboxParams, 'scale', 0.1, 10).step(0.1).onChange(v => parkingSkybox.scale.set(v, v, v));
+                    skyboxFolder.add(skyboxParams, 'rotationSpeed', -0.5, 0.5).step(0.01).onChange(v => parkingSkyboxRotationSpeed = v);
+                    skyboxFolder.add(skyboxParams, 'print').name('PRINT SKYBOX SETTINGS');
+                } catch (e) {
+                    console.warn("Could not add Skybox GUI:", e);
+                }
+            }
+
+
+            if (camera) {
+                try {
+                    const cameraFolder = gui.addFolder('Camera Position');
+                    const cameraParams = {
+                        posX: camera.position.x,
+                        posY: camera.position.y,
+                        posZ: camera.position.z,
+                        print: () => {
+                            console.log(`Camera Position: [${camera.position.x.toFixed(2)}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(2)}]`);
+                            alert(`Camera Pos: ${camera.position.x.toFixed(2)}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(2)}`);
+                        }
+                    };
+                    cameraFolder.add(cameraParams, 'posX', -100, 100).step(0.01).onChange(v => camera.position.x = v);
+                    cameraFolder.add(cameraParams, 'posY', -100, 100).step(0.01).onChange(v => camera.position.y = v);
+                    cameraFolder.add(cameraParams, 'posZ', -100, 100).step(0.01).onChange(v => camera.position.z = v);
+                    cameraFolder.add(cameraParams, 'print').name('PRINT POSITION');
+                    cameraFolder.open();
+                } catch (e) {
+                    console.warn("Could not add Camera GUI:", e);
+                }
             }
         } catch (e) {
             console.error("GUI error:", e);
