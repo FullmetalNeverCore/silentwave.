@@ -376,8 +376,7 @@
           "Grimoires Appearance": 0.05,
           "Divergence Meter Appearance": 0.05,
           "Yellow King Appearance": 0.05,
-          "Parking Appearance": 0.005,
-          // "Cafe Appearance": 0.005
+          "Parking Appearance": 0.005
         };
 
         this.tryTriggerEvent();
@@ -766,10 +765,6 @@
         eventManager = new Events();
 
 
-        // if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
-        //     camera.position.set(0, -1.25, 8);
-        // }
-
         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
@@ -937,23 +932,14 @@
                 }
             });
 
-            if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
-                tvModel.position.set(0.04, -1.40, 4.85); 
-                tvModel.rotation.set(0, 0, 0); 
-                tvModel.scale.set(0.006, 0.006, 0.006);
+            tvModel.position.set(0.3, -3, 0); 
+            tvModel.rotation.y = 0; 
+            tvModel.scale.set(0.05, 0.05, 0.05);
 
-                if (screenLight) {
-                    screenLight.castShadow = false;
-                }
-            } else {
-                tvModel.position.set(0.3, -3, 0); 
-                tvModel.rotation.y = 0; 
-                tvModel.scale.set(0.05, 0.05, 0.05);
-
-                if (screenLight) {
-                    screenLight.castShadow = true;
-                }
+            if (screenLight) {
+                screenLight.castShadow = true;
             }
+
             scene.add(tvModel);
             tvModel.add(screenLight); 
 
@@ -1620,7 +1606,6 @@
         }
         
         const isParkingEvent = eventManager && eventManager.activeEvent === "Parking Appearance";
-        const isCafeEvent = eventManager && eventManager.activeEvent === "Cafe Appearance";
         const isSpecialEvent = eventManager && (eventManager.activeEvent === "Pyramid Head" || eventManager.activeEvent === "Tyrant Appearance" || eventManager.activeEvent === "Complete Blackout" || eventManager.activeEvent === "Pages Event");
 
         if (isParkingEvent) {
@@ -1654,45 +1639,6 @@
 
             if (parkingSkybox) {
                 parkingSkybox.rotation.y += delta * parkingSkyboxRotationSpeed;
-            }
-        } else if (isCafeEvent) {
-
-            
-
-            if (cafeFogVolume && cafeFogVolume.material) {
-                cafeFogDensityTime += delta;
-                const baseOpacity = 0.2;
-                const opacityVariation = 0.15;
-                const fogOpacity = baseOpacity + (Math.sin(cafeFogDensityTime * 0.3) * 0.5 + 0.5) * opacityVariation;
-                cafeFogVolume.material.opacity = fogOpacity;
-            }
-            
-
-            if (ambientLight && ambientLight.intensity > 0.05) {
-                ambientLight.color.setHex(0xffffff);
-                ambientLight.intensity = 0.05;
-            }
-            if (hemisphereLight && hemisphereLight.intensity > 0.08) {
-                hemisphereLight.color.setHex(0xffffff);
-                hemisphereLight.groundColor.setHex(0x111111);
-                hemisphereLight.intensity = 0.08;
-            }
-            if (directionalLight && directionalLight.intensity > 0.2) {
-                directionalLight.color.setHex(0xffffff);
-                directionalLight.intensity = 0.2;
-            }
-
-            if (cafeFillLight1 && cafeFillLight1.intensity > 0.05) {
-                cafeFillLight1.intensity = 0.05;
-            }
-            if (cafeFillLight2 && cafeFillLight2.intensity > 0.03) {
-                cafeFillLight2.intensity = 0.03;
-            }
-            if (cafeFillLight3 && cafeFillLight3.intensity > 0.02) {
-                cafeFillLight3.intensity = 0.02;
-            }
-            if (cafeSkyLight && cafeSkyLight.intensity > 0.08) {
-                cafeSkyLight.intensity = 0.08;
             }
         } else if (isSpecialEvent) {
             if (ambientLight) ambientLight.intensity = 0;
@@ -1761,7 +1707,7 @@
             if (tallmanModel) tallmanModel.visible = false; 
             
 
-            if (!isParkingEvent && !isCafeEvent) {
+            if (!isParkingEvent) {
 
                 if (scene.fog) scene.fog = null;
                 
@@ -1789,42 +1735,6 @@
                     parkingGroundPlane = null;
                 }
                 
-
-                if (cafeFillLight1 && scene.children.includes(cafeFillLight1)) {
-                    scene.remove(cafeFillLight1);
-                    cafeFillLight1 = null;
-                }
-                if (cafeFillLight2 && scene.children.includes(cafeFillLight2)) {
-                    scene.remove(cafeFillLight2);
-                    cafeFillLight2 = null;
-                }
-                if (cafeFillLight3 && scene.children.includes(cafeFillLight3)) {
-                    scene.remove(cafeFillLight3);
-                    cafeFillLight3 = null;
-                }
-
-                if (cafeSkyLight && scene.children.includes(cafeSkyLight)) {
-                    scene.remove(cafeSkyLight);
-                    cafeSkyLight = null;
-                }
-
-                if (cafeGroundPlane && scene.children.includes(cafeGroundPlane)) {
-                    scene.remove(cafeGroundPlane);
-                    cafeGroundPlane = null;
-                }
-
-                if (cafeDustModel && scene.children.includes(cafeDustModel)) {
-                    scene.remove(cafeDustModel);
-                    cafeDustModel = null;
-                }
-
-                if (cafeFogVolume && scene.children.includes(cafeFogVolume)) {
-                    scene.remove(cafeFogVolume);
-                    cafeFogVolume = null;
-                }
-                
-
-                cafeFogDensityTime = 0;
                 
                 if (ambientLight && ambientLight.intensity === 0) ambientLight.intensity = 0.01;
                 if (hemisphereLight && hemisphereLight.intensity === 0) hemisphereLight.intensity = 0.02;
@@ -1933,8 +1843,6 @@
         if (fukuroModel) fukuroModel.visible = (eventManager && eventManager.activeEvent === "Fukuro Event");
         if (devilzModel) devilzModel.visible = (eventManager && eventManager.activeEvent === "Devilz Event");
         if (ylwkingModel) ylwkingModel.visible = (eventManager && eventManager.activeEvent === "Yellow King Appearance");
-        if (cafeDustModel) cafeDustModel.visible = (eventManager && eventManager.activeEvent === "Cafe Appearance");
-        if (cafeFogVolume) cafeFogVolume.visible = (eventManager && eventManager.activeEvent === "Cafe Appearance");
         if (gbModel) {
             const isGBActive = (eventManager && eventManager.activeEvent === "Game Boy Appearance");
             gbModel.visible = isGBActive;
@@ -2010,55 +1918,9 @@
             addFolderDefensive('Tallman', tallmanModel);
             addFolderDefensive('Yellow King', ylwkingModel);
             addFolderDefensive('Parking', parkingModel);
-            addFolderDefensive('Cafe', cafeModel);
             addFolderDefensive('TV', tvModel, true);
 
 
-            if (cafeDustModel) {
-                try {
-                    const dustFolder = gui.addFolder('Dust Effect');
-                    const dustParams = {
-                        posX: cafeDustModel.position.x,
-                        posY: cafeDustModel.position.y,
-                        posZ: cafeDustModel.position.z,
-                        rotX: cafeDustModel.rotation.x,
-                        rotY: cafeDustModel.rotation.y,
-                        rotZ: cafeDustModel.rotation.z || 0,
-                        scale: cafeDustModel.scale.x,
-                        opacity: 0.8,
-                        print: () => {
-                            console.log(`Dust Position: [${cafeDustModel.position.x.toFixed(2)}, ${cafeDustModel.position.y.toFixed(2)}, ${cafeDustModel.position.z.toFixed(2)}]`);
-                            console.log(`Dust Rotation: [${cafeDustModel.rotation.x.toFixed(2)}, ${cafeDustModel.rotation.y.toFixed(2)}, ${cafeDustModel.rotation.z.toFixed(2)}]`);
-                            console.log(`Dust Scale: ${cafeDustModel.scale.x.toFixed(4)}`);
-                            alert(`Dust Pos: ${cafeDustModel.position.x.toFixed(2)}, ${cafeDustModel.position.y.toFixed(2)}, ${cafeDustModel.position.z.toFixed(2)}\nRot: [${cafeDustModel.rotation.x.toFixed(2)}, ${cafeDustModel.rotation.y.toFixed(2)}, ${cafeDustModel.rotation.z.toFixed(2)}]\nScale: ${cafeDustModel.scale.x.toFixed(4)}`);
-                        }
-                    };
-                    dustFolder.add(dustParams, 'posX', -200, 200).step(0.01).onChange(v => cafeDustModel.position.x = v);
-                    dustFolder.add(dustParams, 'posY', -200, 200).step(0.01).onChange(v => cafeDustModel.position.y = v);
-                    dustFolder.add(dustParams, 'posZ', -200, 200).step(0.01).onChange(v => cafeDustModel.position.z = v);
-                    dustFolder.add(dustParams, 'rotX', -Math.PI, Math.PI).step(0.01).onChange(v => cafeDustModel.rotation.x = v);
-                    dustFolder.add(dustParams, 'rotY', -Math.PI, Math.PI).step(0.01).onChange(v => cafeDustModel.rotation.y = v);
-                    dustFolder.add(dustParams, 'rotZ', -Math.PI, Math.PI).step(0.01).onChange(v => cafeDustModel.rotation.z = v);
-                    dustFolder.add(dustParams, 'scale', 0.01, 100).step(0.01).onChange(v => cafeDustModel.scale.set(v, v, v));
-                    dustFolder.add(dustParams, 'opacity', 0, 1).step(0.01).onChange(v => {
-                        dustParams.opacity = v;
-                        cafeDustModel.traverse((child) => {
-                            if (child.isMesh && child.material) {
-                                const materials = Array.isArray(child.material) ? child.material : [child.material];
-                                materials.forEach(mat => {
-                                    if (mat) {
-                                        mat.opacity = v;
-                                        mat.transparent = v < 1;
-                                    }
-                                });
-                            }
-                        });
-                    });
-                    dustFolder.add(dustParams, 'print').name('PRINT POSITION');
-                } catch (e) {
-                    console.warn("Could not add Dust GUI:", e);
-                }
-            }
 
 
             if (scene.fog && scene.fog instanceof THREE.FogExp2) {
@@ -2086,46 +1948,6 @@
             }
             
 
-            if (cafeFogVolume) {
-                try {
-                    const fogVolumeFolder = gui.addFolder('Fog Volume Settings');
-                    const fogVolumeParams = {
-                        posX: cafeFogVolume.position.x,
-                        posY: cafeFogVolume.position.y,
-                        posZ: cafeFogVolume.position.z,
-                        scaleX: cafeFogVolume.scale.x,
-                        scaleY: cafeFogVolume.scale.y,
-                        scaleZ: cafeFogVolume.scale.z,
-                        opacity: cafeFogVolume.material.opacity,
-                        colorR: (cafeFogVolume.material.color.r * 255),
-                        colorG: (cafeFogVolume.material.color.g * 255),
-                        colorB: (cafeFogVolume.material.color.b * 255),
-                        print: () => {
-                            console.log(`Fog Volume Position: [${cafeFogVolume.position.x.toFixed(2)}, ${cafeFogVolume.position.y.toFixed(2)}, ${cafeFogVolume.position.z.toFixed(2)}]`);
-                            console.log(`Fog Volume Scale: [${cafeFogVolume.scale.x.toFixed(2)}, ${cafeFogVolume.scale.y.toFixed(2)}, ${cafeFogVolume.scale.z.toFixed(2)}]`);
-                            console.log(`Fog Volume Opacity: ${cafeFogVolume.material.opacity.toFixed(2)}`);
-                            alert(`Fog Volume Pos: ${cafeFogVolume.position.x.toFixed(2)}, ${cafeFogVolume.position.y.toFixed(2)}, ${cafeFogVolume.position.z.toFixed(2)}\nScale: [${cafeFogVolume.scale.x.toFixed(2)}, ${cafeFogVolume.scale.y.toFixed(2)}, ${cafeFogVolume.scale.z.toFixed(2)}]\nOpacity: ${cafeFogVolume.material.opacity.toFixed(2)}`);
-                        }
-                    };
-                    fogVolumeFolder.add(fogVolumeParams, 'posX', -200, 200).step(0.01).onChange(v => cafeFogVolume.position.x = v);
-                    fogVolumeFolder.add(fogVolumeParams, 'posY', -200, 200).step(0.01).onChange(v => cafeFogVolume.position.y = v);
-                    fogVolumeFolder.add(fogVolumeParams, 'posZ', -200, 200).step(0.01).onChange(v => cafeFogVolume.position.z = v);
-                    fogVolumeFolder.add(fogVolumeParams, 'scaleX', 0.1, 10).step(0.1).onChange(v => cafeFogVolume.scale.x = v);
-                    fogVolumeFolder.add(fogVolumeParams, 'scaleY', 0.1, 10).step(0.1).onChange(v => cafeFogVolume.scale.y = v);
-                    fogVolumeFolder.add(fogVolumeParams, 'scaleZ', 0.1, 10).step(0.1).onChange(v => cafeFogVolume.scale.z = v);
-                    fogVolumeFolder.add(fogVolumeParams, 'opacity', 0, 1).step(0.01).onChange(v => {
-                        fogVolumeParams.opacity = v;
-                        cafeFogVolume.material.opacity = v;
-                    });
-                    fogVolumeFolder.add(fogVolumeParams, 'colorR', 0, 255).step(1).onChange(v => cafeFogVolume.material.color.r = v / 255);
-                    fogVolumeFolder.add(fogVolumeParams, 'colorG', 0, 255).step(1).onChange(v => cafeFogVolume.material.color.g = v / 255);
-                    fogVolumeFolder.add(fogVolumeParams, 'colorB', 0, 255).step(1).onChange(v => cafeFogVolume.material.color.b = v / 255);
-                    fogVolumeFolder.add(fogVolumeParams, 'print').name('PRINT FOG VOLUME SETTINGS');
-                    fogVolumeFolder.open();
-                } catch (e) {
-                    console.warn("Could not add Fog Volume GUI:", e);
-                }
-            }
 
 
             if (parkingSkybox) {
