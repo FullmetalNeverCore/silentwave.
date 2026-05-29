@@ -4,7 +4,6 @@ import requests
 import socket
 from datetime import datetime
 from dataclasses import dataclass, replace
-import logging
 import bg_list
 import conf
 import pytz
@@ -26,14 +25,12 @@ bgtype = ['nier','silenthill']
 
 @app.route('/endpoints', methods=['GET'])
 def get_endpoints():
-    logger.warning('Trying to get endpoints...')
     routes = {}
     for r in app.url_map._rules:
         routes[r.rule] = {}
         routes[r.rule]["functionName"] = r.rule
         routes[r.rule]["methods"] = list(r.methods)
     routes.pop("/static/<path:filename>")
-    logger.info('Endpoints returned')
     return jsonify(routes)
 
 @app.route("/test")
@@ -44,7 +41,6 @@ def test_home():
     else:
         season = 'summer'
     background = get_season_background(season)
-    logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('styletest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 
@@ -53,7 +49,6 @@ def test_home():
 #     name = "silentwave."
 #     season = 'halloween'
 #     background = bgi['hw']
-#     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
 #     return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 
@@ -62,7 +57,6 @@ def test_home():
 #     name = "silentwave."
 #     season = 'halloween'
 #     background = bgi['hw']
-#     logger.info('Welcome to %s, currently its %s season.,HALLOWEEN MODE', name, season)
 #     return render_template('halloweentest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 @app.route("/prodtest")
@@ -73,7 +67,6 @@ def test_prod():
     else:
         season = 'summer'
     background = get_season_background(season)
-    logger.info('Welcome to %s, currently its %s season.', name, season)
     return render_template('prodtest.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
 
 def get_background(season, bg_type):
@@ -88,7 +81,6 @@ def get_background(season, bg_type):
         case 'nier':
             background = random.choice(bgi['nier'])
         case _:  
-            logger.error(f'Неизвестный тип фона: {bg_type}')
             return None  
     return background
 
@@ -115,7 +107,6 @@ def home_page():
     if current_date.month == 10 and current_date.day == 31:
         season = 'halloween'
         background = bgi['hw']
-        logger.info('Добро пожаловать в %s, сейчас сезон %s. РЕЖИМ ХЭЛЛОУИНА', name, season)
         return render_template('halloween.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background)
     
     if current_date.month >= 12 or current_date.month <= 2:
@@ -125,7 +116,6 @@ def home_page():
     
     background = get_background(season, bgt)
     vhstime = 2001 if bgt == 'silenthill' else 11945
-    logger.info('Добро пожаловать в %s, сейчас сезон %s.', name, season)
     
     if is_mobile:
         return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background, year=vhstime)
@@ -142,7 +132,6 @@ def home_page():
 #         current_time = misc.get_time_zone() #getting time in correct time zone
 #         previous.routes.add_tracks(time=current_time, track=track_name)
 #     except Exception as e:
-#         logger.error(f'{e} - Is RadioDJ working fine?')
 
 @app.route('/robots.txt')
 def robots():
