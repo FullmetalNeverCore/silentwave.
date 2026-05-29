@@ -376,7 +376,7 @@
           "Grimoires Appearance": 0.05,
           "Divergence Meter Appearance": 0.05,
           "Yellow King Appearance": 0.05,
-          "Parking Appearance": 0.005,
+          // "Parking Appearance": 0.005,
           // "Cafe Appearance": 0.005
         };
 
@@ -825,7 +825,7 @@
             }
         };
 
-        if (eventManager && eventManager.activeEvent === "Parking Appearance") {
+        if (false) {
 
             scene.fog = new THREE.FogExp2(0xcccccc, 0.001);
             
@@ -1930,7 +1930,7 @@
             }
         }
         
-        const isParkingEvent = eventManager && eventManager.activeEvent === "Parking Appearance";
+        const isParkingEvent = false;
         const isCafeEvent = eventManager && eventManager.activeEvent === "Cafe Appearance";
         const isSpecialEvent = eventManager && (eventManager.activeEvent === "Pyramid Head" || eventManager.activeEvent === "Tyrant Appearance" || eventManager.activeEvent === "Complete Blackout" || eventManager.activeEvent === "Pages Event");
 
