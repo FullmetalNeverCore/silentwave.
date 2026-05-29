@@ -363,7 +363,7 @@
           "Marys Letter": 0.05,
           "Maria Appearance": 0.02,
           "Ashley Appearance": 0.02,
-          "Ada Appearance": 0.02,
+          // "Ada Appearance": 0.02,
           "Fukuro Event": 0.02,
           "SH1 Case": 0.04,
           "SH3 Case": 0.04,
@@ -377,7 +377,7 @@
           "Divergence Meter Appearance": 0.05,
           "Yellow King Appearance": 0.05,
           "Parking Appearance": 0.005,
-          "Cafe Appearance": 0.005
+          // "Cafe Appearance": 0.005
         };
 
         this.tryTriggerEvent();
@@ -409,13 +409,12 @@
     }
 
     let scene, camera, renderer, cssRenderer;
-    let tvModel, barModel, parkingModel, parkingSkybox, parkingGroundPlane, cafeModel, cafeGroundPlane, cafeDustModel, cafeFogVolume, screenEffect, screenUI, screenLight, signLight, signHalo, nightHalo, stripperLight, paradiseLight, meterLight, parkingFillLight1, parkingFillLight2, parkingFillLight3, parkingSkyLight, cafeFillLight1, cafeFillLight2, cafeFillLight3, cafeSkyLight;
+    let tvModel, barModel, parkingModel, parkingSkybox, parkingGroundPlane, screenEffect, screenUI, screenLight, signLight, signHalo, nightHalo, stripperLight, paradiseLight, meterLight, parkingFillLight1, parkingFillLight2, parkingFillLight3, parkingSkyLight;
     let parkingSkyboxRotationSpeed = 0.05;
-    let cafeFogDensityTime = 0;
     let lastImageColorUpdate = 0;
     let extractedImageColor = { r: 0.8, g: 0.8, b: 1.0 };
     let ambientLight, hemisphereLight, directionalLight;
-    let eventManager, marysLetter, mariaModel, mariaMixer, ashleyModel, ashleyMixer, adaModel, adaMixer, lunarModel, sh1Model, sh3Model, sh1Mixer, sh3Mixer, simonPhoneModel, simonPhoneMixer, dogeModel, dogeMixer, mirrorModel, mirrorMixer, fukuroModel, fukuroMixer, devilzModel, devilzMixer, pyramidHeadModel, pyramidHeadMixer, tyrantModel, tyrantMixer, gbModel, gbMixer,gbCartridgeModel,grimoiresModel,grimoiresMixer,pagesModel,pagesMixer,tallmanModel,tallmanMixer,dmeterModel,dmeterMixer,ylwkingModel,ylwkingMixer,cafeDustMixer; 
+    let eventManager, marysLetter, mariaModel, mariaMixer, ashleyModel, ashleyMixer, adaModel, adaMixer, lunarModel, sh1Model, sh3Model, sh1Mixer, sh3Mixer, simonPhoneModel, simonPhoneMixer, dogeModel, dogeMixer, mirrorModel, mirrorMixer, fukuroModel, fukuroMixer, devilzModel, devilzMixer, pyramidHeadModel, pyramidHeadMixer, tyrantModel, tyrantMixer, gbModel, gbMixer,gbCartridgeModel,grimoiresModel,grimoiresMixer,pagesModel,pagesMixer,tallmanModel,tallmanMixer,dmeterModel,dmeterMixer,ylwkingModel,ylwkingMixer; 
     let pagesList = [];let signFlickerTimer = 0;
     let signDarknessTimer = 0;
     const clock = new THREE.Clock();
@@ -767,9 +766,9 @@
         eventManager = new Events();
 
 
-        if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
-            camera.position.set(0, -1.25, 8);
-        }
+        // if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
+        //     camera.position.set(0, -1.25, 8);
+        // }
 
         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -976,7 +975,8 @@
                 });
                 onModelLoaded();
             });
-        } else if (eventManager && eventManager.activeEvent === "Cafe Appearance") {
+        /*
+        } else if (false) {
 
             scene.fog = null;
             if (renderer) renderer.setClearColor(0xcccccc, 1);
@@ -1048,6 +1048,7 @@
                     
                     const groundGeometry = new THREE.PlaneGeometry(2000, 2000);
                     const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x666666, roughness: 0.9 });
+        */
                     cafeGroundPlane = new THREE.Mesh(groundGeometry, groundMaterial);
                     cafeGroundPlane.rotation.x = -Math.PI / 2;
                     cafeGroundPlane.position.set(-5.09, -2.9, -0.49);
@@ -1271,7 +1272,7 @@
             screenUI.scale.set(0.075, 0.075, 0.075);
             screenUI.position.z = -15; 
 
-            const eventsToLoad = ["Marys Letter", "Maria Appearance", "Ashley Appearance", "Ada Appearance", "Lunar Tear", "SH1 Case", "SH3 Case", "Simon Phone", "Doge Appearance", "Mirror Event", "Fukuro Event", "Devilz Event", "Pyramid Head", "Tyrant Appearance", "Game Boy Appearance", "Grimoires Appearance", "Pages Event", "Yellow King Appearance"];
+            const eventsToLoad = ["Marys Letter", "Maria Appearance", "Ashley Appearance", "Lunar Tear", "SH1 Case", "SH3 Case", "Simon Phone", "Doge Appearance", "Mirror Event", "Fukuro Event", "Devilz Event", "Pyramid Head", "Tyrant Appearance", "Game Boy Appearance", "Grimoires Appearance", "Pages Event", "Yellow King Appearance"];
             if (eventManager && eventsToLoad.includes(eventManager.activeEvent)) {
                 if (eventManager.activeEvent === "Game Boy Appearance") modelsToLoad += 2;
                 else modelsToLoad++;
@@ -1630,7 +1631,7 @@
                 });
             }
 
-            if (eventManager && eventManager.activeEvent === "Ada Appearance") {
+            if (false) {
                 gltfLoader.load(window.ASSETS.ada_model, (gltf) => {
                     adaModel = gltf.scene;
                     adaModel.position.set(-13.2, -18.9, -18.9); 
@@ -2190,7 +2191,7 @@
         }
 
             if (signLight && nightHalo) {
-                if (eventManager && (eventManager.activeEvent === "Sign Blackout" || eventManager.activeEvent === "Complete Blackout" || eventManager.activeEvent === "Ada Appearance")) {
+                if (eventManager && (eventManager.activeEvent === "Sign Blackout" || eventManager.activeEvent === "Complete Blackout")) {
                     signLight.intensity = 0; nightHalo.intensity = 0;
                 } else if (eventManager && eventManager.activeEvent === "Mirror Event") {
                     signLight.color.setHex(0xff0000); nightHalo.color.setHex(0x880000);
@@ -2229,7 +2230,7 @@
         if (mariaModel) mariaModel.visible = (eventManager && eventManager.activeEvent === "Maria Appearance");
         if (ashleyModel) ashleyModel.visible = (eventManager && eventManager.activeEvent === "Ashley Appearance");
         if (adaModel) {
-            const isAdaActive = (eventManager && eventManager.activeEvent === "Ada Appearance");
+            const isAdaActive = false;
             adaModel.visible = isAdaActive;
         }
         if (lunarModel) lunarModel.visible = (eventManager && eventManager.activeEvent === "Lunar Tear");
