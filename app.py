@@ -12,22 +12,22 @@ import pytz
 import misc 
 
 # logging
-logging.basicConfig(filename='self.app.log')
+# logging.basicConfig(filename='self.app.log')
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 
-fh = logging.FileHandler('example.log')
-fh.setLevel(logging.DEBUG)
+# fh = logging.FileHandler('example.log')
+# fh.setLevel(logging.DEBUG)
 
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-fh.setFormatter(formatter)
+# fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 
-logger.addHandler(fh)
+# logger.addHandler(fh)
 logger.addHandler(ch)
 
 import previous.routes
@@ -39,9 +39,9 @@ app = Flask(__name__)
 app.register_blueprint(prev_bp, url_prefix='/previous')
 app.register_blueprint(tn_bp, url_prefix='/track_name')
 
-scheduler = APScheduler()
-scheduler.init_app(app)
-scheduler.start()
+# scheduler = APScheduler()
+# scheduler.init_app(app)
+# scheduler.start()
 
 bgi = bg_list.bglist
 music_host = conf.music_host
@@ -155,17 +155,17 @@ def home_page():
     else:
         return render_template('tv_3d.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background, year=vhstime)
 
-@scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
-def check_tracks():
-    status_url = f'{conf.host}/status.xsl'
-    response = requests.get(status_url)
-    html = response.text
-    try:
-        track_name = html.split('<td class="streamstats">')[7].split('</td>')[0]
-        current_time = misc.get_time_zone() #getting time in correct time zone
-        previous.routes.add_tracks(time=current_time, track=track_name)
-    except Exception as e:
-        logger.error(f'{e} - Is RadioDJ working fine?')
+# @scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
+# def check_tracks():
+#     status_url = f'{conf.host}/status.xsl'
+#     response = requests.get(status_url)
+#     html = response.text
+#     try:
+#         track_name = html.split('<td class="streamstats">')[7].split('</td>')[0]
+#         current_time = misc.get_time_zone() #getting time in correct time zone
+#         previous.routes.add_tracks(time=current_time, track=track_name)
+#     except Exception as e:
+#         logger.error(f'{e} - Is RadioDJ working fine?')
 
 @app.route('/robots.txt')
 def robots():
