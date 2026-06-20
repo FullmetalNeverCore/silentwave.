@@ -57,7 +57,30 @@
     <script src="{{ url_for('static', filename='js/vendor/fflate.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/CSS3DRenderer.js') }}"></script>
 </head>
+
 <body>
+    <style>
+        #fps-display {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ff00;
+            padding: 10px 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            border: 2px solid #00ff00;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        .revision-text {
+            font-size: 16px;
+            color: #e3e3e3;
+            margin-top: 350px;
+            margin-left: 35px;
+        }
+    </style>
     <div id="intro-overlay">
         <img id="intro-image" src="{{ url_for('static', filename='pictures/boot_seq/silentwave2_1.png') }}" alt="Silentwave. Loading Screen" style="opacity: 1;">
     </div>
@@ -92,6 +115,9 @@
                 <div class="vhs" id="vhs" data-splitting>NODATA</div>
                 <input type="hidden" id="yearValue" value="{{ year }}">
                 <div class="counter" style="color: #00ff00;"><label id="viewers-count" style="color: #00ff00;">0</label></div>
+                <div class="counter" style="color: #00ff00;"><label id="fps-counter" style="color: #00ff00; font-size: 20px;">FPS:0</label></div>
+                <div class="revision-text">Revision: {{ revision }}</div>
+
             </div>
             <div class="center-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 900; text-align: center; width: 80%;">
                 <img src="{{ url_for('static', filename='silentwave.png') }}" alt="Silentwave. Survival Horror Radio Logo" style="max-width: 100%; height: auto; margin-bottom: 0px;">

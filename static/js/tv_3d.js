@@ -368,9 +368,9 @@
         eventManager = new Events();
 
 
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+        renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
         renderer.setClearColor(0x000000, 1); 
         renderer.outputEncoding = THREE.sRGBEncoding; 
         renderer.physicallyCorrectLights = true;
@@ -403,8 +403,8 @@
         directionalLight.shadow.camera.right = 50;
         directionalLight.shadow.camera.top = 50;
         directionalLight.shadow.camera.bottom = -50;
-        directionalLight.shadow.mapSize.width = 2048;
-        directionalLight.shadow.mapSize.height = 2048;
+        directionalLight.shadow.mapSize.width = 512;
+        directionalLight.shadow.mapSize.height = 512;
         scene.add(directionalLight);
 
         screenLight = new THREE.PointLight(0x5555ff, 25, 20); 
@@ -432,8 +432,8 @@
                 
                 barModel.traverse((child) => {
                     if (child.isMesh) {
-                        child.castShadow = true;
-                        child.receiveShadow = true;
+                        child.castShadow = false;
+                        child.castShadow = false;
                         const oldMat = child.material;
                         const materials = Array.isArray(oldMat) ? oldMat : [oldMat];
                         
@@ -467,14 +467,14 @@
                 stripperLight= new THREE.PointLight(0xffcb00, 3000, 0); 
                 stripperLight.decay = 1; 
                 stripperLight.position.set(-2, 9, 23); 
-                stripperLight.castShadow = true;
-                stripperLight.shadow.bias = -0.001;
+                // stripperLight.castShadow = true;
+                // stripperLight.shadow.bias = -0.001;
                 scene.add(stripperLight);
 
                 paradiseLight= new THREE.PointLight(0xff0000, 15, 100);
                 paradiseLight.position.set(-9, 23, 19); 
-                paradiseLight.castShadow = true;
-                paradiseLight.shadow.bias = -0.001;
+                // paradiseLight.castShadow = true;
+                // paradiseLight.shadow.bias = -0.001;
                 scene.add(paradiseLight);
                 onModelLoaded();
             });
@@ -485,7 +485,7 @@
             const tvTexture = textureLoader.load(window.ASSETS.tv_texture, 
                 (tex) => {
                     tex.encoding = THREE.sRGBEncoding;
-                    tex.anisotropy = 16;
+                    tex.anisotropy = 4;
                     tex.flipY = true;
                     tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
                 }
@@ -568,8 +568,8 @@
                     gbModel.traverse((child) => { 
                         if (child.isMesh) { 
                             child.frustumCulled = false;
-                            child.castShadow = true; 
-                            child.receiveShadow = true; 
+                            child.castShadow = false; 
+                            child.castShadow = false; 
                             
                             if (child.material) {
                                 const mats = Array.isArray(child.material) ? child.material : [child.material];
@@ -628,8 +628,8 @@
                         gbCartridgeModel.traverse((child) => {
                             if (child.isMesh) {
                                 child.frustumCulled = false;
-                                child.castShadow = true;
-                                child.receiveShadow = true;
+                                child.castShadow = false;
+                                child.castShadow = false;
 
                                 child.material = cartMaterial;
 
@@ -675,7 +675,7 @@
                     mariaModel.visible = false; 
                     scene.add(mariaModel);
                     mariaModel.traverse((child) => {
-                        if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; }
+                        if (child.isMesh) { child.castShadow = false; child.castShadow = false; }
                         if (child.isBone) {
                             if (child.name === "head_08") { child.rotation.set(-0.6, 0.9, 0); }
                             if (child.name === "arm_right_shoulder1_066" || child.name === "arm_left_shoulder1_047") { child.rotation.set(-1.39, -0.46, 1.69); }
@@ -695,8 +695,8 @@
                         if (child.isMesh || child.isSkinnedMesh) {
                             child.visible = true;
                             child.frustumCulled = false; 
-                            child.castShadow = true;
-                            child.receiveShadow = true;
+                            child.castShadow = false;
+                            child.castShadow = false;
                             const materials = Array.isArray(child.material) ? child.material : [child.material];
                             materials.forEach(mat => {
                                 if (!mat) return;
@@ -733,8 +733,8 @@
 
                     dmeterModel.traverse((child) => {
                         if (child.isMesh) {
-                            child.castShadow = true;
-                            child.receiveShadow = true;
+                            child.castShadow = false;
+                            child.castShadow = false;
                             
                             const materials = Array.isArray(child.material) ? child.material : [child.material];
                             materials.forEach(mat => {
@@ -764,8 +764,8 @@
                     
                     ylwkingModel.traverse((child) => {
                         if (child.isMesh || child.isSkinnedMesh) {
-                            child.castShadow = true;
-                            child.receiveShadow = true;
+                            child.castShadow = false;
+                            child.castShadow = false;
                             if (child.material) {
                                 const materials = Array.isArray(child.material) ? child.material : [child.material];
                                 materials.forEach(mat => {
@@ -799,8 +799,8 @@
                     pagesList = [];
                     pagesModel.traverse((child) => {
                         if (child.isMesh) {
-                            child.castShadow = true;
-                            child.receiveShadow = true;
+                            child.castShadow = false;
+                            child.castShadow = false;
                             pagesList.push(child);
                         }
                     });
@@ -880,8 +880,8 @@
                         if (child.isMesh || child.isSkinnedMesh) {
                             child.visible = true;
                             child.frustumCulled = false; 
-                            child.castShadow = true;
-                            child.receiveShadow = true;
+                            child.castShadow = false;
+                            child.castShadow = false;
                             const materials = Array.isArray(child.material) ? child.material : [child.material];
                             materials.forEach(mat => {
                                 if (!mat) return;
@@ -918,8 +918,8 @@
                     adaModel.traverse((child) => {
                         if (child.isMesh || child.isSkinnedMesh) {
                             child.visible = true;
-                            child.castShadow = true;
-                            child.receiveShadow = true;
+                            child.castShadow = false;
+                            child.castShadow = false;
                             const materials = Array.isArray(child.material) ? child.material : [child.material];
                             materials.forEach(mat => { if (mat && mat.map) { mat.map.encoding = THREE.sRGBEncoding; mat.map.anisotropy = 16; } });
                         }
@@ -938,7 +938,7 @@
                     lunarModel.scale.set(2.7, 2.7, 2.7); 
                     lunarModel.traverse((child) => {
                         if (child.isMesh) {
-                            child.castShadow = true; child.receiveShadow = true;
+                            child.castShadow = false; child.castShadow = false;
                             if (child.material && child.material.map) { child.material.map.encoding = THREE.sRGBEncoding; child.material.map.anisotropy = 16; }
                         }
                     });
@@ -954,7 +954,7 @@
                     sh1Model.position.set(-2.20, -2.20, 1.80); 
                     sh1Model.rotation.set(-1.51, 0.44, 0);
                     sh1Model.scale.set(0.05, 0.05, 0.05); 
-                    sh1Model.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    sh1Model.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { sh1Mixer = new THREE.AnimationMixer(sh1Model); sh1Mixer.clipAction(gltf.animations[0]).play(); }
                     sh1Model.visible = true; 
                     scene.add(sh1Model);
@@ -968,7 +968,7 @@
                     sh3Model.position.set(-1.40, -2.50, 3.20); 
                     sh3Model.rotation.set(-0.04, 0.15, 0);
                     sh3Model.scale.set(0.41, 0.41, 0.41); 
-                    sh3Model.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    sh3Model.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { sh3Mixer = new THREE.AnimationMixer(sh3Model); sh3Mixer.clipAction(gltf.animations[0]).play(); }
                     sh3Model.visible = true; 
                     scene.add(sh3Model);
@@ -982,7 +982,7 @@
                     simonPhoneModel.position.set(-0.20, -2.90, 2.00); 
                     simonPhoneModel.rotation.set(-1.51, 0.02, 0);
                     simonPhoneModel.scale.set(0.0529, 0.0529, 0.0529); 
-                    simonPhoneModel.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    simonPhoneModel.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { simonPhoneMixer = new THREE.AnimationMixer(simonPhoneModel); simonPhoneMixer.clipAction(gltf.animations[0]).play(); }
                     simonPhoneModel.visible = true; 
                     scene.add(simonPhoneModel);
@@ -996,7 +996,7 @@
                     dogeModel.position.set(24.60, -18.90, -35.70); 
                     dogeModel.rotation.set(0.10, -0.85, 0);
                     dogeModel.scale.set(12.3428, 12.3428, 12.3428); 
-                    dogeModel.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    dogeModel.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { dogeMixer = new THREE.AnimationMixer(dogeModel); dogeMixer.clipAction(gltf.animations[0]).play(); }
                     dogeModel.visible = true; 
                     scene.add(dogeModel);
@@ -1010,7 +1010,7 @@
                     mirrorModel.position.set(25.70, 14.30, -53.70); 
                     mirrorModel.rotation.y = 0.12;
                     mirrorModel.scale.set(13.1062, 13.1062, 13.1062); 
-                    mirrorModel.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    mirrorModel.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { mirrorMixer = new THREE.AnimationMixer(mirrorModel); mirrorMixer.clipAction(gltf.animations[0]).play(); }
                     mirrorModel.visible = true; 
                     scene.add(mirrorModel);
@@ -1024,7 +1024,7 @@
                     fukuroModel.position.set(25.30, -22.00, -48.70); 
                     fukuroModel.rotation.set(-0.21, 0.71, 0);
                     fukuroModel.scale.set(5.1859, 5.1859, 5.1859); 
-                    fukuroModel.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    fukuroModel.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { fukuroMixer = new THREE.AnimationMixer(fukuroModel); fukuroMixer.clipAction(gltf.animations[0]).play(); }
                     fukuroModel.visible = true; 
                     scene.add(fukuroModel);
@@ -1038,7 +1038,7 @@
                     devilzModel.position.set(-2.20, -3.00, 0.90); 
                     devilzModel.rotation.set(0, 0.99, 0);
                     devilzModel.scale.set(0.4146, 0.4146, 0.4146); 
-                    devilzModel.traverse((child) => { if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    devilzModel.traverse((child) => { if (child.isMesh) { child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { devilzMixer = new THREE.AnimationMixer(devilzModel); devilzMixer.clipAction(gltf.animations[0]).play(); }
                     devilzModel.visible = true; 
                     scene.add(devilzModel);
@@ -1052,7 +1052,7 @@
                     pyramidHeadModel.position.set(42.10, -19.30, -41.90); 
                     pyramidHeadModel.rotation.set(0, 1.28, 0);
                     pyramidHeadModel.scale.set(7.4761, 7.4761, 7.4761); 
-                    pyramidHeadModel.traverse((child) => { if (child.isMesh || child.isSkinnedMesh) { child.visible = true; child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    pyramidHeadModel.traverse((child) => { if (child.isMesh || child.isSkinnedMesh) { child.visible = true; child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     if (gltf.animations && gltf.animations.length > 0) { pyramidHeadMixer = new THREE.AnimationMixer(pyramidHeadModel); pyramidHeadMixer.clipAction(gltf.animations[0]).play(); }
                     pyramidHeadModel.visible = true; 
                     scene.add(pyramidHeadModel);
@@ -1066,7 +1066,7 @@
                     tyrantModel.position.set(28.80, -17.40, -17.00); 
                     tyrantModel.rotation.set(-0.07, -0.70, 0);
                     tyrantModel.scale.set(0.2238, 0.2238, 0.2238); 
-                    tyrantModel.traverse((child) => { if (child.isMesh || child.isSkinnedMesh) { child.visible = true; child.castShadow = true; child.receiveShadow = true; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
+                    tyrantModel.traverse((child) => { if (child.isMesh || child.isSkinnedMesh) { child.visible = true; child.castShadow = false; child.castShadow = false; if (child.material && child.material.map) child.material.map.encoding = THREE.sRGBEncoding; } });
                     tyrantModel.visible = true; 
                     scene.add(tyrantModel);
                     onModelLoaded();
@@ -1097,7 +1097,7 @@
             image: { enabled: true, options: { src: window.CONFIG.bg_img, blur: 1.2 } },
             vignette: { enabled: true },
             scanlines: { enabled: true },
-            vcr: { enabled: true, options: { opacity: 0.4 + Math.random() * 0.6, miny: 220, miny2: 220, num: 15 + Math.random() * 60, fps: 24 } },
+            vcr: { enabled: true, options: { opacity: 0.4 + Math.random() * 0.6, miny: 220, miny2: 220, num: 15 + Math.random() * 60, fps: 15 } },
             wobbley: { enabled: true },
             snow: { enabled: true, options: { opacity: 0.2 } },
           },
@@ -1599,6 +1599,30 @@
             console.error("GUI error:", e);
         }
     }
+
+    // FPS Counter
+    (function() {
+          let lastTime = Date.now();
+          let frames = 0;
+          let fps = 0;
+          
+          function updateFPS() {
+            frames++;
+            const now = Date.now();
+            const delta = now - lastTime;
+            
+            if (delta >= 1000) {
+              fps = Math.round((frames * 1000) / delta);
+              document.getElementById('fps-counter').textContent = "FPS: " + fps.toString().padStart(2, '0');
+              frames = 0;
+              lastTime = now;
+            }
+            
+            requestAnimationFrame(updateFPS);
+          }
+          
+          updateFPS();
+    })();
 
     init();
 

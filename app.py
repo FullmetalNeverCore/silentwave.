@@ -8,6 +8,8 @@ import bg_list
 import conf
 import pytz
 import misc 
+import os
+import subprocess
 
 import previous.routes
 from previous.routes import prev_bp
@@ -22,6 +24,18 @@ app.register_blueprint(tn_bp, url_prefix='/track_name')
 bgi = bg_list.bglist
 music_host = conf.music_host
 bgtype = ['nier','silenthill']
+
+# revision
+def get_git_commit():
+    commit_id = os.getenv('VERCEL_GIT_COMMIT_SHA', 'unknown')
+    if commit_id != 'unknown':
+        return commit_id[:7]
+    
+    try:
+        commit_id = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode().strip()[:7]
+        return commit_id
+    except:
+        return "unknown"
 
 @app.route('/endpoints', methods=['GET'])
 def get_endpoints():
@@ -120,7 +134,7 @@ def home_page():
     if is_mobile:
         return render_template('helloworld.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background, year=vhstime)
     else:
-        return render_template('tv_3d.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background, year=vhstime)
+        return render_template('tv_3d.html', title='silentwave.', username=name, stream_url=f'{music_host}', bg_img=background, year=vhstime,revision=get_git_commit())
 
 # @scheduler.task('interval', id='check_tracks', seconds=5, misfire_grace_time=900)
 # def check_tracks():
@@ -163,5 +177,5 @@ def alpine():
 
 # if __name__ == "__main__":
 #     # app.debug = True
-#     app.run(host='0.0.0.0',debug=True, port=5000)
-#     # app.run(host='0.0.0.0', debug=True, port=5000, ssl_context=('192.168.8.14.pem','192.168.8.14-key.pem'))
+#     # app.run(host='0.0.0.0',debug=True, port=5000)
+#     app.run(host='0.0.0.0', debug=True, port=5001, ssl_context=('192.168.8.14.pem','192.168.8.14-key.pem'))

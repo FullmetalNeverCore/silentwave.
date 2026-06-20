@@ -154,6 +154,8 @@ class ScreenEffect {
     const effect = this.effects.snow;
     if (!effect || this.paused) return;
 
+    const FRAME_SKIP = 2;
+
     const canvas = effect.node;
     let targetOpacity = 0.15;
     let currentOpacity = 0.15;
@@ -162,6 +164,7 @@ class ScreenEffect {
       if (this.paused) return;
       this.generateSnow(effect.ctx, effect.imgData, effect.buffer);
 
+    
       const isPagesEvent = typeof eventManager !== 'undefined' && eventManager && eventManager.activeEvent === "Pages Event";
 
       if (isPagesEvent) {
